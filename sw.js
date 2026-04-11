@@ -1,9 +1,10 @@
-const CACHE = 'kickboks-v3';
+const CACHE = 'kickboks-v4';
 const FILES = [
   './',
   './index.html',
   './manifest.json',
-  './icon.svg'
+  './icon.svg',
+  './schedules.json'
 ];
 
 self.addEventListener('install', e => {

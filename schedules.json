@@ -1,0 +1,66 @@
+{
+  "updated": "2026-04-11T00:00:00.000Z",
+  "schools": {
+    "colosseum": {
+      "name": "The Colosseum",
+      "addr": "Utrecht",
+      "classes": [
+        { "id": "c01", "day": 1, "time": "18:00", "dur": 60, "type": "Kickboxen",     "level": "Beginners"       },
+        { "id": "c02", "day": 1, "time": "19:15", "dur": 60, "type": "Kickboxen",     "level": "Gevorderd"       },
+        { "id": "c03", "day": 1, "time": "20:30", "dur": 60, "type": "K1 / Sparring", "level": "Gevorderd"       },
+        { "id": "c04", "day": 2, "time": "09:30", "dur": 60, "type": "Fitness",       "level": "Alle niveaus"    },
+        { "id": "c05", "day": 2, "time": "18:00", "dur": 60, "type": "Muay Thai",     "level": "Beginners"       },
+        { "id": "c06", "day": 2, "time": "19:15", "dur": 60, "type": "Kickboxen",     "level": "Gevorderd"       },
+        { "id": "c07", "day": 3, "time": "17:30", "dur": 45, "type": "Kids Kickboxen","level": "Jeugd (8–14 jr)" },
+        { "id": "c08", "day": 3, "time": "18:30", "dur": 60, "type": "Kickboxen",     "level": "Beginners"       },
+        { "id": "c09", "day": 3, "time": "20:00", "dur": 60, "type": "K1 / Sparring", "level": "Gevorderd"       },
+        { "id": "c10", "day": 4, "time": "09:30", "dur": 60, "type": "Fitness",       "level": "Alle niveaus"    },
+        { "id": "c11", "day": 4, "time": "18:00", "dur": 60, "type": "Muay Thai",     "level": "Alle niveaus"    },
+        { "id": "c12", "day": 4, "time": "19:15", "dur": 60, "type": "Kickboxen",     "level": "Gevorderd"       },
+        { "id": "c13", "day": 5, "time": "18:00", "dur": 60, "type": "Kickboxen",     "level": "Beginners"       },
+        { "id": "c14", "day": 5, "time": "19:15", "dur": 60, "type": "Vrij Sparring", "level": "Gevorderd"       },
+        { "id": "c15", "day": 6, "time": "10:00", "dur": 90, "type": "Open Mat",      "level": "Alle niveaus"    },
+        { "id": "c16", "day": 6, "time": "12:00", "dur": 60, "type": "Kickboxen",     "level": "Beginners"       },
+        { "id": "c17", "day": 0, "time": "10:00", "dur": 60, "type": "Kickboxen",     "level": "Alle niveaus"    },
+        { "id": "c18", "day": 0, "time": "11:15", "dur": 60, "type": "Open Sparring", "level": "Gevorderd"       }
+      ]
+    },
+    "sbgym": {
+      "name": "SB Gym",
+      "addr": "Utrecht",
+      "classes": [
+        { "id": "s01", "day": 1, "time": "09:00", "dur": 60, "type": "Ochtend Kickboxen", "level": "Alle niveaus" },
+        { "id": "s02", "day": 1, "time": "18:00", "dur": 60, "type": "Kickboxen",         "level": "Beginners"    },
+        { "id": "s03", "day": 1, "time": "19:15", "dur": 60, "type": "Boksen",            "level": "Alle niveaus" },
+        { "id": "s04", "day": 1, "time": "20:30", "dur": 60, "type": "Kickboxen",         "level": "Gevorderd"    },
+        { "id": "s05", "day": 2, "time": "18:00", "dur": 60, "type": "Muay Thai",         "level": "Alle niveaus" },
+        { "id": "s06", "day": 2, "time": "19:15", "dur": 60, "type": "Kickboxen",         "level": "Beginners"    },
+        { "id": "s07", "day": 3, "time": "09:00", "dur": 60, "type": "Ochtend Training",  "level": "Alle niveaus" },
+        { "id": "s08", "day": 3, "time": "17:30", "dur": 45, "type": "Kids Boxing",       "level": "Jeugd"        },
+        { "id": "s09", "day": 3, "time": "18:30", "dur": 60, "type": "Kickboxen",         "level": "Beginners"    },
+        { "id": "s10", "day": 3, "time": "19:45", "dur": 60, "type": "Kickboxen",         "level": "Gevorderd"    },
+        { "id": "s11", "day": 4, "time": "18:00", "dur": 60, "type": "Boksen",            "level": "Alle niveaus" },
+        { "id": "s12", "day": 4, "time": "19:15", "dur": 60, "type": "Kickboxen",         "level": "Beginners"    },
+        { "id": "s13", "day": 4, "time": "20:30", "dur": 60, "type": "Sparring",          "level": "Gevorderd"    },
+        { "id": "s14", "day": 5, "time": "12:00", "dur": 60, "type": "Middag Training",   "level": "Alle niveaus" },
+        { "id": "s15", "day": 5, "time": "18:00", "dur": 60, "type": "Kickboxen",         "level": "Beginners"    },
+        { "id": "s16", "day": 6, "time": "10:00", "dur": 90, "type": "Weekend Training",  "level": "Alle niveaus" },
+        { "id": "s17", "day": 0, "time": "11:00", "dur": 60, "type": "Kickboxen",         "level": "Alle niveaus" },
+        { "id": "s18", "day": 0, "time": "12:15", "dur": 60, "type": "Sparring",          "level": "Gevorderd"    }
+      ]
+    },
+    "commit": {
+      "name": "Commit Rivierenwijk",
+      "addr": "Rivierenwijk, Utrecht",
+      "classes": [
+        { "id": "m01", "day": 1, "time": "19:00", "dur": 60, "type": "Kickboxen",      "level": "Alle niveaus" },
+        { "id": "m02", "day": 2, "time": "20:00", "dur": 60, "type": "Boksen Fitness", "level": "Alle niveaus" },
+        { "id": "m03", "day": 3, "time": "10:00", "dur": 60, "type": "Kick & Box Fit", "level": "Alle niveaus" },
+        { "id": "m04", "day": 3, "time": "19:00", "dur": 60, "type": "Kickboxen",      "level": "Alle niveaus" },
+        { "id": "m05", "day": 4, "time": "19:30", "dur": 60, "type": "Kick & Box Fit", "level": "Alle niveaus" },
+        { "id": "m06", "day": 6, "time": "10:00", "dur": 75, "type": "Kickboxen",      "level": "Alle niveaus" },
+        { "id": "m07", "day": 0, "time": "10:00", "dur": 60, "type": "Kickboxen",      "level": "Alle niveaus" }
+      ]
+    }
+  }
+}

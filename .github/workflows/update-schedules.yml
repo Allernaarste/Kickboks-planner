@@ -1,0 +1,37 @@
+name: Rooster ophalen
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'   # Elke maandag om 04:00 UTC (06:00 NL zomertijd)
+  workflow_dispatch:        # Handmatig starten via GitHub-knop
+
+jobs:
+  fetch-schedules:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Installeer Playwright + Chromium
+        run: |
+          npm install playwright
+          npx playwright install --with-deps chromium
+
+      - name: Haal roosters op
+        run: node scripts/fetch-schedules.mjs
+        # Doorgaan ook als het mislukt — dan blijft de oude JSON staan
+        continue-on-error: true
+
+      - name: Sla bijgewerkt rooster op
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add schedules.json
+          git diff --staged --quiet || git commit -m "Rooster bijgewerkt $(date -u '+%d-%m-%Y')"
+          git push
