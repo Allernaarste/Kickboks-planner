@@ -1,4 +1,4 @@
-const CACHE = 'kickboks-v1';
+const CACHE = 'kickboks-v2';
 const FILES = [
   './',
   './index.html',
