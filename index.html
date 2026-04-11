@@ -125,6 +125,9 @@
     }
     .day-btn.active            { background: var(--accent); color: #fff; }
     .day-btn.active .day-num   { color: #fff; }
+    .day-btn.today .day-num    { color: var(--accent); }
+    .day-btn.active.today .day-num { color: #fff; }
+    .day-btn.past              { opacity: .38; }
     /* dot = has selection on that day */
     .day-btn.dot::after {
       content: '';
@@ -135,6 +138,31 @@
       background: var(--green);
     }
     .day-btn.active.dot::after { background: #fff; }
+    /* week navigation arrows */
+    .week-nav {
+      flex-shrink: 0;
+      align-self: center;
+      width: 30px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px;
+      color: var(--text2);
+      font-size: 17px;
+      cursor: pointer;
+    }
+    .week-nav:active        { background: rgba(255,255,255,.12); }
+    .week-nav.off           { opacity: .22; pointer-events: none; }
+    /* week label above day tabs */
+    .week-label {
+      background: var(--bg2);
+      padding: 4px 14px 0;
+      font-size: 11px;
+      color: var(--text3);
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
 
     /* ── CONTENT AREA ── */
     .content {
@@ -379,6 +407,7 @@
     <button class="chip"        data-s="sbgym"     onclick="setSchool('sbgym',this)">SB Gym</button>
     <button class="chip"        data-s="commit"    onclick="setSchool('commit',this)">Commit</button>
   </div>
+  <div class="week-label" id="weekLabel"></div>
   <div class="day-row" id="dayRow"></div>
   <div class="content" id="classList"></div>
 </div>
@@ -491,8 +520,35 @@ const DAYS_FULL  = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag
 // ── STATE ──────────────────────────────────────────────────────
 let activeView    = 'rooster';
 let activeSchool  = 'all';
+let weekOffset    = 0;   // 0 = huidige week, 1 = volgende week, etc.
 let activeDay     = (() => { const d = new Date().getDay(); return d === 0 ? 1 : d; })();
 let selected      = new Set();
+
+// ── WEEK HELPERS ──────────────────────────────────────────────
+// Geeft de maandag van de week op 'offset' weken vanaf nu
+function weekMonday(offset) {
+  const today = new Date();
+  const dow = today.getDay(); // 0=Zo
+  const toMon = dow === 0 ? -6 : 1 - dow;
+  const mon = new Date(today);
+  mon.setDate(today.getDate() + toMon + offset * 7);
+  mon.setHours(0, 0, 0, 0);
+  return mon;
+}
+
+function changeWeek(dir) {
+  if (weekOffset + dir < 0) return;
+  weekOffset += dir;
+  // Bij vooruit: zet op maandag; bij terug naar huidig: zet op vandaag
+  if (weekOffset === 0) {
+    const tod = new Date().getDay();
+    activeDay = tod === 0 ? 1 : tod;
+  } else {
+    activeDay = 1;
+  }
+  renderDayRow();
+  renderList();
+}
 
 function loadState() {
   try { const s = localStorage.getItem('kbp_sel'); if (s) selected = new Set(JSON.parse(s)); } catch(e) {}
@@ -554,21 +610,42 @@ function updateBadge() {
 
 // ── DAY ROW ──────────────────────────────────────────────────
 function renderDayRow() {
-  const today = new Date();
-  const todayDow = today.getDay();
+  const monday = weekMonday(weekOffset);
+  const todayMidnight = new Date(); todayMidnight.setHours(0,0,0,0);
 
-  // Show Mon–Sat (days 1–6)
-  const html = [1,2,3,4,5,6].map(d => {
-    const diff = d - todayDow;
-    const dt = new Date(today);
-    dt.setDate(today.getDate() + diff);
-    const hasDot = [...selected].some(id => { const c = getClass(id); return c && c.day === d; });
-    return `<button class="day-btn ${d===activeDay?'active':''} ${hasDot?'dot':''}"
+  // Maandiag…Zondag (Ma=1..Za=6, Zo=0) in de volgorde Ma t/m Zo
+  const dayOrder = [1,2,3,4,5,6,0];
+
+  const cells = dayOrder.map((d, i) => {
+    const dt = new Date(monday);
+    dt.setDate(monday.getDate() + i);        // Ma+0 … Zo+6
+    const isToday = dt.getTime() === todayMidnight.getTime();
+    const isPast  = weekOffset === 0 && dt < todayMidnight;
+    const hasDot  = [...selected].some(id => { const c = getClass(id); return c && c.day === d; });
+    return `<button class="day-btn
+                ${d === activeDay ? 'active' : ''}
+                ${hasDot  ? 'dot'   : ''}
+                ${isToday ? 'today' : ''}
+                ${isPast  ? 'past'  : ''}"
                     onclick="selectDay(${d})">
               <span class="day-num">${dt.getDate()}</span>${DAYS_SHORT[d]}
             </button>`;
   }).join('');
-  document.getElementById('dayRow').innerHTML = html;
+
+  // Week-label (bv. "7 – 13 apr" of "volgende week")
+  const weekEnd = new Date(monday); weekEnd.setDate(monday.getDate() + 6);
+  const fmtDay  = d => d.getDate();
+  const fmtMon  = d => d.toLocaleDateString('nl-NL', { month: 'short' });
+  const lbl = weekOffset === 0 ? 'Deze week'
+            : weekOffset === 1 ? 'Volgende week'
+            : `Over ${weekOffset} weken`;
+  document.getElementById('weekLabel').textContent =
+    `${lbl}  ·  ${fmtDay(monday)} – ${fmtDay(weekEnd)} ${fmtMon(weekEnd)}`;
+
+  document.getElementById('dayRow').innerHTML =
+    `<button class="week-nav ${weekOffset===0?'off':''}" onclick="changeWeek(-1)">‹</button>
+     ${cells}
+     <button class="week-nav" onclick="changeWeek(1)">›</button>`;
 }
 
 // ── CLASS LIST ────────────────────────────────────────────────
@@ -654,19 +731,16 @@ function toCalendar(id) {
   const c = getClass(id);
   if (!c) return;
 
-  // Next occurrence of this weekday
-  const now = new Date();
-  let diff = c.day - now.getDay();
-  if (diff < 0) diff += 7;
-  if (diff === 0) {
-    const [hh, mm] = c.time.split(':').map(Number);
-    if (now.getHours() * 60 + now.getMinutes() >= hh * 60 + mm) diff = 7;
-  }
-
-  const start = new Date(now);
-  start.setDate(now.getDate() + diff);
+  // Bereken de exacte datum van deze les in de getoonde week
+  const monday = weekMonday(weekOffset);
+  const dayIndex = c.day === 0 ? 6 : c.day - 1; // Ma=0 … Zo=6
+  const start = new Date(monday);
+  start.setDate(monday.getDate() + dayIndex);
   const [hh, mm] = c.time.split(':').map(Number);
   start.setHours(hh, mm, 0, 0);
+
+  // Als het moment al voorbij is, schuif naar volgende week
+  if (start <= new Date()) start.setDate(start.getDate() + 7);
 
   const end = new Date(start);
   end.setMinutes(end.getMinutes() + c.dur);
