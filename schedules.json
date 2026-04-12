@@ -1,8 +1,10 @@
 {
-  "updated": "2026-04-11T18:16:11.382Z",
+  "updated": "2026-04-12T17:54:34.734Z",
+  "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
       "name": "The Colosseum",
+      "url": "https://thecolosseum.nl/en/rooster/",
       "addr": "Utrecht",
       "classes": [
         {
@@ -153,6 +155,7 @@
     },
     "sbgym": {
       "name": "SB Gym",
+      "url": "https://sbgym.nl/lesrooster/",
       "addr": "Utrecht",
       "classes": [
         {
@@ -303,7 +306,8 @@
     },
     "commit": {
       "name": "Commit Rivierenwijk",
-      "addr": "Rivierenwijk, Utrecht",
+      "url": "https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/",
+      "addr": "Amaliadwarsstraat 2A, Utrecht",
       "classes": [
         {
           "id": "m01",
