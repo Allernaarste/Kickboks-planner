@@ -1,16 +1,16 @@
-name: Update Schedules
+name: Rooster ophalen
 
 on:
   schedule:
-    - cron: '0 4 * * 1'   # elke maandag om 04:00 UTC
-  workflow_dispatch:        # handmatig starten via GitHub UI
-
-permissions:
-  contents: write
+    - cron: '0 4 * * 1'   # Elke maandag 06:00 NL (04:00 UTC)
+  workflow_dispatch:        # Handmatig starten via GitHub-knop
 
 jobs:
-  fetch:
+  fetch-schedules:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -18,19 +18,30 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Playwright
+      - name: Installeer dependencies
         run: |
-          npm init -y
-          npm install playwright
-          npx playwright install chromium --with-deps
+          npm install playwright playwright-extra puppeteer-extra-plugin-stealth
+          npx playwright install --with-deps chromium
 
-      - name: Fetch schedules
+      - name: Haal roosters op
         run: node scripts/fetch-schedules.mjs
+        env:
+          DEBUG_SCHEDULES: '1'
+        continue-on-error: true
 
-      - name: Commit if changed
+      - name: Upload debug-screenshots (bij fouten)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rooster-debug
+          path: debug-output/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Sla rooster op in git
         run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add schedules.json
-          git diff --cached --quiet || git commit -m "Automatische roosterupdate $(date -u +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "Rooster bijgewerkt $(date -u '+%d-%m-%Y')"
           git push
