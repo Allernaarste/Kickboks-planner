@@ -2,8 +2,13 @@ name: Rooster ophalen
 
 on:
   schedule:
-    - cron: '0 4 * * 1'   # Elke maandag 06:00 NL (04:00 UTC)
-  workflow_dispatch:        # Handmatig starten via GitHub-knop
+    - cron: '0 4 * * 1'   # Maandag  06:00 NL (04:00 UTC)
+    - cron: '0 4 * * 4'   # Donderdag 06:00 NL (04:00 UTC)
+  workflow_dispatch:        # Handmatig starten via GitHub Actions-knop
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch-schedules.mjs'
 
 jobs:
   fetch-schedules:
@@ -20,7 +25,7 @@ jobs:
 
       - name: Installeer dependencies
         run: |
-          npm install playwright playwright-extra puppeteer-extra-plugin-stealth
+          npm ci
           npx playwright install --with-deps chromium
 
       - name: Haal roosters op
@@ -45,3 +50,30 @@ jobs:
           git add schedules.json
           git diff --staged --quiet || git commit -m "Rooster bijgewerkt $(date -u '+%d-%m-%Y')"
           git push
+
+# ─── GitHub Pages ────────────────────────────────────────────────────────────
+# Aparte job zodat de PWA meteen gepubliceerd wordt na elke rooster-update.
+  deploy-pages:
+    needs: fetch-schedules
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main   # altijd de nieuwste versie ophalen na de push hierboven
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'   # root van de repo = index.html, manifest.json, sw.js, schedules.json, icon.svg
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

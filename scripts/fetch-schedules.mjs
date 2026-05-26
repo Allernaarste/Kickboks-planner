@@ -246,9 +246,41 @@ async function scrapeVirtuagymDOM(browser, pageUrl, prefix, schoolName) {
 
 // ── The Colosseum ─────────────────────────────────────────────────
 
+// Try each URL candidate until one gives us HTTP 200
+async function openColosseumPage(browser) {
+  const candidates = [
+    'https://thecolosseum.nl/rooster/',
+    'https://thecolosseum.nl/en/rooster/',
+    'https://thecolosseum.nl/lesrooster/',
+  ];
+  for (const url of candidates) {
+    const page = await browser.newPage();
+    await page.setExtraHTTPHeaders({ 'Accept-Language': 'nl-NL,nl;q=0.9,en;q=0.8' });
+    await page.setViewportSize({ width: 1280, height: 800 });
+    try {
+      const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30_000 });
+      if (resp && resp.status() < 400) {
+        console.log(`\n[colosseum] Geladen: ${url} (${resp.status()})`);
+        // accept cookies and wait for JS to settle
+        for (const sel of ['button[id*="accept"]','#onetrust-accept-btn-handler',
+          'button:has-text("Accepteren")','button:has-text("Accept")','button:has-text("Akkoord")']) {
+          try {
+            const btn = page.locator(sel).first();
+            if (await btn.isVisible({ timeout: 1500 })) { await btn.click(); break; }
+          } catch(_) {}
+        }
+        await page.waitForTimeout(2000);
+        return page;
+      }
+    } catch(_) {}
+    await page.close();
+  }
+  // last resort: return a page on the first URL even if it failed
+  return newPage(browser, candidates[0]);
+}
+
 async function fetchColosseum(browser) {
-  console.log('\n[colosseum] Ophalen: thecolosseum.nl/en/rooster/');
-  const page = await newPage(browser, 'https://thecolosseum.nl/en/rooster/');
+  const page = await openColosseumPage(browser);
   const classes = [];
 
   try {
@@ -420,7 +452,7 @@ async function fetchColosseum(browser) {
     schools: {
       colosseum: {
         name: 'The Colosseum',
-        url:  'https://thecolosseum.nl/en/rooster/',
+        url:  'https://thecolosseum.nl/rooster/',
         addr: 'Utrecht',
         classes: fallback('colosseum', colosseumClasses),
       },

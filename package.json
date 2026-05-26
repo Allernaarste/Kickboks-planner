@@ -1,0 +1,15 @@
+{
+  "name": "kickboks-planner",
+  "version": "1.0.0",
+  "description": "Kickboxing schedule aggregator for Utrecht gyms (The Colosseum, SB Gym, Commit Rivierenwijk)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch-schedules.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

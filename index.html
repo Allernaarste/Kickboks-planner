@@ -97,6 +97,7 @@ body{
 .chip.on[data-s=col] {background:var(--col)}
 .chip.on[data-s=sb]  {background:var(--sb)}
 .chip.on[data-s=com] {background:var(--com);color:#000}
+#typeChips .chip.on  {background:var(--blue)!important;color:#fff!important}
 
 /* ── WEEK LABEL ── */
 .wk-label{
@@ -306,6 +307,15 @@ body{
     <button class="chip"     data-s="com" onclick="setSchool('com',this)">Commit</button>
   </div>
 
+  <div class="chips" id="typeChips">
+    <button class="chip on" data-t="all"  onclick="setType('all',this)">Alles</button>
+    <button class="chip"    data-t="kick" onclick="setType('kick',this)">Kickboksen</button>
+    <button class="chip"    data-t="boks" onclick="setType('boks',this)">Boksen</button>
+    <button class="chip"    data-t="zak"  onclick="setType('zak',this)">Zaktraining</button>
+    <button class="chip"    data-t="muay" onclick="setType('muay',this)">Muay Thai</button>
+    <button class="chip"    data-t="spar" onclick="setType('spar',this)">Sparring</button>
+  </div>
+
   <div class="wk-label" id="wkLabel"></div>
   <div class="day-row"  id="dayRow"></div>
   <div class="content"  id="classList"></div>
@@ -377,11 +387,12 @@ const DF = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zater
 const SK = { col:'colosseum', sb:'sbgym', com:'commit' };
 
 // ── STATE ────────────────────────────────────────────────────────
-let view      = 'rooster';
-let school    = 'all';
-let weekOff   = 0;
-let day       = (() => { const d = new Date().getDay(); return d === 0 ? 1 : d; })();
-let selected  = new Set();
+let view       = 'rooster';
+let school     = 'all';
+let typeFilter = 'all';
+let weekOff    = 0;
+let day        = (() => { const d = new Date().getDay(); return d === 0 ? 1 : d; })();
+let selected   = new Set();
 
 // ── STORAGE ──────────────────────────────────────────────────────
 function load()  { try { const s = localStorage.getItem('kbp2'); if(s) selected = new Set(JSON.parse(s)); } catch(e){} }
@@ -432,6 +443,24 @@ function setSchool(s, btn) {
 
 function setDay(d) { day = d; renderDays(); renderList(); }
 
+function setType(t, btn) {
+  typeFilter = t;
+  document.querySelectorAll('#typeChips .chip').forEach(c => c.classList.remove('on'));
+  btn.classList.add('on');
+  renderList();
+}
+
+function matchType(c) {
+  if (typeFilter === 'all') return true;
+  const t = (c.type || '').toLowerCase();
+  if (typeFilter === 'kick') return /kick/.test(t);
+  if (typeFilter === 'boks') return /\bboks/.test(t) || (/\bbox/.test(t) && !/kick/.test(t));
+  if (typeFilter === 'zak')  return /zak|bag/.test(t);
+  if (typeFilter === 'muay') return /muay/.test(t);
+  if (typeFilter === 'spar') return /sparr|\bk1\b|open mat/.test(t);
+  return true;
+}
+
 // ── TOGGLE ───────────────────────────────────────────────────────
 function toggle(id) {
   selected.has(id) ? selected.delete(id) : selected.add(id);
@@ -480,7 +509,7 @@ function renderList() {
   const items = [];
   for (const [sk, sc] of Object.entries(SCHOOLS)) {
     if (school !== 'all' && SK[school] !== sk) continue;
-    (sc.classes || []).filter(c => c.day === day).forEach(c =>
+    (sc.classes || []).filter(c => c.day === day && matchType(c)).forEach(c =>
       items.push({ ...c, sk: Object.keys(SK).find(k => SK[k] === sk), school: sc })
     );
   }
@@ -488,10 +517,14 @@ function renderList() {
 
   const cont = document.getElementById('classList');
   if (!items.length) {
+    const typeLabel = {
+      kick:'Kickboksen', boks:'Boksen', zak:'Zaktraining',
+      muay:'Muay Thai',  spar:'Sparring',
+    }[typeFilter];
     cont.innerHTML = `<div class="empty">
       <div class="ei">🥊</div>
-      <div class="em">Geen lessen op ${DF[day]}</div>
-      <div class="es">Kies een andere dag of school.</div>
+      <div class="em">${typeLabel ? `Geen ${typeLabel} op ${DF[day]}` : `Geen lessen op ${DF[day]}`}</div>
+      <div class="es">${typeLabel ? 'Probeer "Alles" of een andere dag.' : 'Kies een andere dag of school.'}</div>
     </div>`;
     return;
   }
