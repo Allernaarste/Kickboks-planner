@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 4 * * 1'   # Elke maandag 06:00 NL (04:00 UTC)
   workflow_dispatch:        # Handmatig starten via GitHub-knop
+  push:
+    paths:
+      - 'scripts/fetch-schedules.mjs'
+      - '.github/workflows/update-schedules.yml'
 
 jobs:
   fetch-schedules:
@@ -25,20 +29,19 @@ jobs:
 
       - name: Haal roosters op
         run: node scripts/fetch-schedules.mjs
-        env:
-          DEBUG_SCHEDULES: '1'
         continue-on-error: true
 
-      - name: Upload debug-screenshots (bij fouten)
+      - name: Upload debug-artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: rooster-debug
           path: debug-output/
           if-no-files-found: ignore
-          retention-days: 7
+          retention-days: 14
 
       - name: Sla rooster op in git
+        if: github.event_name != 'pull_request'
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name  "github-actions[bot]"
