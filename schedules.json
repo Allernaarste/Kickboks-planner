@@ -1,10 +1,10 @@
 {
-  "updated": "2026-05-25T08:24:21.648Z",
+  "updated": "2026-05-26T23:46:03.603Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
       "name": "The Colosseum",
-      "url": "https://thecolosseum.nl/en/rooster/",
+      "url": "https://thecolosseum.nl/lesrooster/",
       "addr": "Utrecht",
       "classes": [
         {
@@ -151,11 +151,12 @@
           "type": "Open Sparring",
           "level": "Gevorderd"
         }
-      ]
+      ],
+      "source": "fallback"
     },
     "sbgym": {
       "name": "SB Gym",
-      "url": "https://sbgym.nl/lesrooster/",
+      "url": "https://sbgym.nl/rooster/",
       "addr": "Utrecht",
       "classes": [
         {
@@ -302,11 +303,12 @@
           "type": "Sparring",
           "level": "Gevorderd"
         }
-      ]
+      ],
+      "source": "fallback"
     },
     "commit": {
       "name": "Commit Rivierenwijk",
-      "url": "https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/",
+      "url": "https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen/",
       "addr": "Amaliadwarsstraat 2A, Utrecht",
       "classes": [
         {
@@ -365,7 +367,8 @@
           "type": "Kickboxen",
           "level": "Alle niveaus"
         }
-      ]
+      ],
+      "source": "fallback"
     }
   }
 }
