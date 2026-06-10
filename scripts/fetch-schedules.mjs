@@ -54,9 +54,6 @@ const SCHOOLS = [
     altUrls: ['https://sbgym.nl/rooster/'],
     addr: 'Utrecht',
     workit: true,
-    // dag-toewijzing nog niet betrouwbaar geverifieerd: wel scrapen en
-    // loggen, maar resultaat niet als live publiceren
-    verifyOnly: true,
   },
   {
     key: 'commit', prefix: 'm',
@@ -70,10 +67,19 @@ const SCHOOLS = [
   {
     key: 'impactfit', prefix: 'i',
     name: 'Impact Fit',
-    url:  'https://impactfit.nl/lesrooster/',
-    altUrls: ['https://impactfit.nl/', 'https://classpass.nl/studios/impact-fit-utrecht'],
+    // Eigen lesrooster is een afbeelding; ClassPass publiceert per datum
+    // schema.org-events (ld+json) — bezoek de komende 7 dagen
+    url:  'https://classpass.nl/studios/impact-fit-utrecht',
+    altUrls: [...Array(7)].map((_, i) => {
+      const d = new Date(Date.now() + i * 86_400_000);
+      const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      return `https://classpass.nl/studios/impact-fit-utrecht?date=${iso}`;
+    }),
+    siteUrl: 'https://impactfit.nl/lesrooster/',
     addr: 'Utrecht',
     workit: false,
+    visitAll: true,
+    rounds: 10,
   },
   {
     key: 'tigers', prefix: 't',
@@ -122,7 +128,40 @@ async function scrapeFrameDOM(frame) {
       const isOpeningHours = t =>
         /^[^0-9]*\d{1,2}[:.]\d{2}\s*[-–]\s*\d{1,2}[:.]\d{2}\s*(uur)?\s*$/i.test(String(t ?? '').trim()) ||
         /geopend|gesloten|opening/i.test(String(t ?? ''));
+      const stripTimes = s => String(s ?? '')
+        .replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?(\s*uur)?/gi, '')
+        .replace(/[|·•]/g, ' ').replace(/\s+/g, ' ').trim();
       const out = [];
+
+      // 0. SportBit-rooster (o.a. SB Gym): kolommen .items-day met .evtitem,
+      //    dagkoppen .day-name — koppel kolom aan kop via x-overlap of volgorde
+      const sportbit = document.querySelector('#sportbit-rooster, .embed-rooster');
+      if (sportbit) {
+        const heads = [...sportbit.querySelectorAll('.day-name')]
+          .map(e => ({ d: dayOf(e.innerText), r: e.getBoundingClientRect() }))
+          .filter(h => h.d != null);
+        const cols = [...sportbit.querySelectorAll('.items-day')];
+        cols.forEach((col, i) => {
+          let d = null;
+          const r = col.getBoundingClientRect();
+          if (r.width > 0) {
+            for (const h of heads) {
+              const cx = (h.r.left + h.r.right) / 2;
+              if (cx >= r.left - 4 && cx <= r.right + 4) { d = h.d; break; }
+            }
+          }
+          if (d == null && heads.length === cols.length) d = heads[i].d;
+          if (d == null) return;
+          col.querySelectorAll('.evtitem').forEach(item => {
+            const text = item.innerText ?? '';
+            const tm = text.match(/\b(\d{1,2}[:.]\d{2})\b/);
+            if (!tm) return;
+            const name = stripTimes(text);
+            if (name) out.push({ day: d, time: tm[1], name, via: 'sportbit' });
+          });
+        });
+        if (out.length >= 5) return out;
+      }
 
       // 1. Tabellen: rij per les of kolom per dag
       document.querySelectorAll('table').forEach(table => {
@@ -165,9 +204,8 @@ async function scrapeFrameDOM(frame) {
       //    a) dagnaam in id/class/aria van voorouders (tabs/panelen)
       //    b) geometrisch: kolomkop met horizontale overlap (week-grids)
       //    c) dichtstbijzijnde dagkop erbóven in documentvolgorde
-      const stripTimes = s => s
-        .replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?(\s*uur)?/gi, '')
-        .replace(/[|·•]/g, ' ').replace(/\s+/g, ' ').trim();
+      //       (alleen als er géén grid is: in een grid wijst "erboven"
+      //        vrijwel altijd naar de laatste kolomkop)
       const FULLDAYS = {
         zondag:0,sunday:0, maandag:1,monday:1, dinsdag:2,tuesday:2, woensdag:3,wednesday:3,
         donderdag:4,thursday:4, vrijdag:5,friday:5, zaterdag:6,saturday:6,
@@ -247,7 +285,7 @@ async function scrapeFrameDOM(frame) {
           if (!name) return;
           let d = dayFromAncestors(el), via = 'ancestor';
           if (d == null) { d = gridDay(el.getBoundingClientRect()); via = 'grid'; }
-          if (d == null) {
+          if (d == null && !gridOK) {
             via = 'doc-order';
             for (let j = i; j >= 0 && j > i - 1500; j--) {
               if (headerDayAt[j] != null) { d = headerDayAt[j]; break; }
@@ -491,7 +529,7 @@ async function visit(context, url, school, jsonBag) {
 
 // Widget-/rooster-iframes die het waard zijn om direct als pagina te openen
 const FRAME_FOLLOW   = /virtuagym|appybee|europewebcompany|sportbit|trainin|eversports|fitmanager|agenda|classes|schedule|rooster|widget/i;
-const FRAME_IGNORE   = /google|youtube|gtm|googletagmanager|facebook|hotjar|cookie|maps|recaptcha|vimeo|sw_iframe/i;
+const FRAME_IGNORE   = /google|youtube|gtm|googletagmanager|facebook|hotjar|cookie|maps|recaptcha|vimeo|sw_iframe|stripe|decagon|segment|braze|datadog/i;
 
 
 async function fetchSchool(context, school) {
@@ -501,13 +539,18 @@ async function fetchSchool(context, school) {
   let domRows = [];
   let pendingLinks = [school.url, ...(school.altUrls ?? [])];
 
-  for (let round = 0; round < 6 && pendingLinks.length; round++) {
+  const maxRounds = school.rounds ?? 6;
+  for (let round = 0; round < maxRounds && pendingLinks.length; round++) {
     const url = pendingLinks.shift();
     if (tried.has(url)) continue;
     tried.add(url);
 
     const res = await visit(context, url, school, jsonBag);
     domRows.push(...res.domRows);
+
+    // visitAll: eerst alle pagina's bezoeken (bv. ClassPass per datum),
+    // pas daarna beoordelen
+    if (school.visitAll && pendingLinks.length && round < maxRounds - 1) continue;
 
     // Rooster-widget-iframes direct als pagina openen (hoogste prioriteit)
     for (const fu of res.frameUrls) {
@@ -599,7 +642,7 @@ async function fetchSchool(context, school) {
       if (live) liveCount++;
       schools[school.key] = {
         name: school.name,
-        url:  school.url,
+        url:  school.siteUrl ?? school.url,
         addr: school.addr,
         workit: school.workit,
         ...(school.workitUrl ? { workitUrl: school.workitUrl } : {}),
