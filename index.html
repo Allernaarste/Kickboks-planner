@@ -180,7 +180,7 @@ body{
   background:rgba(100,210,255,.16);color:var(--wk);
   font-size:10px;font-weight:700;letter-spacing:.3px;
   padding:2px 7px;border-radius:9px;margin-left:6px;
-  text-transform:uppercase;
+  text-transform:uppercase;text-decoration:none;
 }
 .sl-wk{
   background:rgba(100,210,255,.16);color:var(--wk);
@@ -546,7 +546,10 @@ function renderList() {
 function cardHTML(c) {
   const on = selected.has(c.id);
   const label = SN[c.sk] || c.school.name;
-  const wk = c.school.workit ? '<span class="wk-badge">💼 Workit</span>' : '';
+  const wk = !c.school.workit ? ''
+    : c.school.workitUrl
+      ? `<a class="wk-badge" href="${c.school.workitUrl}" target="_blank" onclick="event.stopPropagation()">💼 Workit</a>`
+      : '<span class="wk-badge">💼 Workit</span>';
   return `<div class="card ${on?'sel':''}">
     <div class="card-top">
       <div class="school-tag">
