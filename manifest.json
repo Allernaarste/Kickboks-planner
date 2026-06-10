@@ -1,7 +1,7 @@
 {
   "name": "Kickboks Planner Utrecht",
   "short_name": "Kickboks",
-  "description": "Weekrooster voor The Colosseum, SB Gym en Commit Rivierenwijk",
+  "description": "Weekrooster voor The Colosseum, SB Gym, Commit, Impact Fit en Tigers Gym — met Workit-label",
   "start_url": "./",
   "display": "standalone",
   "orientation": "portrait",

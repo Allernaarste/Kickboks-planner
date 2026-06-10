@@ -5,6 +5,8 @@
  * The Colosseum  → thecolosseum.nl/en/rooster/
  * SB Gym         → sbgym.nl/lesrooster/  (Virtuagym embed)
  * Commit         → commit-i-do.com/…/groepslessen-rivierenwijk/  (Virtuagym embed)
+ * Impact Fit     → impactfit.nl/lesrooster/
+ * Tigers Gym     → tigersgym.nl
  */
 
 import { chromium } from 'playwright-extra';
@@ -244,11 +246,11 @@ async function scrapeVirtuagymDOM(browser, pageUrl, prefix, schoolName) {
   }
 }
 
-// ── The Colosseum ─────────────────────────────────────────────────
+// ── Generiek weekrooster (tabel / divs / paginatekst) ─────────────
 
-async function fetchColosseum(browser) {
-  console.log('\n[colosseum] Ophalen: thecolosseum.nl/en/rooster/');
-  const page = await newPage(browser, 'https://thecolosseum.nl/en/rooster/');
+async function fetchTimetable(browser, pageUrl, prefix, schoolName) {
+  console.log(`\n[${schoolName}] Ophalen: ${pageUrl}`);
+  const page = await newPage(browser, pageUrl);
   const classes = [];
 
   try {
@@ -283,7 +285,7 @@ async function fetchColosseum(browser) {
           const time = parseTime(row[timeCol]);
           if (day === null || !time) continue;
           classes.push({
-            id:    `c${idN++}`,
+            id:    `${prefix}${idN++}`,
             day, time,
             dur:   durCol >= 0 ? parseDur(row[durCol]) : 60,
             type:  typeCol >= 0 ? row[typeCol] : row.find(c => c.length > 2 && !/\d{1,2}:\d{2}/.test(c)) ?? 'Les',
@@ -297,7 +299,7 @@ async function fetchColosseum(browser) {
           const time = parseTime(row[1] ?? '');
           if (day === null || !time) continue;
           classes.push({
-            id:    `c${classes.length + 1}`,
+            id:    `${prefix}${classes.length + 1}`,
             day, time,
             dur:   row[3] ? parseDur(row[3]) : 60,
             type:  row[2] ?? 'Les',
@@ -341,7 +343,7 @@ async function fetchColosseum(browser) {
         if (!time) continue;
         const lines = row.text.split('\n').map(l => l.trim()).filter(Boolean);
         classes.push({
-          id:    `c${idN++}`,
+          id:    `${prefix}${idN++}`,
           day:   row.day,
           time,
           dur:   60,
@@ -368,7 +370,7 @@ async function fetchColosseum(browser) {
         if (!time) continue;
         const rest = line.replace(/\d{1,2}[:.]\d{2}/, '').trim();
         classes.push({
-          id: `c${idN++}`, day: currentDay, time, dur: 60,
+          id: `${prefix}${idN++}`, day: currentDay, time, dur: 60,
           type: rest || 'Les', level: 'Alle niveaus',
         });
       }
@@ -377,8 +379,8 @@ async function fetchColosseum(browser) {
     if (DEBUG) {
       try {
         mkdirSync('debug-output', { recursive: true });
-        await page.screenshot({ path: 'debug-output/colosseum.png', fullPage: true });
-        writeFileSync('debug-output/colosseum.html', await page.content());
+        await page.screenshot({ path: `debug-output/${prefix}-timetable.png`, fullPage: true });
+        writeFileSync(`debug-output/${prefix}-timetable.html`, await page.content());
       } catch(_) {}
     }
   } finally {
@@ -395,17 +397,25 @@ async function fetchColosseum(browser) {
   const old = loadOld();
   const browser = await chromium.launch({ headless: true });
 
-  let colosseumClasses, sbClasses, commitClasses;
+  let colosseumClasses, sbClasses, commitClasses, impactClasses, tigersClasses;
 
   try {
-    [colosseumClasses, sbClasses, commitClasses] = await Promise.all([
-      fetchColosseum(browser),
+    [colosseumClasses, sbClasses, commitClasses, impactClasses, tigersClasses] = await Promise.all([
+      fetchTimetable(browser,
+        'https://thecolosseum.nl/en/rooster/',
+        'c', 'colosseum'),
       fetchVirtuagym(browser,
         'https://sbgym.nl/lesrooster/',
         's', 'SB Gym'),
       fetchVirtuagym(browser,
         'https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/',
         'm', 'Commit'),
+      fetchTimetable(browser,
+        'https://impactfit.nl/lesrooster/',
+        'i', 'Impact Fit'),
+      fetchTimetable(browser,
+        'https://tigersgym.nl/',
+        't', 'Tigers Gym'),
     ]);
   } finally {
     await browser.close();
@@ -422,26 +432,47 @@ async function fetchColosseum(browser) {
         name: 'The Colosseum',
         url:  'https://thecolosseum.nl/en/rooster/',
         addr: 'Utrecht',
+        workit: true,
+        workitUrl: 'https://workit.nl/locaties/4251-the-colosseum-gym',
         classes: fallback('colosseum', colosseumClasses),
       },
       sbgym: {
         name: 'SB Gym',
         url:  'https://sbgym.nl/lesrooster/',
         addr: 'Utrecht',
+        workit: false,
         classes: fallback('sbgym', sbClasses),
       },
       commit: {
         name: 'Commit Rivierenwijk',
         url:  'https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/',
         addr: 'Amaliadwarsstraat 2A, Utrecht',
+        workit: true,
+        workitUrl: 'https://workit.nl/locaties/4317-commit-rivierenwijk',
         classes: fallback('commit', commitClasses),
+      },
+      impactfit: {
+        name: 'Impact Fit',
+        url:  'https://impactfit.nl/lesrooster/',
+        addr: 'Utrecht',
+        workit: false,
+        classes: fallback('impactfit', impactClasses),
+      },
+      tigers: {
+        name: 'Tigers Gym',
+        url:  'https://tigersgym.nl/',
+        addr: 'Kroonstraat 9, Utrecht',
+        workit: false,
+        classes: fallback('tigers', tigersClasses),
       },
     },
   };
 
   writeFileSync(OUTPUT, JSON.stringify(result, null, 2));
   console.log(`\n✓ schedules.json geschreven (${new Date().toISOString()})`);
-  console.log(`  Colosseum: ${result.schools.colosseum.classes.length} lessen`);
-  console.log(`  SB Gym:    ${result.schools.sbgym.classes.length} lessen`);
-  console.log(`  Commit:    ${result.schools.commit.classes.length} lessen`);
+  console.log(`  Colosseum:  ${result.schools.colosseum.classes.length} lessen`);
+  console.log(`  SB Gym:     ${result.schools.sbgym.classes.length} lessen`);
+  console.log(`  Commit:     ${result.schools.commit.classes.length} lessen`);
+  console.log(`  Impact Fit: ${result.schools.impactfit.classes.length} lessen`);
+  console.log(`  Tigers Gym: ${result.schools.tigers.classes.length} lessen`);
 })();

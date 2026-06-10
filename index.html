@@ -29,6 +29,9 @@
   --col:     #ff453a;
   --sb:      #0a84ff;
   --com:     #30d158;
+  --if:      #bf5af2;
+  --tig:     #ffd60a;
+  --wk:      #64d2ff;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{height:100%;-webkit-text-size-adjust:100%}
@@ -97,6 +100,9 @@ body{
 .chip.on[data-s=col] {background:var(--col)}
 .chip.on[data-s=sb]  {background:var(--sb)}
 .chip.on[data-s=com] {background:var(--com);color:#000}
+.chip.on[data-s=if]  {background:var(--if)}
+.chip.on[data-s=tig] {background:var(--tig);color:#000}
+.chip.wk-chip.on     {background:var(--wk);color:#000}
 
 /* ── WEEK LABEL ── */
 .wk-label{
@@ -168,6 +174,20 @@ body{
 }
 .school-dot{width:8px;height:8px;border-radius:50%}
 .d-col{background:var(--col)} .d-sb{background:var(--sb)} .d-com{background:var(--com)}
+.d-if{background:var(--if)} .d-tig{background:var(--tig)}
+.wk-badge{
+  display:inline-flex;align-items:center;gap:3px;
+  background:rgba(100,210,255,.16);color:var(--wk);
+  font-size:10px;font-weight:700;letter-spacing:.3px;
+  padding:2px 7px;border-radius:9px;margin-left:6px;
+  text-transform:uppercase;
+}
+.sl-wk{
+  background:rgba(100,210,255,.16);color:var(--wk);
+  font-size:10px;font-weight:700;letter-spacing:.3px;
+  padding:2px 7px;border-radius:9px;text-transform:uppercase;
+  flex-shrink:0;
+}
 .time-tag{text-align:right}
 .time-tag .t{font-size:18px;font-weight:700;line-height:1}
 .time-tag .d{font-size:11px;color:var(--l3)}
@@ -294,7 +314,7 @@ body{
   <header class="hdr">
     <div class="hdr-text">
       <div class="hdr-title">Kickboks <b>Planner</b></div>
-      <div class="hdr-sub" id="hdrSub">The Colosseum · SB Gym · Commit</div>
+      <div class="hdr-sub" id="hdrSub">5 gyms in Utrecht</div>
     </div>
     <button class="hdr-btn" id="refreshBtn" onclick="doRefresh()" title="Ververs rooster">↻</button>
   </header>
@@ -304,6 +324,9 @@ body{
     <button class="chip"     data-s="col" onclick="setSchool('col',this)">The Colosseum</button>
     <button class="chip"     data-s="sb"  onclick="setSchool('sb',this)">SB Gym</button>
     <button class="chip"     data-s="com" onclick="setSchool('com',this)">Commit</button>
+    <button class="chip"     data-s="if"  onclick="setSchool('if',this)">Impact Fit</button>
+    <button class="chip"     data-s="tig" onclick="setSchool('tig',this)">Tigers</button>
+    <button class="chip wk-chip" id="wkChip" onclick="toggleWorkit()">💼 Workit</button>
   </div>
 
   <div class="wk-label" id="wkLabel"></div>
@@ -339,6 +362,7 @@ body{
     <a class="sl-item" href="https://thecolosseum.nl/en/rooster/" target="_blank">
       <div class="sl-dot" style="background:var(--col)"></div>
       <span class="sl-name">The Colosseum</span>
+      <span class="sl-wk">💼 Workit</span>
       <span class="sl-arr">›</span>
     </a>
     <a class="sl-item" href="https://sbgym.nl/lesrooster/" target="_blank">
@@ -349,6 +373,17 @@ body{
     <a class="sl-item" href="https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/" target="_blank">
       <div class="sl-dot" style="background:var(--com)"></div>
       <span class="sl-name">Commit Rivierenwijk</span>
+      <span class="sl-wk">💼 Workit</span>
+      <span class="sl-arr">›</span>
+    </a>
+    <a class="sl-item" href="https://impactfit.nl/lesrooster/" target="_blank">
+      <div class="sl-dot" style="background:var(--if)"></div>
+      <span class="sl-name">Impact Fit</span>
+      <span class="sl-arr">›</span>
+    </a>
+    <a class="sl-item" href="https://tigersgym.nl/" target="_blank">
+      <div class="sl-dot" style="background:var(--tig)"></div>
+      <span class="sl-name">Tigers Gym</span>
       <span class="sl-arr">›</span>
     </a>
   </div>
@@ -374,11 +409,13 @@ let updatedAt = null;
 // Dag 0=Zo 1=Ma 2=Di 3=Wo 4=Do 5=Vr 6=Za
 const DS = ['Zo','Ma','Di','Wo','Do','Vr','Za'];
 const DF = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
-const SK = { col:'colosseum', sb:'sbgym', com:'commit' };
+const SK = { col:'colosseum', sb:'sbgym', com:'commit', if:'impactfit', tig:'tigers' };
+const SN = { col:'The Colosseum', sb:'SB Gym', com:'Commit', if:'Impact Fit', tig:'Tigers' };
 
 // ── STATE ────────────────────────────────────────────────────────
 let view      = 'rooster';
 let school    = 'all';
+let workitOnly = false;
 let weekOff   = 0;
 let day       = (() => { const d = new Date().getDay(); return d === 0 ? 1 : d; })();
 let selected  = new Set();
@@ -432,6 +469,12 @@ function setSchool(s, btn) {
 
 function setDay(d) { day = d; renderDays(); renderList(); }
 
+function toggleWorkit() {
+  workitOnly = !workitOnly;
+  document.getElementById('wkChip').classList.toggle('on', workitOnly);
+  renderList();
+}
+
 // ── TOGGLE ───────────────────────────────────────────────────────
 function toggle(id) {
   selected.has(id) ? selected.delete(id) : selected.add(id);
@@ -480,6 +523,7 @@ function renderList() {
   const items = [];
   for (const [sk, sc] of Object.entries(SCHOOLS)) {
     if (school !== 'all' && SK[school] !== sk) continue;
+    if (workitOnly && !sc.workit) continue;
     (sc.classes || []).filter(c => c.day === day).forEach(c =>
       items.push({ ...c, sk: Object.keys(SK).find(k => SK[k] === sk), school: sc })
     );
@@ -501,11 +545,12 @@ function renderList() {
 // ── CARD HTML ────────────────────────────────────────────────────
 function cardHTML(c) {
   const on = selected.has(c.id);
-  const label = c.sk === 'col' ? 'The Colosseum' : c.sk === 'sb' ? 'SB Gym' : 'Commit';
+  const label = SN[c.sk] || c.school.name;
+  const wk = c.school.workit ? '<span class="wk-badge">💼 Workit</span>' : '';
   return `<div class="card ${on?'sel':''}">
     <div class="card-top">
       <div class="school-tag">
-        <div class="school-dot d-${c.sk}"></div>${label}
+        <div class="school-dot d-${c.sk}"></div>${label}${wk}
       </div>
       <div class="time-tag">
         <div class="t">${c.time}</div>
@@ -632,8 +677,9 @@ async function loadSchedules() {
   SCHOOLS = data.schools;
   updatedAt = data.updated;
   const d = new Date(updatedAt);
+  const n = Object.keys(SCHOOLS).length;
   document.getElementById('hdrSub').textContent =
-    `The Colosseum · SB Gym · Commit  ·  ${d.toLocaleDateString('nl-NL',{day:'numeric',month:'short'})}`;
+    `${n} gyms in Utrecht  ·  bijgewerkt ${d.toLocaleDateString('nl-NL',{day:'numeric',month:'short'})}`;
 }
 
 async function doRefresh() {

@@ -1,4 +1,4 @@
-const CACHE = 'kbp-v1';
+const CACHE = 'kbp-v2';
 const FILES = ['./', './index.html', './manifest.json', './icon.svg', './schedules.json'];
 
 self.addEventListener('install', e => {
