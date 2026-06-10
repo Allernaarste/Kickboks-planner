@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-10T08:35:38.515Z",
+  "updated": "2026-06-10T18:27:34.899Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-10T08:32:41.471Z",
+      "fetchedAt": "2026-06-10T18:24:56.510Z",
       "classes": [
         {
           "id": "c01",
@@ -523,153 +523,361 @@
       "url": "https://sbgym.nl/lesrooster/",
       "addr": "Utrecht",
       "workit": true,
-      "live": false,
-      "source": null,
-      "fetchedAt": null,
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-06-10T18:25:08.336Z",
       "classes": [
         {
           "id": "s01",
-          "day": 1,
-          "time": "09:00",
+          "day": 0,
+          "time": "10:00",
           "dur": 60,
-          "type": "Ochtend Kickboxen",
-          "level": "Alle niveaus"
+          "type": "Bokszaktraining gecombineerd met kracht Micah",
+          "level": ""
         },
         {
           "id": "s02",
-          "day": 1,
-          "time": "18:00",
+          "day": 0,
+          "time": "19:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "LADY'S ONLY Mounia",
+          "level": ""
         },
         {
           "id": "s03",
           "day": 1,
-          "time": "19:15",
+          "time": "17:00",
           "dur": 60,
-          "type": "Boksen",
-          "level": "Alle niveaus"
+          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
+          "level": ""
         },
         {
           "id": "s04",
           "day": 1,
-          "time": "20:30",
+          "time": "17:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
+          "type": "Jeugd training tot 7 jaar Amin",
+          "level": ""
         },
         {
           "id": "s05",
-          "day": 2,
+          "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Muay Thai",
-          "level": "Alle niveaus"
+          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
+          "level": ""
         },
         {
           "id": "s06",
-          "day": 2,
-          "time": "19:15",
+          "day": 1,
+          "time": "19:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Bokszaktraining Said",
+          "level": ""
         },
         {
           "id": "s07",
-          "day": 3,
-          "time": "09:00",
+          "day": 1,
+          "time": "19:00",
           "dur": 60,
-          "type": "Ochtend Training",
-          "level": "Alle niveaus"
+          "type": "Kickboksen Techniek Jahfarr",
+          "level": ""
         },
         {
           "id": "s08",
-          "day": 3,
-          "time": "17:30",
-          "dur": 45,
-          "type": "Kids Boxing",
-          "level": "Jeugd"
+          "day": 1,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Bokszaktraining Michael",
+          "level": ""
         },
         {
           "id": "s09",
-          "day": 3,
-          "time": "18:30",
+          "day": 1,
+          "time": "20:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Kickboksen PRO Niveau Najim",
+          "level": ""
         },
         {
           "id": "s10",
-          "day": 3,
-          "time": "19:45",
+          "day": 2,
+          "time": "09:15",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
+          "type": "LADY'S ONLY Mounia",
+          "level": ""
         },
         {
           "id": "s11",
-          "day": 4,
+          "day": 2,
           "time": "18:00",
           "dur": 60,
-          "type": "Boksen",
-          "level": "Alle niveaus"
+          "type": "Jeugd Training 8 t/m 13 jaar Mounia",
+          "level": ""
         },
         {
           "id": "s12",
-          "day": 4,
-          "time": "19:15",
+          "day": 2,
+          "time": "18:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Jeugd training tot 7 jaar Chaimae",
+          "level": ""
         },
         {
           "id": "s13",
-          "day": 4,
-          "time": "20:30",
+          "day": 2,
+          "time": "19:00",
           "dur": 60,
-          "type": "Sparring",
-          "level": "Gevorderd"
+          "type": "Bokszaktraining Micah",
+          "level": ""
         },
         {
           "id": "s14",
-          "day": 5,
-          "time": "12:00",
+          "day": 2,
+          "time": "19:00",
           "dur": 60,
-          "type": "Middag Training",
-          "level": "Alle niveaus"
+          "type": "Kickboksen Techniek Najim",
+          "level": ""
         },
         {
           "id": "s15",
-          "day": 5,
-          "time": "18:00",
+          "day": 2,
+          "time": "19:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Kracht - Circuit Training André",
+          "level": ""
         },
         {
           "id": "s16",
-          "day": 6,
-          "time": "10:00",
-          "dur": 90,
-          "type": "Weekend Training",
-          "level": "Alle niveaus"
+          "day": 2,
+          "time": "19:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
         },
         {
           "id": "s17",
-          "day": 0,
-          "time": "11:00",
+          "day": 2,
+          "time": "20:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
+          "type": "Bokszaktraining Badr",
+          "level": ""
         },
         {
           "id": "s18",
-          "day": 0,
-          "time": "12:15",
+          "day": 2,
+          "time": "20:00",
           "dur": 60,
-          "type": "Sparring",
-          "level": "Gevorderd"
+          "type": "Sparren Training Sergei",
+          "level": ""
+        },
+        {
+          "id": "s19",
+          "day": 3,
+          "time": "17:00",
+          "dur": 60,
+          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
+          "level": ""
+        },
+        {
+          "id": "s20",
+          "day": 3,
+          "time": "17:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Amin",
+          "level": ""
+        },
+        {
+          "id": "s21",
+          "day": 3,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Wedstrijd Groep Hamza &",
+          "level": ""
+        },
+        {
+          "id": "s22",
+          "day": 3,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Said",
+          "level": ""
+        },
+        {
+          "id": "s23",
+          "day": 3,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Techniek Micah",
+          "level": ""
+        },
+        {
+          "id": "s24",
+          "day": 3,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Bokszaktraining Michael",
+          "level": ""
+        },
+        {
+          "id": "s25",
+          "day": 3,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Kickboksen PRO Niveau Said",
+          "level": ""
+        },
+        {
+          "id": "s26",
+          "day": 4,
+          "time": "09:15",
+          "dur": 60,
+          "type": "LADY'S ONLY Mounia",
+          "level": ""
+        },
+        {
+          "id": "s27",
+          "day": 4,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Training 8 t/m 13 jaar Quinty",
+          "level": ""
+        },
+        {
+          "id": "s28",
+          "day": 4,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Amin",
+          "level": ""
+        },
+        {
+          "id": "s29",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Chaimae",
+          "level": ""
+        },
+        {
+          "id": "s30",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Techniek Haytam",
+          "level": ""
+        },
+        {
+          "id": "s31",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kracht - Circuit Training André",
+          "level": ""
+        },
+        {
+          "id": "s32",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
+        },
+        {
+          "id": "s33",
+          "day": 4,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Sparren Training Sergei",
+          "level": ""
+        },
+        {
+          "id": "s34",
+          "day": 4,
+          "time": "20:15",
+          "dur": 60,
+          "type": "LADY'S ONLY Chaimae",
+          "level": ""
+        },
+        {
+          "id": "s35",
+          "day": 5,
+          "time": "07:00",
+          "dur": 60,
+          "type": "Bokszaktraining Micah",
+          "level": ""
+        },
+        {
+          "id": "s36",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Training 8 t/m 13 jaar Badr",
+          "level": ""
+        },
+        {
+          "id": "s37",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Wedstrijd Groep Najim",
+          "level": ""
+        },
+        {
+          "id": "s38",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Lotte",
+          "level": ""
+        },
+        {
+          "id": "s39",
+          "day": 5,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Najim",
+          "level": ""
+        },
+        {
+          "id": "s40",
+          "day": 5,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Kickboksen PRO Niveau Najim",
+          "level": ""
+        },
+        {
+          "id": "s41",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Bokszaktraining Micah",
+          "level": ""
+        },
+        {
+          "id": "s42",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Kracht - Circuit Training André",
+          "level": ""
+        },
+        {
+          "id": "s43",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
+        },
+        {
+          "id": "s44",
+          "day": 6,
+          "time": "11:00",
+          "dur": 60,
+          "type": "Kickboksen beginners & gevorderden Micah",
+          "level": ""
         }
       ]
     },
@@ -681,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-10T08:33:24.768Z",
+      "fetchedAt": "2026-06-10T18:25:20.707Z",
       "classes": [
         {
           "id": "m01",
@@ -1263,7 +1471,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-10T08:35:38.448Z",
+      "fetchedAt": "2026-06-10T18:27:34.830Z",
       "classes": [
         {
           "id": "t01",
