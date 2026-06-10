@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-10T00:00:00.000Z",
-  "note": "Wordt automatisch live bijgewerkt door GitHub Actions",
+  "updated": "2026-06-10T08:01:19.756Z",
+  "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
       "name": "The Colosseum",
-      "url": "https://thecolosseum.nl/en/rooster/",
+      "url": "https://thecolosseum.nl/rooster/",
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
@@ -541,137 +541,41 @@
       "url": "https://tigersgym.nl/",
       "addr": "Kroonstraat 9, Utrecht",
       "workit": false,
-      "live": false,
-      "source": null,
-      "fetchedAt": null,
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-06-10T08:01:19.683Z",
       "classes": [
         {
           "id": "t01",
-          "day": 1,
-          "time": "07:00",
+          "day": 0,
+          "time": "17:55",
           "dur": 60,
-          "type": "Ochtend Kickboxen",
-          "level": "Alle niveaus"
+          "type": "* De bokszak trainingen worden in de Garage gegeven. We vertrekken om uur vanaf de voordeur van de dojo.",
+          "level": ""
         },
         {
           "id": "t02",
-          "day": 1,
-          "time": "18:00",
+          "day": 3,
+          "time": "19:30",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "HOE LAAT? uur",
+          "level": ""
         },
         {
           "id": "t03",
-          "day": 1,
-          "time": "19:15",
+          "day": 4,
+          "time": "19:30",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
+          "type": "HOE LAAT? uur",
+          "level": ""
         },
         {
           "id": "t04",
-          "day": 2,
-          "time": "07:00",
-          "dur": 60,
-          "type": "Ochtend Kickboxen",
-          "level": "Alle niveaus"
-        },
-        {
-          "id": "t05",
-          "day": 2,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
-        },
-        {
-          "id": "t06",
-          "day": 2,
-          "time": "19:15",
-          "dur": 60,
-          "type": "Sparring",
-          "level": "Gevorderd"
-        },
-        {
-          "id": "t07",
-          "day": 3,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
-        },
-        {
-          "id": "t08",
-          "day": 3,
-          "time": "19:15",
-          "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
-        },
-        {
-          "id": "t09",
-          "day": 3,
-          "time": "20:30",
-          "dur": 60,
-          "type": "Ademtraining & Yoga",
-          "level": "Alle niveaus"
-        },
-        {
-          "id": "t10",
-          "day": 4,
-          "time": "07:00",
-          "dur": 60,
-          "type": "Ochtend Kickboxen",
-          "level": "Alle niveaus"
-        },
-        {
-          "id": "t11",
-          "day": 4,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
-        },
-        {
-          "id": "t12",
-          "day": 4,
-          "time": "19:15",
-          "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
-        },
-        {
-          "id": "t13",
           "day": 5,
-          "time": "18:00",
+          "time": "12:30",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
-        },
-        {
-          "id": "t14",
-          "day": 6,
-          "time": "09:30",
-          "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
-        },
-        {
-          "id": "t15",
-          "day": 6,
-          "time": "11:00",
-          "dur": 60,
-          "type": "Ademtraining & Yoga",
-          "level": "Alle niveaus"
-        },
-        {
-          "id": "t16",
-          "day": 0,
-          "time": "10:30",
-          "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
+          "type": "HOE LAAT?",
+          "level": ""
         }
       ]
     }
