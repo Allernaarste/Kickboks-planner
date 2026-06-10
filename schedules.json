@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-10T08:01:19.756Z",
+  "updated": "2026-06-10T08:10:01.774Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -543,38 +543,206 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-10T08:01:19.683Z",
+      "fetchedAt": "2026-06-10T08:10:01.710Z",
       "classes": [
         {
           "id": "t01",
           "day": 0,
-          "time": "17:55",
+          "time": "10:15",
           "dur": 60,
-          "type": "* De bokszak trainingen worden in de Garage gegeven. We vertrekken om uur vanaf de voordeur van de dojo.",
+          "type": "Bokszaktraining * Michael",
           "level": ""
         },
         {
           "id": "t02",
-          "day": 3,
-          "time": "19:30",
+          "day": 0,
+          "time": "19:15",
           "dur": 60,
-          "type": "HOE LAAT? uur",
+          "type": "Kickboksen met circuit (geen sparren) Michael",
           "level": ""
         },
         {
           "id": "t03",
-          "day": 4,
-          "time": "19:30",
+          "day": 1,
+          "time": "17:00",
           "dur": 60,
-          "type": "HOE LAAT? uur",
+          "type": "Techniek (geen sparren) Federico & Ingmar",
           "level": ""
         },
         {
           "id": "t04",
-          "day": 5,
-          "time": "12:30",
+          "day": 1,
+          "time": "17:00",
           "dur": 60,
-          "type": "HOE LAAT?",
+          "type": "Techniek (geen sparren) Federico",
+          "level": ""
+        },
+        {
+          "id": "t05",
+          "day": 1,
+          "time": "17:00",
+          "dur": 60,
+          "type": "Basis / Beginnersles Federico",
+          "level": ""
+        },
+        {
+          "id": "t06",
+          "day": 1,
+          "time": "17:00",
+          "dur": 60,
+          "type": "Kickboksen Ivar",
+          "level": ""
+        },
+        {
+          "id": "t07",
+          "day": 3,
+          "time": "08:30",
+          "dur": 60,
+          "type": "Kickboksen Federico",
+          "level": ""
+        },
+        {
+          "id": "t08",
+          "day": 3,
+          "time": "08:30",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Jeroen",
+          "level": ""
+        },
+        {
+          "id": "t09",
+          "day": 3,
+          "time": "08:30",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Maud",
+          "level": ""
+        },
+        {
+          "id": "t10",
+          "day": 3,
+          "time": "08:30",
+          "dur": 60,
+          "type": "Kickboksen (bij goed weer in het Griftpark) Ingmar",
+          "level": ""
+        },
+        {
+          "id": "t11",
+          "day": 3,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Kickboksen Ingmar",
+          "level": ""
+        },
+        {
+          "id": "t12",
+          "day": 3,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Hardlooptraining Mark Kickboksen Michael",
+          "level": ""
+        },
+        {
+          "id": "t13",
+          "day": 3,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Tom",
+          "level": ""
+        },
+        {
+          "id": "t14",
+          "day": 3,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Ingmar & Dave",
+          "level": ""
+        },
+        {
+          "id": "t15",
+          "day": 3,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Kickboksen Federico",
+          "level": ""
+        },
+        {
+          "id": "t16",
+          "day": 3,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Basis / Beginnersles (geen sparren) Mark",
+          "level": ""
+        },
+        {
+          "id": "t17",
+          "day": 4,
+          "time": "10:15",
+          "dur": 60,
+          "type": "Recharging Breathing session Ingmar",
+          "level": ""
+        },
+        {
+          "id": "t18",
+          "day": 4,
+          "time": "18:15",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Sara",
+          "level": ""
+        },
+        {
+          "id": "t19",
+          "day": 5,
+          "time": "07:00",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Jeroen",
+          "level": ""
+        },
+        {
+          "id": "t20",
+          "day": 5,
+          "time": "07:00",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Maud",
+          "level": ""
+        },
+        {
+          "id": "t21",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Gevorderden/wedstrijd (Invite only) volwassenen en jeugd Mark",
+          "level": ""
+        },
+        {
+          "id": "t22",
+          "day": 6,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Ivar",
+          "level": ""
+        },
+        {
+          "id": "t23",
+          "day": 6,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Dave",
+          "level": ""
+        },
+        {
+          "id": "t24",
+          "day": 6,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Gevorderden/wedstrijd (Invite only) Rico",
+          "level": ""
+        },
+        {
+          "id": "t25",
+          "day": 6,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Gevorderden/wedstrijd (Invite only) Mark",
           "level": ""
         }
       ]
