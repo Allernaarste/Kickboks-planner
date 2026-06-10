@@ -68,7 +68,7 @@ const SCHOOLS = [
     key: 'impactfit', prefix: 'i',
     name: 'Impact Fit',
     url:  'https://impactfit.nl/lesrooster/',
-    altUrls: ['https://impactfit.nl/'],
+    altUrls: ['https://impactfit.nl/', 'https://classpass.nl/studios/impact-fit-utrecht'],
     addr: 'Utrecht',
     workit: false,
   },
@@ -158,38 +158,76 @@ async function scrapeFrameDOM(frame) {
         });
       });
 
-      // 2. Dag-containers met les-items
-      document.querySelectorAll('[class*="day"],[class*="rooster"],[class*="schedule"],[class*="timetable"],[class*="weekday"],[data-day]').forEach(container => {
-        const title = container.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="header"],[class*="day-name"],[class*="dayname"]')?.innerText ?? container.getAttribute('data-day') ?? '';
-        const d = dayOf(title) ?? dayOfDate(title);
-        if (d == null) return;
-        container.querySelectorAll('*').forEach(item => {
-          if (item.children.length > 3) return;
-          const text = item.innerText?.trim() ?? '';
+      // 2. Documentvolgorde: per tijd-item de dichtstbijzijnde dagkop erbóven
+      //    (lost tabs/secties op waar één wrapper alle dagen bevat)
+      const stripTimes = s => s
+        .replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?(\s*uur)?/gi, '')
+        .replace(/[|·•]/g, ' ').replace(/\s+/g, ' ').trim();
+      {
+        const all = [...document.querySelectorAll('body *')];
+        const headerDayAt = all.map(el => {
+          if (el.children.length > 2) return null;
+          const t = (el.innerText ?? '').trim();
+          if (!t || t.length > 28 || /\d{1,2}[:.]\d{2}/.test(t)) return null;
+          return dayOf(t) ?? dayOfDate(t);
+        });
+        all.forEach((el, i) => {
+          if (el.children.length > 3) return;
+          const text = (el.innerText ?? '').trim();
           if (text.length < 5 || text.length > 120 || isOpeningHours(text)) return;
           const tm = text.match(/\b(\d{1,2}[:.]\d{2})\b/);
           if (!tm) return;
-          const name = text.replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?/g, '').replace(/\n/g, ' ').trim();
-          if (name) out.push({ day: d, time: tm[1], name, via: 'day-container' });
+          // alleen het "buitenste" item: ouder met zelfde tekst wint niet dubbel door dedupe onderaan
+          let name = stripTimes(text);
+          if (!name) {
+            // naam op buurregel: zoek korte tekstregel in voorgaande broertjes
+            let s = el.previousElementSibling, hops = 0;
+            while (s && hops < 4 && !name) {
+              const st = (s.innerText ?? '').trim();
+              if (st && st.length < 80 && !/\d{1,2}[:.]\d{2}/.test(st) && dayOf(st) == null && dayOfDate(st) == null) name = stripTimes(st);
+              s = s.previousElementSibling; hops++;
+            }
+          }
+          if (!name) return;
+          let d = null;
+          for (let j = i; j >= 0 && j > i - 1500; j--) {
+            if (headerDayAt[j] != null) { d = headerDayAt[j]; break; }
+          }
+          if (d == null) return;
+          out.push({ day: d, time: tm[1], name, via: 'doc-order' });
         });
-      });
+      }
 
-      // 3. Platte paginatekst: dagkop gevolgd door tijdregels
-      if (out.length === 0) {
+      // 3. Platte paginatekst: dagkop gevolgd door tijdregels;
+      //    naam mag op de regel ervóór of erna staan
+      if (out.length < 5) {
         const lines = (document.body?.innerText ?? '').split('\n').map(l => l.trim()).filter(Boolean);
+        const lineDay = l => (l.length < 30 && !/\d{1,2}[:.]\d{2}.*\d{1,2}[:.]\d{2}/.test(l))
+          ? (dayOf(l) ?? dayOfDate(l)) : null;
+        const nameish = l => l && l.length > 1 && l.length < 80 && !/\d{1,2}[:.]\d{2}/.test(l)
+          && dayOf(l) == null && dayOfDate(l) == null && !isOpeningHours(l) ? stripTimes(l) : '';
         let cur = null;
-        for (const line of lines) {
-          const d = dayOf(line) ?? dayOfDate(line.length < 30 ? line : '');
-          if (d != null && line.length < 30 && !/\d{1,2}[:.]\d{2}.*\d{1,2}[:.]\d{2}/.test(line)) { cur = d; continue; }
-          if (cur == null) continue;
-          if (isOpeningHours(line)) continue;
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          const d = lineDay(line);
+          if (d != null) { cur = d; continue; }
+          if (cur == null || isOpeningHours(line)) continue;
           const tm = line.match(/\b(\d{1,2}[:.]\d{2})\b/);
           if (!tm) continue;
-          const name = line.replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?/g, '').replace(/[|·•]/g, ' ').trim();
-          if (name && name.length > 1) out.push({ day: cur, time: tm[1], name, via: 'text' });
+          let name = stripTimes(line)
+            || nameish(lines[i - 1] ?? '') || nameish(lines[i + 1] ?? '');
+          if (name) out.push({ day: cur, time: tm[1], name, via: 'text' });
         }
       }
-      return out;
+
+      // ontdubbelen binnen frame
+      const seen = new Set();
+      return out.filter(r => {
+        const k = `${r.day}|${r.time}|${String(r.name).toLowerCase()}`;
+        if (seen.has(k)) return false;
+        seen.add(k);
+        return true;
+      });
     });
   } catch (_) {
     return [];
@@ -256,14 +294,36 @@ async function visit(context, url, school, jsonBag) {
 
   // Diagnose: tijd-regels per frame (eerste 25)
   if (DEBUG) {
+    let sawTimes = false;
     for (const f of frames) {
       const lines = await f.evaluate(() =>
         (document.body?.innerText ?? '').split('\n').map(l => l.trim())
           .filter(l => /\d{1,2}[:.]\d{2}/.test(l)).slice(0, 25)
       ).catch(() => []);
       if (lines.length) {
+        sawTimes = true;
         console.log(`  tijdregels in ${f.url().slice(0, 80)}:`);
         lines.forEach(l => console.log(`      | ${l.slice(0, 110)}`));
+      }
+    }
+    // Geen tijden te zien? Dump paginastructuur om de roosterbron te vinden
+    if (!sawTimes) {
+      const info = await page.evaluate(() => ({
+        anchors: [...document.querySelectorAll('a[href]')].slice(0, 60)
+          .map(a => `${(a.innerText ?? '').trim().slice(0, 30)} -> ${a.href.slice(0, 90)}`)
+          .filter(s => s.length > 4),
+        iframes: [...document.querySelectorAll('iframe')].map(f => f.src.slice(0, 120)),
+        imgs: [...document.querySelectorAll('img')].map(i => i.src)
+          .filter(s => /rooster|schedule|timetable|agenda|les/i.test(s)).slice(0, 10),
+        scripts: [...document.querySelectorAll('script[src]')].map(s => s.src)
+          .filter(s => !/wp-includes|jquery|google|gtm|facebook|cdn-cookieyes/i.test(s)).slice(0, 15),
+      })).catch(() => null);
+      if (info) {
+        console.log(`  geen tijden op pagina — structuur:`);
+        info.iframes.forEach(s => console.log(`    iframe: ${s}`));
+        info.imgs.forEach(s => console.log(`    img: ${s}`));
+        info.scripts.forEach(s => console.log(`    script: ${s}`));
+        info.anchors.slice(0, 35).forEach(s => console.log(`    a: ${s}`));
       }
     }
   }
@@ -310,7 +370,12 @@ async function fetchSchool(context, school) {
 
     // Rooster-widget-iframes direct als pagina openen (hoogste prioriteit)
     for (const fu of res.frameUrls) {
-      if (!tried.has(fu) && FRAME_FOLLOW.test(fu) && !FRAME_IGNORE.test(fu)) pendingLinks.unshift(fu);
+      if (!tried.has(fu) && FRAME_FOLLOW.test(fu) && !FRAME_IGNORE.test(fu)) {
+        pendingLinks.unshift(fu);
+        // Europe Web Company: maand-agenda heeft vaak ook een week-variant
+        const weekVariant = fu.replace('agenda_public_per_month', 'agenda_public_per_week');
+        if (weekVariant !== fu && !tried.has(weekVariant)) pendingLinks.unshift(weekVariant);
+      }
     }
 
     // JSON-kandidaten evalueren
