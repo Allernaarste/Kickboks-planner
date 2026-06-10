@@ -27,9 +27,13 @@ export function parseDay(s) {
 
 export function parseTime(s) {
   if (s == null) return null;
-  const m = String(s).match(/(\d{1,2})[:.uh](\d{2})/i);
+  const m = String(s).match(/(\d{1,2})[:.uh](\d{2})\s*(am|pm|a\.m\.|p\.m\.)?/i);
   if (!m) return null;
-  const h = +m[1], mi = +m[2];
+  let h = +m[1];
+  const mi = +m[2];
+  const ap = m[3]?.toLowerCase();
+  if (ap?.startsWith('p') && h < 12) h += 12;
+  if (ap?.startsWith('a') && h === 12) h = 0;
   if (h > 23 || mi > 59) return null;
   return `${String(h).padStart(2,'0')}:${m[2]}`;
 }
@@ -84,7 +88,7 @@ export function isValidSchedule(classes) {
 // ── Heuristiek: les-achtige objecten in willekeurige JSON ──────────
 
 const NAME_FIELDS  = ['name','title','activity_name','class_name','activityName','className','lesson','activity','event_name','les'];
-const START_FIELDS = ['start','start_time','startTime','start_at','startAt','start_date','startDate','begin','from','time','starts_at','datetime','date_time'];
+const START_FIELDS = ['start','start_time','startTime','starttime','start_at','startAt','start_date','startDate','start_datetime','startDateTime','begin','from','time','starts_at','datetime','date_time'];
 const DAY_FIELDS   = ['day_of_week','dayOfWeek','day','weekday','week_day','dag'];
 const DUR_FIELDS   = ['duration','length','dur','duration_in_minutes','minutes'];
 const END_FIELDS   = ['end','end_time','endTime','end_at','until','till','to'];
@@ -148,7 +152,11 @@ export function finishClasses(raw, prefix) {
     }))
     .filter(c => c.day != null && c.time && c.type && c.type.length > 1)
     // ruis: regels die zelf een dagnaam of puur nummer zijn
-    .filter(c => !isDayWord(c.type) && !/^\d+$/.test(c.type));
+    .filter(c => !isDayWord(c.type) && !/^\d+$/.test(c.type))
+    // ruis: datumkoppen ("Vrijdag 17 juni"), kale kopjes, voetnoten, te lange teksten
+    .filter(c => !/^(zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|sunday|monday|tuesday|wednesday|thursday|friday|saturday)\b/i.test(c.type))
+    .filter(c => !/^groepsless?en$/i.test(c.type))
+    .filter(c => !c.type.startsWith('*') && c.type.length <= 70);
   const unique = dedupe(cleaned)
     .sort((a, b) => (a.day - b.day) || a.time.localeCompare(b.time))
     .map((c, i) => ({ id: `${prefix}${String(i + 1).padStart(2, '0')}`, ...c }));

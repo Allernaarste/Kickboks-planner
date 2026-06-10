@@ -158,29 +158,82 @@ async function scrapeFrameDOM(frame) {
         });
       });
 
-      // 2. Documentvolgorde: per tijd-item de dichtstbijzijnde dagkop erbóven
-      //    (lost tabs/secties op waar één wrapper alle dagen bevat)
+      // 2. Per tijd-item de dag bepalen via drie sporen:
+      //    a) dagnaam in id/class/aria van voorouders (tabs/panelen)
+      //    b) geometrisch: kolomkop met horizontale overlap (week-grids)
+      //    c) dichtstbijzijnde dagkop erbóven in documentvolgorde
       const stripTimes = s => s
         .replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?(\s*uur)?/gi, '')
         .replace(/[|·•]/g, ' ').replace(/\s+/g, ' ').trim();
+      const FULLDAYS = {
+        zondag:0,sunday:0, maandag:1,monday:1, dinsdag:2,tuesday:2, woensdag:3,wednesday:3,
+        donderdag:4,thursday:4, vrijdag:5,friday:5, zaterdag:6,saturday:6,
+      };
+      const dayFromAncestors = el => {
+        let n = el;
+        for (let depth = 0; n && n.getAttribute && depth < 10; depth++) {
+          const attrs = [
+            n.id, String(n.className ?? ''), n.getAttribute('data-day'),
+            n.getAttribute('data-title'), n.getAttribute('aria-label'),
+          ].join(' ').toLowerCase();
+          for (const [w, d] of Object.entries(FULLDAYS)) if (attrs.includes(w)) return d;
+          const lab = n.getAttribute('aria-labelledby');
+          if (lab) {
+            const d = dayOf(document.getElementById(lab)?.innerText);
+            if (d != null) return d;
+          }
+          n = n.parentElement;
+        }
+        return null;
+      };
       {
         const all = [...document.querySelectorAll('body *')];
-        const headerDayAt = all.map(el => {
-          if (el.children.length > 2) return null;
+        // dagkoppen: documentpositie + geometrie
+        const headerDayAt = new Array(all.length).fill(null);
+        const headerRects = [];
+        all.forEach((el, i) => {
+          if (el.children.length > 2) return;
           const t = (el.innerText ?? '').trim();
-          if (!t || t.length > 28 || /\d{1,2}[:.]\d{2}/.test(t)) return null;
-          return dayOf(t) ?? dayOfDate(t);
+          if (!t || t.length > 28 || /\d{1,2}[:.]\d{2}/.test(t)) return;
+          const d = dayOf(t) ?? dayOfDate(t);
+          if (d == null) return;
+          headerDayAt[i] = d;
+          const r = el.getBoundingClientRect();
+          if (r.width >= 15 && r.height >= 5) headerRects.push({ d, x1: r.left, x2: r.right, y: r.top });
         });
+        // per dag de bovenste kop als kolomkop; grid pas bruikbaar bij ≥4 dagen naast elkaar
+        const colByDay = {};
+        for (const h of headerRects) {
+          if (!colByDay[h.d] || h.y < colByDay[h.d].y) colByDay[h.d] = h;
+        }
+        const cols = Object.values(colByDay);
+        const gridOK = cols.length >= 4 &&
+          (Math.max(...cols.map(c => c.x1)) - Math.min(...cols.map(c => c.x1))) > 300;
+        const avgColWidth = cols.length
+          ? cols.reduce((s, c) => s + (c.x2 - c.x1), 0) / cols.length : 0;
+        const gridDay = rect => {
+          if (!gridOK || rect.width <= 0) return null;
+          // alleen kolom-brede items; rijen over de volle breedte horen niet bij één kolom
+          if (avgColWidth > 0 && rect.width > 2.2 * avgColWidth + 40) return null;
+          const cx = (rect.left + rect.right) / 2;
+          let best = null, bestDist = Infinity;
+          for (const c of cols) {
+            if (cx >= c.x1 - 8 && cx <= c.x2 + 8 && rect.top > c.y - 5) return c.d;
+            const dist = Math.abs(cx - (c.x1 + c.x2) / 2);
+            if (dist < bestDist) { bestDist = dist; best = c.d; }
+          }
+          return bestDist < 100 ? best : null;
+        };
+
         all.forEach((el, i) => {
           if (el.children.length > 3) return;
           const text = (el.innerText ?? '').trim();
           if (text.length < 5 || text.length > 120 || isOpeningHours(text)) return;
           const tm = text.match(/\b(\d{1,2}[:.]\d{2})\b/);
           if (!tm) return;
-          // alleen het "buitenste" item: ouder met zelfde tekst wint niet dubbel door dedupe onderaan
           let name = stripTimes(text);
           if (!name) {
-            // naam op buurregel: zoek korte tekstregel in voorgaande broertjes
+            // naam op buurregel: korte tekstregel in voorgaande broertjes
             let s = el.previousElementSibling, hops = 0;
             while (s && hops < 4 && !name) {
               const st = (s.innerText ?? '').trim();
@@ -189,12 +242,16 @@ async function scrapeFrameDOM(frame) {
             }
           }
           if (!name) return;
-          let d = null;
-          for (let j = i; j >= 0 && j > i - 1500; j--) {
-            if (headerDayAt[j] != null) { d = headerDayAt[j]; break; }
+          let d = dayFromAncestors(el), via = 'ancestor';
+          if (d == null) { d = gridDay(el.getBoundingClientRect()); via = 'grid'; }
+          if (d == null) {
+            via = 'doc-order';
+            for (let j = i; j >= 0 && j > i - 1500; j--) {
+              if (headerDayAt[j] != null) { d = headerDayAt[j]; break; }
+            }
           }
           if (d == null) return;
-          out.push({ day: d, time: tm[1], name, via: 'doc-order' });
+          out.push({ day: d, time: tm[1], name, via });
         });
       }
 
@@ -277,6 +334,25 @@ async function visit(context, url, school, jsonBag) {
       } catch (_) {}
     }
     await page.waitForTimeout(3000);
+
+    // ClassPass: klik alle dagen in de datumbalk zodat de schedule-API
+    // voor de hele week wordt aangeroepen (JSON wordt onderschept)
+    if (/classpass/i.test(url)) {
+      for (let i = 0; i < 9; i++) {
+        const clicked = await page.evaluate(idx => {
+          const btns = [...document.querySelectorAll('button,[role="button"],a,[role="tab"]')]
+            .filter(e => {
+              const t = (e.innerText ?? '').trim();
+              return t.length <= 12 &&
+                /^(zo|ma|di|wo|do|vr|za|sun|mon|tue|wed|thu|fri|sat)\.?[\s\n]*\d{1,2}$/i.test(t);
+            });
+          if (idx < btns.length) { btns[idx].click(); return true; }
+          return false;
+        }, i).catch(() => false);
+        if (!clicked) break;
+        await page.waitForTimeout(1500);
+      }
+    }
   } catch (e) {
     console.warn(`  ! laadprobleem ${url}: ${e.message.split('\n')[0]}`);
   }

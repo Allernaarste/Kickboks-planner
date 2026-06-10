@@ -87,3 +87,17 @@ assert.ok(!isValidSchedule(finishClasses([
 ], 'x'))); // 3 lessen maar 1 dag
 
 console.log('✓ alle parse-tests geslaagd');
+
+// ── ronde 4: AM/PM, ruisfilters ──
+assert.equal(parseTime('7:00 PM'), '19:00');
+assert.equal(parseTime('12:15 AM'), '00:15');
+assert.equal(parseTime('11:30 am'), '11:30');
+const r4 = finishClasses([
+  { day: 1, time: '18:00', name: 'Vrijdag 17 juni' },
+  { day: 1, time: '18:00', name: 'Groepslessen' },
+  { day: 1, time: '18:00', name: '* De bokszak trainingen worden in de Garage gegeven.' },
+  { day: 1, time: '18:00', name: 'Kickboksen wedstrijdgroep' },
+  { day: 2, time: '7:00 PM', name: 'Boxing' },
+], 'x');
+assert.deepEqual(r4.map(c => `${c.day} ${c.time} ${c.type}`), ['1 18:00 Kickboksen wedstrijdgroep', '2 19:00 Boxing']);
+console.log('✓ ronde-4 tests geslaagd');
