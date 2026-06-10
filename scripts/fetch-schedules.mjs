@@ -54,6 +54,9 @@ const SCHOOLS = [
     altUrls: ['https://sbgym.nl/rooster/'],
     addr: 'Utrecht',
     workit: true,
+    // dag-toewijzing nog niet betrouwbaar geverifieerd: wel scrapen en
+    // loggen, maar resultaat niet als live publiceren
+    verifyOnly: true,
   },
   {
     key: 'commit', prefix: 'm',
@@ -308,6 +311,14 @@ async function visit(context, url, school, jsonBag) {
   try {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45_000 });
     await page.waitForLoadState('networkidle', { timeout: 20_000 }).catch(() => {});
+    // Lege of geblokkeerde pagina (bot-check)? Even wachten en herladen.
+    const bodyLen = await page.evaluate(() => document.body?.innerText?.length ?? 0).catch(() => 0);
+    if (bodyLen < 300) {
+      console.log(`  pagina vrijwel leeg (${bodyLen} tekens) — herladen…`);
+      await page.waitForTimeout(6000);
+      await page.reload({ waitUntil: 'domcontentloaded', timeout: 45_000 }).catch(() => {});
+      await page.waitForLoadState('networkidle', { timeout: 20_000 }).catch(() => {});
+    }
     // Cookie-banners
     for (const sel of [
       '#onetrust-accept-btn-handler', 'button[id*="accept"]', 'button[class*="accept"]',
@@ -357,6 +368,21 @@ async function visit(context, url, school, jsonBag) {
     console.warn(`  ! laadprobleem ${url}: ${e.message.split('\n')[0]}`);
   }
 
+  // Inline JSON-bronnen (Next.js __NEXT_DATA__, schema.org ld+json)
+  for (const f of page.frames()) {
+    const inline = await f.evaluate(() => {
+      const out = [];
+      const nd = document.getElementById('__NEXT_DATA__')?.textContent;
+      if (nd) out.push({ src: '__NEXT_DATA__', text: nd.slice(0, 3_000_000) });
+      document.querySelectorAll('script[type="application/ld+json"]')
+        .forEach(s => out.push({ src: 'ld+json', text: s.textContent ?? '' }));
+      return out;
+    }).catch(() => []);
+    for (const { src, text } of inline) {
+      try { jsonBag.push({ url: `inline:${src} @ ${f.url().slice(0, 80)}`, json: JSON.parse(text) }); } catch (_) {}
+    }
+  }
+
   // Frames loggen + DOM-scrapen
   const frames = page.frames();
   console.log(`  frames: ${frames.length}`);
@@ -366,6 +392,45 @@ async function visit(context, url, school, jsonBag) {
     const rows = await scrapeFrameDOM(f);
     if (rows.length) console.log(`  DOM ${f === page.mainFrame() ? 'main' : 'iframe'} (${f.url().slice(0,60)}): ${rows.length} rijen via ${[...new Set(rows.map(r => r.via))].join(',')}`);
     domRows.push(...rows);
+  }
+
+  // Structuurdiagnose: dagkoppen + voorouder-ketens van tijd-items
+  if (DEBUG && domRows.length) {
+    for (const f of frames) {
+      const diag = await f.evaluate(() => {
+        const out = { headers: [], chains: [] };
+        const all = [...document.querySelectorAll('body *')];
+        const DAYRE = /^(maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|monday|tuesday|wednesday|thursday|friday|saturday|sunday|ma|di|wo|do|vr|za|zo)\b/i;
+        for (const el of all) {
+          if (el.children.length > 2) continue;
+          const t = (el.innerText ?? '').trim();
+          if (!t || t.length > 28 || /\d{1,2}[:.]\d{2}/.test(t) || !DAYRE.test(t)) continue;
+          const r = el.getBoundingClientRect();
+          out.headers.push(`"${t}" @x${Math.round(r.left)},y${Math.round(r.top)} w${Math.round(r.width)} <${el.tagName.toLowerCase()}${el.id ? '#' + el.id : ''} .${String(el.className).split(' ').slice(0, 2).join('.')}>`.slice(0, 150));
+        }
+        let count = 0;
+        for (const el of all) {
+          if (count >= 5) break;
+          if (el.children.length > 3) continue;
+          const t = (el.innerText ?? '').trim();
+          if (t.length < 5 || t.length > 120 || !/\b\d{1,2}[:.]\d{2}\b/.test(t)) continue;
+          const chain = [];
+          let n = el;
+          for (let d = 0; n && d < 7; d++) {
+            chain.push(`${n.tagName.toLowerCase()}${n.id ? '#' + n.id : ''}${n.className ? '.' + String(n.className).trim().split(/\s+/).slice(0, 2).join('.') : ''}`);
+            n = n.parentElement;
+          }
+          out.chains.push(`"${t.slice(0, 35).replace(/\n/g, '·')}" :: ${chain.join(' < ')}`.slice(0, 230));
+          count++;
+        }
+        return out;
+      }).catch(() => null);
+      if (diag && (diag.headers.length || diag.chains.length)) {
+        console.log(`  structuur ${f.url().slice(0, 60)}:`);
+        diag.headers.slice(0, 20).forEach(h => console.log(`    kop: ${h}`));
+        diag.chains.forEach(c => console.log(`    item: ${c}`));
+      }
+    }
   }
 
   // Diagnose: tijd-regels per frame (eerste 25)
@@ -524,7 +589,12 @@ async function fetchSchool(context, school) {
 
   try {
     for (const school of SCHOOLS) {
-      const { classes, live, source } = await fetchSchool(context, school);
+      let { classes, live, source } = await fetchSchool(context, school);
+      if (school.verifyOnly && live) {
+        console.log(`  ⚠ ${school.key}: verify-only — resultaat gelogd maar niet gepubliceerd`);
+        live = false;
+        classes = [];
+      }
       const oldSchool = old?.schools?.[school.key];
       if (live) liveCount++;
       schools[school.key] = {
