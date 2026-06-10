@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-10T08:10:01.774Z",
+  "updated": "2026-06-10T08:18:54.458Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,153 +8,529 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": false,
-      "source": null,
-      "fetchedAt": null,
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-06-10T08:15:42.516Z",
       "classes": [
         {
           "id": "c01",
-          "day": 1,
-          "time": "18:00",
+          "day": 0,
+          "time": "09:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Groepslessen",
+          "level": ""
         },
         {
           "id": "c02",
-          "day": 1,
-          "time": "19:15",
+          "day": 0,
+          "time": "09:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
+          "type": "Zaktraining kickboksen",
+          "level": ""
         },
         {
           "id": "c03",
-          "day": 1,
-          "time": "20:30",
+          "day": 0,
+          "time": "10:00",
           "dur": 60,
-          "type": "K1 / Sparring",
-          "level": "Gevorderd"
+          "type": "Kickboksen",
+          "level": ""
         },
         {
           "id": "c04",
-          "day": 2,
-          "time": "09:30",
+          "day": 0,
+          "time": "10:00",
           "dur": 60,
-          "type": "Fitness",
-          "level": "Alle niveaus"
+          "type": "Vrije Zaktraining",
+          "level": ""
         },
         {
           "id": "c05",
-          "day": 2,
-          "time": "18:00",
+          "day": 0,
+          "time": "10:00",
           "dur": 60,
-          "type": "Muay Thai",
-          "level": "Beginners"
+          "type": "Vrijdag 17 juni",
+          "level": ""
         },
         {
           "id": "c06",
-          "day": 2,
-          "time": "19:15",
+          "day": 0,
+          "time": "11:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
+          "type": "Zaktraining kickboksen",
+          "level": ""
         },
         {
           "id": "c07",
-          "day": 3,
-          "time": "17:30",
-          "dur": 45,
-          "type": "Kids Kickboxen",
-          "level": "Jeugd (8–14 jr)"
+          "day": 0,
+          "time": "11:00",
+          "dur": 60,
+          "type": "Boksles",
+          "level": ""
         },
         {
           "id": "c08",
-          "day": 3,
-          "time": "18:30",
+          "day": 1,
+          "time": "09:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Kickboksen",
+          "level": ""
         },
         {
           "id": "c09",
-          "day": 3,
-          "time": "20:00",
+          "day": 1,
+          "time": "09:00",
           "dur": 60,
-          "type": "K1 / Sparring",
-          "level": "Gevorderd"
+          "type": "Zaktraining kickboksen",
+          "level": ""
         },
         {
           "id": "c10",
-          "day": 4,
-          "time": "09:30",
+          "day": 1,
+          "time": "10:00",
           "dur": 60,
-          "type": "Fitness",
-          "level": "Alle niveaus"
+          "type": "Vrije Zaktraining",
+          "level": ""
         },
         {
           "id": "c11",
-          "day": 4,
-          "time": "18:00",
+          "day": 1,
+          "time": "11:00",
           "dur": 60,
-          "type": "Muay Thai",
-          "level": "Alle niveaus"
+          "type": "Vrije Zaktraining",
+          "level": ""
         },
         {
           "id": "c12",
-          "day": 4,
-          "time": "19:15",
+          "day": 1,
+          "time": "12:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
+          "type": "Vrije Zaktraining",
+          "level": ""
         },
         {
           "id": "c13",
-          "day": 5,
-          "time": "18:00",
+          "day": 1,
+          "time": "18:30",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Kickboksen",
+          "level": ""
         },
         {
           "id": "c14",
-          "day": 5,
-          "time": "19:15",
+          "day": 1,
+          "time": "18:30",
           "dur": 60,
-          "type": "Vrij Sparring",
-          "level": "Gevorderd"
+          "type": "Zaktraining kickboksen",
+          "level": ""
         },
         {
           "id": "c15",
-          "day": 6,
-          "time": "10:00",
-          "dur": 90,
-          "type": "Open Mat",
-          "level": "Alle niveaus"
+          "day": 1,
+          "time": "18:30",
+          "dur": 60,
+          "type": "KIDS Zaktraining 5 t/m 17 jaar",
+          "level": ""
         },
         {
           "id": "c16",
-          "day": 6,
-          "time": "12:00",
+          "day": 1,
+          "time": "19:30",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Kickboksen wedstrijdgroep",
+          "level": ""
         },
         {
           "id": "c17",
-          "day": 0,
-          "time": "10:00",
+          "day": 1,
+          "time": "19:30",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
+          "type": "Zaktraining boksen",
+          "level": ""
         },
         {
           "id": "c18",
-          "day": 0,
-          "time": "11:15",
+          "day": 1,
+          "time": "19:30",
           "dur": 60,
-          "type": "Open Sparring",
-          "level": "Gevorderd"
+          "type": "MMA/Grappling (Beginners-Gevorderden)",
+          "level": ""
+        },
+        {
+          "id": "c19",
+          "day": 1,
+          "time": "20:30",
+          "dur": 60,
+          "type": "Zak/Circuittraining",
+          "level": ""
+        },
+        {
+          "id": "c20",
+          "day": 2,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c21",
+          "day": 2,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c22",
+          "day": 2,
+          "time": "18:00",
+          "dur": 60,
+          "type": "KIDS Kickboksen 5 t/m 10 jaar",
+          "level": ""
+        },
+        {
+          "id": "c23",
+          "day": 2,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c24",
+          "day": 2,
+          "time": "19:00",
+          "dur": 60,
+          "type": "KIDS Kickboksen 11 t/m 17 jaar",
+          "level": ""
+        },
+        {
+          "id": "c25",
+          "day": 2,
+          "time": "19:00",
+          "dur": 60,
+          "type": "MMA Compleet (Beginners-Gevorderden)",
+          "level": ""
+        },
+        {
+          "id": "c26",
+          "day": 2,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c27",
+          "day": 2,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Vrije Zaktraining",
+          "level": ""
+        },
+        {
+          "id": "c28",
+          "day": 2,
+          "time": "20:00",
+          "dur": 60,
+          "type": "MMA/Worstelen en Cage control (Gevorderden)",
+          "level": ""
+        },
+        {
+          "id": "c29",
+          "day": 3,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c30",
+          "day": 3,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c31",
+          "day": 3,
+          "time": "11:00",
+          "dur": 60,
+          "type": "Vrije Zaktraining",
+          "level": ""
+        },
+        {
+          "id": "c32",
+          "day": 3,
+          "time": "12:00",
+          "dur": 60,
+          "type": "Vrije Zaktraining",
+          "level": ""
+        },
+        {
+          "id": "c33",
+          "day": 3,
+          "time": "18:30",
+          "dur": 60,
+          "type": "Kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c34",
+          "day": 3,
+          "time": "18:30",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c35",
+          "day": 3,
+          "time": "18:30",
+          "dur": 60,
+          "type": "KIDS Zaktraining 5 t/m 17 jaar",
+          "level": ""
+        },
+        {
+          "id": "c36",
+          "day": 3,
+          "time": "18:30",
+          "dur": 60,
+          "type": "Hyrox",
+          "level": ""
+        },
+        {
+          "id": "c37",
+          "day": 3,
+          "time": "19:30",
+          "dur": 60,
+          "type": "Kickboksen Sparren",
+          "level": ""
+        },
+        {
+          "id": "c38",
+          "day": 3,
+          "time": "19:30",
+          "dur": 60,
+          "type": "Zaktraining boksen",
+          "level": ""
+        },
+        {
+          "id": "c39",
+          "day": 3,
+          "time": "19:30",
+          "dur": 60,
+          "type": "MMA Sparren (Gevorderden)",
+          "level": ""
+        },
+        {
+          "id": "c40",
+          "day": 3,
+          "time": "19:45",
+          "dur": 60,
+          "type": "Circuit/ Kracht Training",
+          "level": ""
+        },
+        {
+          "id": "c41",
+          "day": 4,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Zak/Circuittraining",
+          "level": ""
+        },
+        {
+          "id": "c42",
+          "day": 4,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c43",
+          "day": 4,
+          "time": "18:00",
+          "dur": 60,
+          "type": "KIDS Kickboksen 5 t/m 10 jaar",
+          "level": ""
+        },
+        {
+          "id": "c44",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c45",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "KIDS Kickboksen 11 t/m 17 jaar",
+          "level": ""
+        },
+        {
+          "id": "c46",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "MMA/Worstelen en cage control (Beginners)",
+          "level": ""
+        },
+        {
+          "id": "c47",
+          "day": 4,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c48",
+          "day": 4,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Vrije Zaktraining",
+          "level": ""
+        },
+        {
+          "id": "c49",
+          "day": 4,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Kickboksen techniek (vanaf 13 jaar)",
+          "level": ""
+        },
+        {
+          "id": "c50",
+          "day": 5,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c51",
+          "day": 5,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c52",
+          "day": 5,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c53",
+          "day": 5,
+          "time": "10:30",
+          "dur": 60,
+          "type": "Hyrox",
+          "level": ""
+        },
+        {
+          "id": "c54",
+          "day": 5,
+          "time": "12:00",
+          "dur": 60,
+          "type": "Vrije Zaktraining",
+          "level": ""
+        },
+        {
+          "id": "c55",
+          "day": 5,
+          "time": "18:30",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c56",
+          "day": 5,
+          "time": "18:30",
+          "dur": 60,
+          "type": "Boksles",
+          "level": ""
+        },
+        {
+          "id": "c57",
+          "day": 5,
+          "time": "18:30",
+          "dur": 60,
+          "type": "MMA/Grappling (Beginners-Gevorderden)",
+          "level": ""
+        },
+        {
+          "id": "c58",
+          "day": 5,
+          "time": "19:30",
+          "dur": 60,
+          "type": "Kickboksen Sparren",
+          "level": ""
+        },
+        {
+          "id": "c59",
+          "day": 6,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c60",
+          "day": 6,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Kickboksen techniek (vanaf 13 jaar)",
+          "level": ""
+        },
+        {
+          "id": "c61",
+          "day": 6,
+          "time": "09:30",
+          "dur": 60,
+          "type": "Hyrox",
+          "level": ""
+        },
+        {
+          "id": "c62",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Zaktraining boksen",
+          "level": ""
+        },
+        {
+          "id": "c63",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "MMA/Worstelen en Cage control (Gevorderden)",
+          "level": ""
+        },
+        {
+          "id": "c64",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "KIDS Kickboksen t/m 12",
+          "level": ""
+        },
+        {
+          "id": "c65",
+          "day": 6,
+          "time": "11:00",
+          "dur": 60,
+          "type": "KIDS Worstelen 6 t/m 14 jr",
+          "level": ""
         }
       ]
     },
@@ -543,7 +919,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-10T08:10:01.710Z",
+      "fetchedAt": "2026-06-10T08:18:54.387Z",
       "classes": [
         {
           "id": "t01",
@@ -556,17 +932,17 @@
         {
           "id": "t02",
           "day": 0,
-          "time": "19:15",
+          "time": "17:55",
           "dur": 60,
-          "type": "Kickboksen met circuit (geen sparren) Michael",
+          "type": "* De bokszak trainingen worden in de Garage gegeven. We vertrekken om vanaf de voordeur van de dojo.",
           "level": ""
         },
         {
           "id": "t03",
-          "day": 1,
-          "time": "17:00",
+          "day": 0,
+          "time": "19:15",
           "dur": 60,
-          "type": "Techniek (geen sparren) Federico & Ingmar",
+          "type": "Kickboksen met circuit (geen sparren) Michael",
           "level": ""
         },
         {
@@ -574,7 +950,7 @@
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "Techniek (geen sparren) Federico",
+          "type": "Techniek (geen sparren) Federico & Ingmar",
           "level": ""
         },
         {
@@ -582,7 +958,7 @@
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "Basis / Beginnersles Federico",
+          "type": "Techniek (geen sparren) Federico",
           "level": ""
         },
         {
@@ -590,15 +966,15 @@
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "Kickboksen Ivar",
+          "type": "Basis / Beginnersles Federico",
           "level": ""
         },
         {
           "id": "t07",
-          "day": 3,
-          "time": "08:30",
+          "day": 1,
+          "time": "17:00",
           "dur": 60,
-          "type": "Kickboksen Federico",
+          "type": "Kickboksen Ivar",
           "level": ""
         },
         {
@@ -606,7 +982,7 @@
           "day": 3,
           "time": "08:30",
           "dur": 60,
-          "type": "Techniek (geen sparren) Jeroen",
+          "type": "Kickboksen Federico",
           "level": ""
         },
         {
@@ -614,7 +990,7 @@
           "day": 3,
           "time": "08:30",
           "dur": 60,
-          "type": "Techniek (geen sparren) Maud",
+          "type": "Techniek (geen sparren) Jeroen",
           "level": ""
         },
         {
@@ -622,15 +998,15 @@
           "day": 3,
           "time": "08:30",
           "dur": 60,
-          "type": "Kickboksen (bij goed weer in het Griftpark) Ingmar",
+          "type": "Techniek (geen sparren) Maud",
           "level": ""
         },
         {
           "id": "t11",
           "day": 3,
-          "time": "09:00",
+          "time": "08:30",
           "dur": 60,
-          "type": "Kickboksen Ingmar",
+          "type": "Kickboksen (bij goed weer in het Griftpark) Ingmar",
           "level": ""
         },
         {
@@ -638,15 +1014,15 @@
           "day": 3,
           "time": "09:00",
           "dur": 60,
-          "type": "Hardlooptraining Mark Kickboksen Michael",
+          "type": "Kickboksen Ingmar",
           "level": ""
         },
         {
           "id": "t13",
           "day": 3,
-          "time": "18:00",
+          "time": "09:00",
           "dur": 60,
-          "type": "Techniek (geen sparren) Tom",
+          "type": "Hardlooptraining Mark Kickboksen Michael",
           "level": ""
         },
         {
@@ -654,7 +1030,7 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Techniek (geen sparren) Ingmar & Dave",
+          "type": "Techniek (geen sparren) Tom",
           "level": ""
         },
         {
@@ -662,7 +1038,7 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Kickboksen Federico",
+          "type": "Techniek (geen sparren) Ingmar & Dave",
           "level": ""
         },
         {
@@ -670,11 +1046,27 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Basis / Beginnersles (geen sparren) Mark",
+          "type": "Kickboksen Federico",
           "level": ""
         },
         {
           "id": "t17",
+          "day": 3,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Basis / Beginnersles (geen sparren) Mark",
+          "level": ""
+        },
+        {
+          "id": "t18",
+          "day": 3,
+          "time": "19:30",
+          "dur": 60,
+          "type": "HOE LAAT?",
+          "level": ""
+        },
+        {
+          "id": "t19",
           "day": 4,
           "time": "10:15",
           "dur": 60,
@@ -682,7 +1074,7 @@
           "level": ""
         },
         {
-          "id": "t18",
+          "id": "t20",
           "day": 4,
           "time": "18:15",
           "dur": 60,
@@ -690,7 +1082,7 @@
           "level": ""
         },
         {
-          "id": "t19",
+          "id": "t21",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -698,7 +1090,7 @@
           "level": ""
         },
         {
-          "id": "t20",
+          "id": "t22",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -706,7 +1098,7 @@
           "level": ""
         },
         {
-          "id": "t21",
+          "id": "t23",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -714,7 +1106,7 @@
           "level": ""
         },
         {
-          "id": "t22",
+          "id": "t24",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -722,7 +1114,7 @@
           "level": ""
         },
         {
-          "id": "t23",
+          "id": "t25",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -730,7 +1122,7 @@
           "level": ""
         },
         {
-          "id": "t24",
+          "id": "t26",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -738,7 +1130,7 @@
           "level": ""
         },
         {
-          "id": "t25",
+          "id": "t27",
           "day": 6,
           "time": "19:00",
           "dur": 60,
