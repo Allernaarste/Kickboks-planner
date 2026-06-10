@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-10T08:18:54.458Z",
+  "updated": "2026-06-10T08:28:00.575Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,8 +8,8 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": true,
-      "source": "dom",
+      "live": false,
+      "source": "stale",
       "fetchedAt": "2026-06-10T08:15:42.516Z",
       "classes": [
         {
@@ -539,153 +539,385 @@
       "url": "https://sbgym.nl/lesrooster/",
       "addr": "Utrecht",
       "workit": true,
-      "live": false,
-      "source": null,
-      "fetchedAt": null,
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-06-10T08:25:12.084Z",
       "classes": [
         {
           "id": "s01",
-          "day": 1,
+          "day": 0,
           "time": "09:00",
           "dur": 60,
-          "type": "Ochtend Kickboxen",
-          "level": "Alle niveaus"
+          "type": "Ma t/m vr: &",
+          "level": ""
         },
         {
           "id": "s02",
-          "day": 1,
-          "time": "18:00",
+          "day": 0,
+          "time": "10:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Bokszaktraining gecombineerd met kracht Micah LADY'S ONLY Mounia",
+          "level": ""
         },
         {
           "id": "s03",
-          "day": 1,
-          "time": "19:15",
+          "day": 0,
+          "time": "10:00",
           "dur": 60,
-          "type": "Boksen",
-          "level": "Alle niveaus"
+          "type": "Bokszaktraining gecombineerd met kracht Micah",
+          "level": ""
         },
         {
           "id": "s04",
-          "day": 1,
-          "time": "20:30",
+          "day": 0,
+          "time": "17:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
+          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
+          "level": ""
         },
         {
           "id": "s05",
-          "day": 2,
-          "time": "18:00",
+          "day": 0,
+          "time": "17:00",
           "dur": 60,
-          "type": "Muay Thai",
-          "level": "Alle niveaus"
+          "type": "Jeugd training tot 7 jaar Amin",
+          "level": ""
         },
         {
           "id": "s06",
-          "day": 2,
-          "time": "19:15",
+          "day": 0,
+          "time": "18:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
+          "level": ""
         },
         {
           "id": "s07",
-          "day": 3,
-          "time": "09:00",
+          "day": 0,
+          "time": "19:00",
           "dur": 60,
-          "type": "Ochtend Training",
-          "level": "Alle niveaus"
+          "type": "Bokszaktraining Said",
+          "level": ""
         },
         {
           "id": "s08",
-          "day": 3,
-          "time": "17:30",
-          "dur": 45,
-          "type": "Kids Boxing",
-          "level": "Jeugd"
+          "day": 0,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Techniek Jahfarr",
+          "level": ""
         },
         {
           "id": "s09",
-          "day": 3,
-          "time": "18:30",
+          "day": 0,
+          "time": "19:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "LADY'S ONLY Mounia",
+          "level": ""
         },
         {
           "id": "s10",
-          "day": 3,
-          "time": "19:45",
+          "day": 0,
+          "time": "20:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Gevorderd"
+          "type": "Bokszaktraining Michael",
+          "level": ""
         },
         {
           "id": "s11",
-          "day": 4,
-          "time": "18:00",
+          "day": 0,
+          "time": "20:00",
           "dur": 60,
-          "type": "Boksen",
-          "level": "Alle niveaus"
+          "type": "Kickboksen PRO Niveau Najim",
+          "level": ""
         },
         {
           "id": "s12",
-          "day": 4,
-          "time": "19:15",
+          "day": 1,
+          "time": "07:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Bokszaktraining Micah",
+          "level": ""
         },
         {
           "id": "s13",
-          "day": 4,
-          "time": "20:30",
+          "day": 1,
+          "time": "09:00",
           "dur": 60,
-          "type": "Sparring",
-          "level": "Gevorderd"
+          "type": "Ma t/m vr: &",
+          "level": ""
         },
         {
           "id": "s14",
-          "day": 5,
-          "time": "12:00",
+          "day": 1,
+          "time": "09:15",
           "dur": 60,
-          "type": "Middag Training",
-          "level": "Alle niveaus"
+          "type": "LADY'S ONLY Mounia",
+          "level": ""
         },
         {
           "id": "s15",
-          "day": 5,
-          "time": "18:00",
+          "day": 1,
+          "time": "17:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Beginners"
+          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
+          "level": ""
         },
         {
           "id": "s16",
-          "day": 6,
-          "time": "10:00",
-          "dur": 90,
-          "type": "Weekend Training",
-          "level": "Alle niveaus"
+          "day": 1,
+          "time": "17:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Amin",
+          "level": ""
         },
         {
           "id": "s17",
-          "day": 0,
-          "time": "11:00",
+          "day": 1,
+          "time": "18:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
+          "type": "Jeugd Wedstrijd Groep Hamza &",
+          "level": ""
         },
         {
           "id": "s18",
-          "day": 0,
-          "time": "12:15",
+          "day": 1,
+          "time": "18:00",
           "dur": 60,
-          "type": "Sparring",
-          "level": "Gevorderd"
+          "type": "Jeugd Training 8 t/m 13 jaar Quinty",
+          "level": ""
+        },
+        {
+          "id": "s19",
+          "day": 1,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Amin",
+          "level": ""
+        },
+        {
+          "id": "s20",
+          "day": 1,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Training 8 t/m 13 jaar Badr",
+          "level": ""
+        },
+        {
+          "id": "s21",
+          "day": 1,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Wedstrijd Groep Najim",
+          "level": ""
+        },
+        {
+          "id": "s22",
+          "day": 1,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Lotte",
+          "level": ""
+        },
+        {
+          "id": "s23",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Said",
+          "level": ""
+        },
+        {
+          "id": "s24",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Techniek Micah",
+          "level": ""
+        },
+        {
+          "id": "s25",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Chaimae",
+          "level": ""
+        },
+        {
+          "id": "s26",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Techniek Haytam",
+          "level": ""
+        },
+        {
+          "id": "s27",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kracht - Circuit Training André",
+          "level": ""
+        },
+        {
+          "id": "s28",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
+        },
+        {
+          "id": "s29",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Najim",
+          "level": ""
+        },
+        {
+          "id": "s30",
+          "day": 1,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Bokszaktraining Michael",
+          "level": ""
+        },
+        {
+          "id": "s31",
+          "day": 1,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Kickboksen PRO Niveau Said",
+          "level": ""
+        },
+        {
+          "id": "s32",
+          "day": 1,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Sparren Training Sergei",
+          "level": ""
+        },
+        {
+          "id": "s33",
+          "day": 1,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Kickboksen PRO Niveau Najim",
+          "level": ""
+        },
+        {
+          "id": "s34",
+          "day": 1,
+          "time": "20:15",
+          "dur": 60,
+          "type": "LADY'S ONLY Chaimae",
+          "level": ""
+        },
+        {
+          "id": "s35",
+          "day": 2,
+          "time": "09:15",
+          "dur": 60,
+          "type": "LADY'S ONLY Mounia",
+          "level": ""
+        },
+        {
+          "id": "s36",
+          "day": 2,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Training 8 t/m 13 jaar Mounia",
+          "level": ""
+        },
+        {
+          "id": "s37",
+          "day": 2,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Chaimae",
+          "level": ""
+        },
+        {
+          "id": "s38",
+          "day": 2,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Micah",
+          "level": ""
+        },
+        {
+          "id": "s39",
+          "day": 2,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Techniek Najim",
+          "level": ""
+        },
+        {
+          "id": "s40",
+          "day": 2,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kracht - Circuit Training André",
+          "level": ""
+        },
+        {
+          "id": "s41",
+          "day": 2,
+          "time": "19:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
+        },
+        {
+          "id": "s42",
+          "day": 2,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Bokszaktraining Badr",
+          "level": ""
+        },
+        {
+          "id": "s43",
+          "day": 2,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Sparren Training Sergei",
+          "level": ""
+        },
+        {
+          "id": "s44",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Bokszaktraining Micah",
+          "level": ""
+        },
+        {
+          "id": "s45",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Kracht - Circuit Training André",
+          "level": ""
+        },
+        {
+          "id": "s46",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
+        },
+        {
+          "id": "s47",
+          "day": 6,
+          "time": "11:00",
+          "dur": 60,
+          "type": "Kickboksen beginners & gevorderden Micah",
+          "level": ""
         }
       ]
     },
@@ -695,65 +927,425 @@
       "addr": "Amaliadwarsstraat 2A, Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
-      "live": false,
-      "source": null,
-      "fetchedAt": null,
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-06-10T08:25:24.339Z",
       "classes": [
         {
           "id": "m01",
-          "day": 1,
-          "time": "19:00",
+          "day": 0,
+          "time": "09:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
+          "type": "Hatha Yoga (COMMIT) Sia Yang",
+          "level": ""
         },
         {
           "id": "m02",
-          "day": 2,
-          "time": "20:00",
+          "day": 0,
+          "time": "09:00",
           "dur": 60,
-          "type": "Boksen Fitness",
-          "level": "Alle niveaus"
+          "type": "Strength Beginner (COMMIT) Enya Hoogewoning",
+          "level": ""
         },
         {
           "id": "m03",
-          "day": 3,
+          "day": 0,
           "time": "10:00",
           "dur": 60,
-          "type": "Kick & Box Fit",
-          "level": "Alle niveaus"
+          "type": "Functional (COMMIT) Enya Hoogewoning",
+          "level": ""
         },
         {
           "id": "m04",
-          "day": 3,
-          "time": "19:00",
+          "day": 0,
+          "time": "10:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
+          "type": "Pilates (COMMIT) Sia Yang",
+          "level": ""
         },
         {
           "id": "m05",
-          "day": 4,
-          "time": "19:30",
+          "day": 0,
+          "time": "11:00",
           "dur": 60,
-          "type": "Kick & Box Fit",
-          "level": "Alle niveaus"
+          "type": "Fitrace (COMMIT) Boaz Knol",
+          "level": ""
         },
         {
           "id": "m06",
-          "day": 6,
-          "time": "10:00",
-          "dur": 75,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
+          "day": 0,
+          "time": "11:00",
+          "dur": 60,
+          "type": "Somatics (COMMIT) Zoe González",
+          "level": ""
         },
         {
           "id": "m07",
           "day": 0,
+          "time": "12:00",
+          "dur": 60,
+          "type": "Yin Yoga (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m08",
+          "day": 0,
+          "time": "13:30",
+          "dur": 60,
+          "type": "Somatics (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m09",
+          "day": 0,
+          "time": "14:30",
+          "dur": 60,
+          "type": "Restorative Yoga (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m10",
+          "day": 1,
+          "time": "07:00",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m11",
+          "day": 1,
+          "time": "07:00",
+          "dur": 60,
+          "type": "Strength Experienced (COMMIT) Twan Kusters",
+          "level": ""
+        },
+        {
+          "id": "m12",
+          "day": 1,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Jan Folgerts",
+          "level": ""
+        },
+        {
+          "id": "m13",
+          "day": 1,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Body and mind flow (COMMIT) Sia Yang",
+          "level": ""
+        },
+        {
+          "id": "m14",
+          "day": 1,
           "time": "10:00",
           "dur": 60,
-          "type": "Kickboxen",
-          "level": "Alle niveaus"
+          "type": "Yin Yoga (COMMIT) Sia Yang",
+          "level": ""
+        },
+        {
+          "id": "m15",
+          "day": 1,
+          "time": "17:00",
+          "dur": 60,
+          "type": "Hatha Yoga (COMMIT) Isa Kraai",
+          "level": ""
+        },
+        {
+          "id": "m16",
+          "day": 1,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Meditatie (COMMIT) Janna van leeuwen",
+          "level": ""
+        },
+        {
+          "id": "m17",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Boxfit (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m18",
+          "day": 1,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Strength Beginner (COMMIT) Twan Kusters",
+          "level": ""
+        },
+        {
+          "id": "m19",
+          "day": 1,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Boaz Knol",
+          "level": ""
+        },
+        {
+          "id": "m20",
+          "day": 2,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Enya Hoogewoning",
+          "level": ""
+        },
+        {
+          "id": "m21",
+          "day": 2,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Fit 50 (COMMIT) Enya Hoogewoning",
+          "level": ""
+        },
+        {
+          "id": "m22",
+          "day": 2,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Yin Yoga (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m23",
+          "day": 2,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Strength Experienced (COMMIT) Twan Kusters",
+          "level": ""
+        },
+        {
+          "id": "m24",
+          "day": 3,
+          "time": "07:00",
+          "dur": 60,
+          "type": "Fitrace (COMMIT) Twan Kusters",
+          "level": ""
+        },
+        {
+          "id": "m25",
+          "day": 3,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Pilates (COMMIT) Nieske Koort",
+          "level": ""
+        },
+        {
+          "id": "m26",
+          "day": 3,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Strength Experienced (COMMIT) Twan Kusters",
+          "level": ""
+        },
+        {
+          "id": "m27",
+          "day": 3,
+          "time": "09:00",
+          "dur": 60,
+          "type": "BBB - buik, benen, billen (COMMIT) Nieske Koort",
+          "level": ""
+        },
+        {
+          "id": "m28",
+          "day": 3,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Yin Yoga (COMMIT) Sia Yang",
+          "level": ""
+        },
+        {
+          "id": "m29",
+          "day": 3,
+          "time": "11:00",
+          "dur": 60,
+          "type": "Flow Yoga (COMMIT) Sia Yang",
+          "level": ""
+        },
+        {
+          "id": "m30",
+          "day": 3,
+          "time": "16:00",
+          "dur": 60,
+          "type": "Fit 50 (COMMIT) Enya Hoogewoning",
+          "level": ""
+        },
+        {
+          "id": "m31",
+          "day": 3,
+          "time": "17:00",
+          "dur": 60,
+          "type": "Yin Yoga (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m32",
+          "day": 3,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Somatics (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m33",
+          "day": 3,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Restorative Yoga (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m34",
+          "day": 3,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Enya Hoogewoning",
+          "level": ""
+        },
+        {
+          "id": "m35",
+          "day": 4,
+          "time": "07:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Andy Hendrikx",
+          "level": ""
+        },
+        {
+          "id": "m36",
+          "day": 4,
+          "time": "08:00",
+          "dur": 60,
+          "type": "BBB - buik, benen, billen (COMMIT) Nieske Koort",
+          "level": ""
+        },
+        {
+          "id": "m37",
+          "day": 4,
+          "time": "08:45",
+          "dur": 60,
+          "type": "Pilates (COMMIT) Nieske Koort",
+          "level": ""
+        },
+        {
+          "id": "m38",
+          "day": 4,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Boksen Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m39",
+          "day": 4,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Twan Kusters",
+          "level": ""
+        },
+        {
+          "id": "m40",
+          "day": 4,
+          "time": "20:00",
+          "dur": 60,
+          "type": "BodyBalance (LesMills) Sharon van Tongeren",
+          "level": ""
+        },
+        {
+          "id": "m41",
+          "day": 5,
+          "time": "07:00",
+          "dur": 60,
+          "type": "Strength Experienced (COMMIT) Andy Hendrikx",
+          "level": ""
+        },
+        {
+          "id": "m42",
+          "day": 5,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Fit race (COMMIT) Andy Hendrikx",
+          "level": ""
+        },
+        {
+          "id": "m43",
+          "day": 5,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Fit 50 (COMMIT) Andy Hendrikx",
+          "level": ""
+        },
+        {
+          "id": "m44",
+          "day": 5,
+          "time": "10:30",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m45",
+          "day": 5,
+          "time": "11:30",
+          "dur": 60,
+          "type": "Booty and core class (COMMIT) Nathalie Poortvliet",
+          "level": ""
+        },
+        {
+          "id": "m46",
+          "day": 5,
+          "time": "16:20",
+          "dur": 60,
+          "type": "BodyPump (LesMills) Anneke Westerlaken (ZZP)",
+          "level": ""
+        },
+        {
+          "id": "m47",
+          "day": 5,
+          "time": "17:30",
+          "dur": 60,
+          "type": "Yin Yoga (COMMIT) Sia Yang",
+          "level": ""
+        },
+        {
+          "id": "m48",
+          "day": 5,
+          "time": "18:30",
+          "dur": 60,
+          "type": "Pilates (COMMIT) Sia Yang",
+          "level": ""
+        },
+        {
+          "id": "m49",
+          "day": 6,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m50",
+          "day": 6,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m51",
+          "day": 6,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Rosan Van Veldhuisen",
+          "level": ""
+        },
+        {
+          "id": "m52",
+          "day": 6,
+          "time": "11:30",
+          "dur": 60,
+          "type": "Yoga in het bos (Amelisweerd) Isa Kraai",
+          "level": ""
         }
       ]
     },
@@ -919,7 +1511,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-10T08:18:54.387Z",
+      "fetchedAt": "2026-06-10T08:28:00.514Z",
       "classes": [
         {
           "id": "t01",
@@ -932,21 +1524,13 @@
         {
           "id": "t02",
           "day": 0,
-          "time": "17:55",
-          "dur": 60,
-          "type": "* De bokszak trainingen worden in de Garage gegeven. We vertrekken om vanaf de voordeur van de dojo.",
-          "level": ""
-        },
-        {
-          "id": "t03",
-          "day": 0,
           "time": "19:15",
           "dur": 60,
           "type": "Kickboksen met circuit (geen sparren) Michael",
           "level": ""
         },
         {
-          "id": "t04",
+          "id": "t03",
           "day": 1,
           "time": "17:00",
           "dur": 60,
@@ -954,7 +1538,7 @@
           "level": ""
         },
         {
-          "id": "t05",
+          "id": "t04",
           "day": 1,
           "time": "17:00",
           "dur": 60,
@@ -962,7 +1546,7 @@
           "level": ""
         },
         {
-          "id": "t06",
+          "id": "t05",
           "day": 1,
           "time": "17:00",
           "dur": 60,
@@ -970,7 +1554,7 @@
           "level": ""
         },
         {
-          "id": "t07",
+          "id": "t06",
           "day": 1,
           "time": "17:00",
           "dur": 60,
@@ -978,11 +1562,19 @@
           "level": ""
         },
         {
-          "id": "t08",
+          "id": "t07",
           "day": 3,
           "time": "08:30",
           "dur": 60,
           "type": "Kickboksen Federico",
+          "level": ""
+        },
+        {
+          "id": "t08",
+          "day": 3,
+          "time": "08:30",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Jeroen",
           "level": ""
         },
         {
@@ -990,7 +1582,7 @@
           "day": 3,
           "time": "08:30",
           "dur": 60,
-          "type": "Techniek (geen sparren) Jeroen",
+          "type": "Techniek (geen sparren) Maud",
           "level": ""
         },
         {
@@ -998,19 +1590,11 @@
           "day": 3,
           "time": "08:30",
           "dur": 60,
-          "type": "Techniek (geen sparren) Maud",
-          "level": ""
-        },
-        {
-          "id": "t11",
-          "day": 3,
-          "time": "08:30",
-          "dur": 60,
           "type": "Kickboksen (bij goed weer in het Griftpark) Ingmar",
           "level": ""
         },
         {
-          "id": "t12",
+          "id": "t11",
           "day": 3,
           "time": "09:00",
           "dur": 60,
@@ -1018,7 +1602,7 @@
           "level": ""
         },
         {
-          "id": "t13",
+          "id": "t12",
           "day": 3,
           "time": "09:00",
           "dur": 60,
@@ -1026,7 +1610,7 @@
           "level": ""
         },
         {
-          "id": "t14",
+          "id": "t13",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1034,7 +1618,7 @@
           "level": ""
         },
         {
-          "id": "t15",
+          "id": "t14",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1042,7 +1626,7 @@
           "level": ""
         },
         {
-          "id": "t16",
+          "id": "t15",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1050,7 +1634,7 @@
           "level": ""
         },
         {
-          "id": "t17",
+          "id": "t16",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1058,7 +1642,7 @@
           "level": ""
         },
         {
-          "id": "t18",
+          "id": "t17",
           "day": 3,
           "time": "19:30",
           "dur": 60,
@@ -1066,7 +1650,7 @@
           "level": ""
         },
         {
-          "id": "t19",
+          "id": "t18",
           "day": 4,
           "time": "10:15",
           "dur": 60,
@@ -1074,7 +1658,7 @@
           "level": ""
         },
         {
-          "id": "t20",
+          "id": "t19",
           "day": 4,
           "time": "18:15",
           "dur": 60,
@@ -1082,7 +1666,7 @@
           "level": ""
         },
         {
-          "id": "t21",
+          "id": "t20",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -1090,7 +1674,7 @@
           "level": ""
         },
         {
-          "id": "t22",
+          "id": "t21",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -1098,7 +1682,7 @@
           "level": ""
         },
         {
-          "id": "t23",
+          "id": "t22",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -1106,7 +1690,7 @@
           "level": ""
         },
         {
-          "id": "t24",
+          "id": "t23",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1114,7 +1698,7 @@
           "level": ""
         },
         {
-          "id": "t25",
+          "id": "t24",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1122,7 +1706,7 @@
           "level": ""
         },
         {
-          "id": "t26",
+          "id": "t25",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1130,7 +1714,7 @@
           "level": ""
         },
         {
-          "id": "t27",
+          "id": "t26",
           "day": 6,
           "time": "19:00",
           "dur": 60,
