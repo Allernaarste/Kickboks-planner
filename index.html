@@ -188,6 +188,8 @@ body{
   padding:2px 7px;border-radius:9px;text-transform:uppercase;
   flex-shrink:0;
 }
+.sl-sub{font-size:11px;color:var(--l3);display:block;margin-top:1px}
+.sl-live{color:var(--green)} .sl-stale{color:var(--orange)}
 .time-tag{text-align:right}
 .time-tag .t{font-size:18px;font-weight:700;line-height:1}
 .time-tag .d{font-size:11px;color:var(--l3)}
@@ -358,35 +360,7 @@ body{
   <div style="padding:8px 16px 0;max-width:580px;margin:0 auto">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--l3);padding:8px 0 8px">Roosters bekijken</div>
   </div>
-  <div class="school-links">
-    <a class="sl-item" href="https://thecolosseum.nl/en/rooster/" target="_blank">
-      <div class="sl-dot" style="background:var(--col)"></div>
-      <span class="sl-name">The Colosseum</span>
-      <span class="sl-wk">💼 Workit</span>
-      <span class="sl-arr">›</span>
-    </a>
-    <a class="sl-item" href="https://sbgym.nl/lesrooster/" target="_blank">
-      <div class="sl-dot" style="background:var(--sb)"></div>
-      <span class="sl-name">SB Gym</span>
-      <span class="sl-arr">›</span>
-    </a>
-    <a class="sl-item" href="https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/" target="_blank">
-      <div class="sl-dot" style="background:var(--com)"></div>
-      <span class="sl-name">Commit Rivierenwijk</span>
-      <span class="sl-wk">💼 Workit</span>
-      <span class="sl-arr">›</span>
-    </a>
-    <a class="sl-item" href="https://impactfit.nl/lesrooster/" target="_blank">
-      <div class="sl-dot" style="background:var(--if)"></div>
-      <span class="sl-name">Impact Fit</span>
-      <span class="sl-arr">›</span>
-    </a>
-    <a class="sl-item" href="https://tigersgym.nl/" target="_blank">
-      <div class="sl-dot" style="background:var(--tig)"></div>
-      <span class="sl-name">Tigers Gym</span>
-      <span class="sl-arr">›</span>
-    </a>
-  </div>
+  <div class="school-links" id="schoolLinks"></div>
 </div>
 
 <!-- ═══ NAV ═══ -->
@@ -609,6 +583,24 @@ function renderPlan() {
   cont.innerHTML = html;
 }
 
+// ── RENDER SCHOOL LINKS ──────────────────────────────────────────
+function renderLinks() {
+  const colors = { col:'var(--col)', sb:'var(--sb)', com:'var(--com)', if:'var(--if)', tig:'var(--tig)' };
+  document.getElementById('schoolLinks').innerHTML = Object.entries(SK).map(([k, key]) => {
+    const sc = SCHOOLS[key];
+    if (!sc) return '';
+    const status = sc.live
+      ? `<span class="sl-live">● Live rooster</span>${sc.fetchedAt ? ' · ' + new Date(sc.fetchedAt).toLocaleDateString('nl-NL',{day:'numeric',month:'short'}) : ''}`
+      : `<span class="sl-stale">● Laatst bekende rooster</span>`;
+    return `<a class="sl-item" href="${sc.url}" target="_blank">
+      <div class="sl-dot" style="background:${colors[k]}"></div>
+      <span class="sl-name">${sc.name}<span class="sl-sub">${status}</span></span>
+      ${sc.workit ? '<span class="sl-wk">💼 Workit</span>' : ''}
+      <span class="sl-arr">›</span>
+    </a>`;
+  }).join('');
+}
+
 // ── ICS ──────────────────────────────────────────────────────────
 function toCalendar(id) {
   const c = cls(id); if (!c) return;
@@ -680,9 +672,11 @@ async function loadSchedules() {
   SCHOOLS = data.schools;
   updatedAt = data.updated;
   const d = new Date(updatedAt);
-  const n = Object.keys(SCHOOLS).length;
+  const all  = Object.values(SCHOOLS);
+  const live = all.filter(s => s.live).length;
   document.getElementById('hdrSub').textContent =
-    `${n} gyms in Utrecht  ·  bijgewerkt ${d.toLocaleDateString('nl-NL',{day:'numeric',month:'short'})}`;
+    `${all.length} gyms in Utrecht  ·  ${live}/${all.length} live  ·  bijgewerkt ${d.toLocaleDateString('nl-NL',{day:'numeric',month:'short'})}`;
+  renderLinks();
 }
 
 async function doRefresh() {

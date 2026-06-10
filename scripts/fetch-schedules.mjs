@@ -1,55 +1,34 @@
 /**
  * fetch-schedules.mjs
- * Haalt roosters op via Playwright + stealth-modus (omzeilt bot-detectie).
+ * Haalt roosters live op via Playwright + stealth-modus.
  *
- * The Colosseum  → thecolosseum.nl/en/rooster/
- * SB Gym         → sbgym.nl/lesrooster/  (Virtuagym embed)
- * Commit         → commit-i-do.com/…/groepslessen-rivierenwijk/  (Virtuagym embed)
- * Impact Fit     → impactfit.nl/lesrooster/
- * Tigers Gym     → tigersgym.nl
+ * Werkwijze per gym:
+ *  1. Laad de roosterpagina en vang ÁLLE JSON-responses op (ook uit iframes).
+ *     Virtuagym/booking-widgets laden hun rooster via zo'n API-call.
+ *  2. Herken les-achtige objecten heuristisch (naam + tijd/datum) — geen
+ *     fragiele URL-patronen.
+ *  3. Geen API-data? DOM-scraping over álle frames (tabel / divs / tekst).
+ *  4. Nog niets? Volg automatisch links op de pagina naar rooster/lesrooster
+ *     en probeer het daar opnieuw ("actief zoeken").
+ *
+ * Validatie: een rooster telt pas als live bij ≥ MIN_CLASSES lessen op
+ * ≥ MIN_DAYS verschillende dagen. Anders blijft het laatst bekende rooster
+ * staan en wordt de gym gemarkeerd met live:false zodat de app dit toont.
  */
 
 import { chromium } from 'playwright-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
+import {
+  parseDay, parseTime, parseDateTime, parseDur,
+  classFromObject, extractClassesFromJSON,
+  dedupe, isValidSchedule, finishClasses,
+} from './lib/parse.mjs';
 
 chromium.use(StealthPlugin());
 
-const OUTPUT  = 'schedules.json';
-const DEBUG   = process.env.DEBUG_SCHEDULES === '1';
-
-// ── Helpers ────────────────────────────────────────────────────────
-
-const DAY_MAP = {
-  zo:0, su:0, zondag:0, sunday:0,
-  ma:1, mo:1, maandag:1, monday:1,
-  di:2, tu:2, dinsdag:2, tuesday:2,
-  wo:3, we:3, woensdag:3, wednesday:3,
-  do:4, th:4, donderdag:4, thursday:4,
-  vr:5, fr:5, vrijdag:5, friday:5,
-  za:6, sa:6, zaterdag:6, saturday:6,
-};
-
-function parseDay(s) {
-  if (s == null) return null;
-  const key = String(s).trim().toLowerCase().replace(/[^a-z]/g, '');
-  for (const [k, v] of Object.entries(DAY_MAP)) {
-    if (key.startsWith(k)) return v;
-  }
-  return null;
-}
-
-function parseTime(s) {
-  if (!s) return null;
-  const m = String(s).match(/(\d{1,2})[:\.](\d{2})/);
-  return m ? `${m[1].padStart(2,'0')}:${m[2]}` : null;
-}
-
-function parseDur(s) {
-  if (!s) return 60;
-  const m = String(s).match(/(\d+)/);
-  return m ? +m[1] : 60;
-}
+const OUTPUT      = 'schedules.json';
+const DEBUG       = process.env.DEBUG_SCHEDULES === '1';
 
 function loadOld() {
   if (existsSync(OUTPUT)) {
@@ -58,421 +37,312 @@ function loadOld() {
   return null;
 }
 
-async function newPage(browser, url) {
-  const page = await browser.newPage();
-  await page.setExtraHTTPHeaders({ 'Accept-Language': 'nl-NL,nl;q=0.9,en;q=0.8' });
-  await page.setViewportSize({ width: 1280, height: 800 });
+const SCHOOLS = [
+  {
+    key: 'colosseum', prefix: 'c',
+    name: 'The Colosseum',
+    url:  'https://thecolosseum.nl/rooster/',
+    altUrls: ['https://thecolosseum.nl/en/rooster/'],
+    addr: 'Utrecht',
+    workit: true,
+    workitUrl: 'https://workit.nl/locaties/4251-the-colosseum-gym',
+  },
+  {
+    key: 'sbgym', prefix: 's',
+    name: 'SB Gym',
+    url:  'https://sbgym.nl/lesrooster/',
+    altUrls: ['https://sbgym.nl/rooster/'],
+    addr: 'Utrecht',
+    workit: true,
+  },
+  {
+    key: 'commit', prefix: 'm',
+    name: 'Commit Rivierenwijk',
+    url:  'https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/',
+    altUrls: [],
+    addr: 'Amaliadwarsstraat 2A, Utrecht',
+    workit: true,
+    workitUrl: 'https://workit.nl/locaties/4317-commit-rivierenwijk',
+  },
+  {
+    key: 'impactfit', prefix: 'i',
+    name: 'Impact Fit',
+    url:  'https://impactfit.nl/lesrooster/',
+    altUrls: ['https://impactfit.nl/'],
+    addr: 'Utrecht',
+    workit: false,
+  },
+  {
+    key: 'tigers', prefix: 't',
+    name: 'Tigers Gym',
+    url:  'https://tigersgym.nl/',
+    altUrls: [],
+    addr: 'Kroonstraat 9, Utrecht',
+    workit: false,
+  },
+];
+
+// ── DOM-scraping (alle frames) ─────────────────────────────────────
+
+async function scrapeFrameDOM(frame) {
   try {
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 45_000 });
-    // Cookie-banner wegklikken (veelgebruikte knoppen)
-    for (const sel of [
-      'button[id*="accept"]', 'button[class*="accept"]', 'button[class*="cookie"]',
-      '#onetrust-accept-btn-handler', '.cookie-accept', '[data-accept-cookies]',
-      'a[href*="accept"]', 'button:has-text("Accepteren")', 'button:has-text("Accept")',
-      'button:has-text("Akkoord")', 'button:has-text("OK")',
-    ]) {
-      try {
-        const btn = page.locator(sel).first();
-        if (await btn.isVisible({ timeout: 1500 })) {
-          await btn.click();
-          await page.waitForTimeout(500);
-          break;
-        }
-      } catch(_) {}
-    }
-    await page.waitForTimeout(2000);
-  } catch(e) {
-    console.warn(`  Laadwaarschuwing (${url}): ${e.message}`);
-  }
-  return page;
-}
+    return await frame.evaluate(() => {
+      const DAYS = {
+        zondag:0,sunday:0,zo:0, maandag:1,monday:1,ma:1, dinsdag:2,tuesday:2,di:2,
+        woensdag:3,wednesday:3,wo:3, donderdag:4,thursday:4,do:4,
+        vrijdag:5,friday:5,vr:5, zaterdag:6,saturday:6,za:6,
+      };
+      const dayOf = t => {
+        const k = String(t ?? '').toLowerCase().trim();
+        for (const [w, n] of Object.entries(DAYS)) if (k === w || k.startsWith(w + ' ') || k.startsWith(w + ',')) return n;
+        for (const [w, n] of Object.entries(DAYS)) if (w.length > 2 && k.includes(w)) return n;
+        return null;
+      };
+      const out = [];
 
-// ── Virtuagym-intercept ────────────────────────────────────────────
-
-function virtuagymFromJSON(items, prefix) {
-  const result = [];
-  let i = 0;
-  for (const item of items) {
-    const day = parseDay(
-      item.day_of_week ?? item.day ?? item.weekday ?? item.start_day ?? ''
-    );
-    let time = parseTime(item.start_time ?? item.time ?? item.begin ?? '');
-    // Soms is start_time een Unix-timestamp of ISO-datum
-    if (!time && item.start_time) {
-      const d = new Date(typeof item.start_time === 'number'
-        ? item.start_time * 1000
-        : item.start_time);
-      if (!isNaN(d)) {
-        time = `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
-        const resolvedDay = d.getDay();
-        if (day === null) {
-          result.push({
-            id: `${prefix}${++i}`,
-            day: resolvedDay, time,
-            dur: parseDur(item.duration ?? item.length ?? 60),
-            type: String(item.name ?? item.activity_name ?? item.class_name ?? item.title ?? 'Les').trim(),
-            level: String(item.level ?? item.difficulty ?? '').trim(),
+      // 1. Tabellen: rij per les of kolom per dag
+      document.querySelectorAll('table').forEach(table => {
+        const headers = [...table.querySelectorAll('thead th, tr:first-child th, tr:first-child td')]
+          .map(c => c.innerText.trim());
+        const headerDays = headers.map(dayOf);
+        const rows = [...table.querySelectorAll('tr')];
+        rows.forEach(tr => {
+          const cells = [...tr.querySelectorAll('td,th')];
+          // rij-vorm: [dag, tijd, les, ...]
+          const rowDay = dayOf(cells[0]?.innerText);
+          const rowTime = cells.map(c => c.innerText).map(t => (t.match(/\b\d{1,2}[:.]\d{2}\b/) || [])[0]).find(Boolean);
+          if (rowDay != null && rowTime) {
+            const name = cells.map(c => c.innerText.trim())
+              .find(t => t.length > 2 && !/^\d{1,2}[:.]\d{2}/.test(t) && dayOf(t) == null);
+            if (name) out.push({ day: rowDay, time: rowTime, name, via: 'table-row' });
+            return;
+          }
+          // kolom-vorm: kolomkop = dag
+          cells.forEach((cell, ci) => {
+            const d = headerDays[ci];
+            if (d == null) return;
+            const txt = cell.innerText.trim();
+            const times = txt.match(/\b\d{1,2}[:.]\d{2}\b/g);
+            if (!times) return;
+            txt.split('\n').forEach(line => {
+              const tm = line.match(/\b(\d{1,2}[:.]\d{2})\b/);
+              if (!tm) return;
+              const name = line.replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?/g, '').replace(/[|·•]/g, ' ').trim();
+              out.push({ day: d, time: tm[1], name: name || null, via: 'table-col' });
+            });
           });
-          continue;
+        });
+      });
+
+      // 2. Dag-containers met les-items
+      document.querySelectorAll('[class*="day"],[class*="rooster"],[class*="schedule"],[class*="timetable"],[class*="weekday"]').forEach(container => {
+        const title = container.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="header"],[class*="day-name"],[class*="dayname"]')?.innerText ?? container.getAttribute('data-day') ?? '';
+        const d = dayOf(title);
+        if (d == null) return;
+        container.querySelectorAll('*').forEach(item => {
+          if (item.children.length > 3) return;
+          const text = item.innerText?.trim() ?? '';
+          if (text.length < 5 || text.length > 120) return;
+          const tm = text.match(/\b(\d{1,2}[:.]\d{2})\b/);
+          if (!tm) return;
+          const name = text.replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?/g, '').replace(/\n/g, ' ').trim();
+          if (name) out.push({ day: d, time: tm[1], name, via: 'day-container' });
+        });
+      });
+
+      // 3. Platte paginatekst: dagkop gevolgd door tijdregels
+      if (out.length === 0) {
+        const lines = (document.body?.innerText ?? '').split('\n').map(l => l.trim()).filter(Boolean);
+        let cur = null;
+        for (const line of lines) {
+          const d = dayOf(line);
+          if (d != null && line.length < 30) { cur = d; continue; }
+          if (cur == null) continue;
+          const tm = line.match(/\b(\d{1,2}[:.]\d{2})\b/);
+          if (!tm) continue;
+          const name = line.replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?/g, '').replace(/[|·•]/g, ' ').trim();
+          if (name && name.length > 1) out.push({ day: cur, time: tm[1], name, via: 'text' });
         }
       }
-    }
-    if (day === null || !time) continue;
-    result.push({
-      id: `${prefix}${++i}`,
-      day, time,
-      dur: parseDur(item.duration ?? item.length ?? 60),
-      type: String(item.name ?? item.activity_name ?? item.class_name ?? item.title ?? 'Les').trim(),
-      level: String(item.level ?? item.difficulty ?? '').trim(),
+      return out;
     });
+  } catch (_) {
+    return [];
   }
-  return result;
 }
 
-async function fetchVirtuagym(browser, pageUrl, prefix, schoolName) {
-  console.log(`\n[${schoolName}] Ophalen: ${pageUrl}`);
-  const captured = [];
+// ── Pagina bezoeken: JSON vangen + DOM scrapen ─────────────────────
 
-  const page = await browser.newPage();
-  await page.setExtraHTTPHeaders({ 'Accept-Language': 'nl-NL,nl;q=0.9' });
-  await page.setViewportSize({ width: 1280, height: 800 });
-
+async function visit(context, url, school, jsonBag) {
+  const page = await context.newPage();
   page.on('response', async resp => {
-    const url = resp.url();
-    const ct  = resp.headers()['content-type'] ?? '';
-    if (!ct.includes('json')) return;
-    if (!url.match(/groupclass|schedule|planning|classes|groepslessen/i)) return;
     try {
-      const json = await resp.json();
-      const list = json?.data ?? json?.classes ?? json?.result ?? json?.items
-                   ?? json?.group_classes ?? (Array.isArray(json) ? json : null);
-      if (list?.length) {
-        console.log(`  ✓ API-response gevangen: ${url} (${list.length} items)`);
-        captured.push(...list);
-      }
-    } catch(_) {}
+      const ct = resp.headers()['content-type'] ?? '';
+      if (!ct.includes('json')) return;
+      const json = await resp.json().catch(() => null);
+      if (json == null) return;
+      jsonBag.push({ url: resp.url(), json });
+    } catch (_) {}
   });
 
   try {
-    await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: 45_000 });
-    // Cookie-banner
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45_000 });
+    await page.waitForLoadState('networkidle', { timeout: 20_000 }).catch(() => {});
+    // Cookie-banners
     for (const sel of [
-      'button[id*="accept"]', '#onetrust-accept-btn-handler',
-      'button:has-text("Accepteren")', 'button:has-text("Accept")',
-      'button:has-text("Akkoord")', '.cookie-accept',
+      '#onetrust-accept-btn-handler', 'button[id*="accept"]', 'button[class*="accept"]',
+      'button:has-text("Accepteren")', 'button:has-text("Accept")', 'button:has-text("Akkoord")',
+      '.cookie-accept', '[data-accept-cookies]',
     ]) {
       try {
         const btn = page.locator(sel).first();
-        if (await btn.isVisible({ timeout: 1500 })) { await btn.click(); break; }
-      } catch(_) {}
+        if (await btn.isVisible({ timeout: 1200 })) { await btn.click(); await page.waitForTimeout(400); break; }
+      } catch (_) {}
     }
-    // Scroll om lazy-load te triggeren
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await page.waitForTimeout(3000);
-    // Volgende week ook laden (soms worden alleen huidige-week calls gemaakt)
-    await page.evaluate(() => {
-      const btns = [...document.querySelectorAll('button,a')];
-      const next = btns.find(b => /volgende|next|>/i.test(b.innerText ?? b.getAttribute('aria-label') ?? ''));
-      if (next) next.click();
-    });
-    await page.waitForTimeout(2000);
-  } catch(e) {
-    console.warn(`  Laadwaarschuwing: ${e.message}`);
+    // Lazy-load triggeren en widgets tijd geven
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)).catch(() => {});
+    await page.waitForTimeout(5000);
+  } catch (e) {
+    console.warn(`  ! laadprobleem ${url}: ${e.message.split('\n')[0]}`);
   }
+
+  // Frames loggen + DOM-scrapen
+  const frames = page.frames();
+  console.log(`  frames: ${frames.length} → ${frames.map(f => f.url().slice(0, 90)).join(' | ')}`);
+  let domRows = [];
+  for (const f of frames) {
+    const rows = await scrapeFrameDOM(f);
+    if (rows.length) console.log(`  DOM ${f === page.mainFrame() ? 'main' : 'iframe'} (${f.url().slice(0,60)}): ${rows.length} rijen via ${[...new Set(rows.map(r => r.via))].join(',')}`);
+    domRows.push(...rows);
+  }
+
+  // Links naar rooster-pagina's verzamelen (voor actief doorzoeken)
+  const links = await page.evaluate(() =>
+    [...document.querySelectorAll('a[href]')]
+      .map(a => a.href)
+      .filter(h => /rooster|lesrooster|schedule|timetable|groepsles|planning/i.test(h))
+  ).catch(() => []);
 
   if (DEBUG) {
     try {
       mkdirSync('debug-output', { recursive: true });
-      await page.screenshot({ path: `debug-output/${prefix}-virtuagym.png`, fullPage: true });
-    } catch(_) {}
+      const tag = `${school.key}-${url.replace(/[^a-z0-9]+/gi, '_').slice(0, 60)}`;
+      await page.screenshot({ path: `debug-output/${tag}.png`, fullPage: true });
+      writeFileSync(`debug-output/${tag}.html`, await page.content());
+    } catch (_) {}
   }
   await page.close();
-
-  if (captured.length > 0) {
-    const classes = virtuagymFromJSON(captured, prefix);
-    console.log(`  → ${classes.length} lessen geparseerd`);
-    return classes;
-  }
-
-  // DOM-fallback
-  console.log(`  → Geen API-data. Probeer DOM-scraping…`);
-  return scrapeVirtuagymDOM(browser, pageUrl, prefix, schoolName);
+  return { domRows, links };
 }
 
-async function scrapeVirtuagymDOM(browser, pageUrl, prefix, schoolName) {
-  const page = await newPage(browser, pageUrl);
-  try {
-    const rows = await page.evaluate(() => {
-      const out = [];
-      const sels = [
-        '.group-class-item', '.class-item', '.schedule-item', '.lesson-item',
-        '[class*="group-class"]', '[class*="class-block"]', '[class*="schedule-row"]',
-        '[data-activity-id]', '[class*="booking-item"]', 'li[class*="class"]',
-      ];
-      for (const sel of sels) {
-        const nodes = [...document.querySelectorAll(sel)];
-        if (!nodes.length) continue;
-        nodes.forEach(n => {
-          const text = n.innerText ?? '';
-          const timeM = text.match(/\b(\d{1,2}[:.]\d{2})\b/);
-          const dayEl  = n.closest('[class*="day"]') ?? n.querySelector('[class*="day"],[class*="datum"]');
-          const nameEl = n.querySelector('[class*="name"],[class*="title"],h3,h4,strong');
-          out.push({
-            raw:  text.trim().slice(0, 300),
-            time: timeM?.[1] ?? null,
-            day:  dayEl?.innerText?.trim() ?? null,
-            name: nameEl?.innerText?.trim() ?? null,
-          });
-        });
-        if (out.length) break;
-      }
-      return out;
+
+async function fetchSchool(context, school) {
+  console.log(`\n[${school.key}] ${school.url}`);
+  const jsonBag = [];
+  const tried = new Set();
+  let domRows = [];
+  let pendingLinks = [school.url, ...(school.altUrls ?? [])];
+
+  for (let round = 0; round < 3 && pendingLinks.length; round++) {
+    const url = pendingLinks.shift();
+    if (tried.has(url)) continue;
+    tried.add(url);
+
+    const res = await visit(context, url, school, jsonBag);
+    domRows.push(...res.domRows);
+
+    // JSON-kandidaten evalueren
+    const fromJson = jsonBag.flatMap(({ url: ju, json }) => {
+      const cls = extractClassesFromJSON(json);
+      if (cls.length) console.log(`  ✓ JSON-bron: ${ju.slice(0, 100)} → ${cls.length} lessen`);
+      return cls;
     });
-
-    const classes = rows
-      .filter(r => r.time)
-      .map((r, i) => ({
-        id:    `${prefix}${i + 1}`,
-        day:   parseDay(r.day) ?? 1,
-        time:  parseTime(r.time) ?? '18:00',
-        dur:   60,
-        type:  r.name ?? r.raw.split('\n')[0].trim().slice(0, 40),
-        level: '',
-      }));
-    console.log(`  → DOM-scraping: ${classes.length} rijen`);
-    return classes;
-  } finally {
-    await page.close();
-  }
-}
-
-// ── Generiek weekrooster (tabel / divs / paginatekst) ─────────────
-
-async function fetchTimetable(browser, pageUrl, prefix, schoolName) {
-  console.log(`\n[${schoolName}] Ophalen: ${pageUrl}`);
-  const page = await newPage(browser, pageUrl);
-  const classes = [];
-
-  try {
-    // Strategie 1: tabel
-    const tableRows = await page.evaluate(() => {
-      const rows = [];
-      document.querySelectorAll('table tr').forEach(tr => {
-        const cells = [...tr.querySelectorAll('td,th')].map(c => c.innerText.trim());
-        if (cells.length >= 2) rows.push(cells);
-      });
-      return rows;
-    });
-
-    const DAY_LOOKUP = {
-      maandag:1,monday:1,dinsdag:2,tuesday:2,woensdag:3,wednesday:3,
-      donderdag:4,thursday:4,vrijdag:5,friday:5,zaterdag:6,saturday:6,zondag:0,sunday:0,
-    };
-
-    if (tableRows.length > 1) {
-      let idN = 1;
-      // Detecteer kolomindex
-      const header = tableRows[0].map(h => h.toLowerCase());
-      const dayCol  = header.findIndex(h => /dag|day/i.test(h));
-      const timeCol = header.findIndex(h => /tijd|time|start/i.test(h));
-      const typeCol = header.findIndex(h => /les|type|class|training|naam|name/i.test(h));
-      const durCol  = header.findIndex(h => /duur|dur|min/i.test(h));
-      const lvlCol  = header.findIndex(h => /niveau|level/i.test(h));
-
-      if (dayCol >= 0 && timeCol >= 0) {
-        for (const row of tableRows.slice(1)) {
-          const day  = parseDay(row[dayCol]);
-          const time = parseTime(row[timeCol]);
-          if (day === null || !time) continue;
-          classes.push({
-            id:    `${prefix}${idN++}`,
-            day, time,
-            dur:   durCol >= 0 ? parseDur(row[durCol]) : 60,
-            type:  typeCol >= 0 ? row[typeCol] : row.find(c => c.length > 2 && !/\d{1,2}:\d{2}/.test(c)) ?? 'Les',
-            level: lvlCol >= 0 ? row[lvlCol] : 'Alle niveaus',
-          });
-        }
-      } else {
-        // Probeer kolom 0 = dag, kolom 1 = tijd, kolom 2 = type
-        for (const row of tableRows.slice(1)) {
-          const day  = parseDay(row[0]);
-          const time = parseTime(row[1] ?? '');
-          if (day === null || !time) continue;
-          classes.push({
-            id:    `${prefix}${classes.length + 1}`,
-            day, time,
-            dur:   row[3] ? parseDur(row[3]) : 60,
-            type:  row[2] ?? 'Les',
-            level: row[4] ?? 'Alle niveaus',
-          });
-        }
-      }
+    const jsonClasses = finishClasses(fromJson, school.prefix);
+    if (isValidSchedule(jsonClasses)) {
+      console.log(`  → live via API: ${jsonClasses.length} lessen`);
+      return { classes: jsonClasses, live: true, source: 'api' };
     }
 
-    // Strategie 2: div-gebaseerd rooster (WordPress timetable plugins)
-    if (classes.length === 0) {
-      const divData = await page.evaluate(() => {
-        const DAYS = {
-          maandag:1,monday:1,dinsdag:2,tuesday:2,woensdag:3,wednesday:3,
-          donderdag:4,thursday:4,vrijdag:5,friday:5,zaterdag:6,saturday:6,zondag:0,sunday:0,
-        };
-        const out = [];
-        const containers = document.querySelectorAll(
-          '[class*="day"],[class*="rooster"],[class*="schedule"],[class*="timetable"],[class*="weekday"]'
-        );
-        containers.forEach(container => {
-          const title = (container.querySelector('h2,h3,h4,[class*="title"],[class*="day-name"]')?.innerText ?? '').toLowerCase();
-          let dayNum = null;
-          for (const [k, v] of Object.entries(DAYS)) {
-            if (title.includes(k)) { dayNum = v; break; }
-          }
-          if (dayNum === null) return;
-          container.querySelectorAll('[class*="les"],[class*="class"],[class*="item"],[class*="training"]').forEach(item => {
-            const text = item.innerText.trim();
-            const timeM = text.match(/\b(\d{1,2}[:.]\d{2})\b/);
-            if (!timeM) return;
-            out.push({ day: dayNum, time: timeM[1], text });
-          });
-        });
-        return out;
-      });
-
-      let idN = 1;
-      for (const row of divData) {
-        const time = parseTime(row.time);
-        if (!time) continue;
-        const lines = row.text.split('\n').map(l => l.trim()).filter(Boolean);
-        classes.push({
-          id:    `${prefix}${idN++}`,
-          day:   row.day,
-          time,
-          dur:   60,
-          type:  lines.find(l => !/\d{1,2}[:.]\d{2}/.test(l)) ?? 'Les',
-          level: 'Alle niveaus',
-        });
-      }
+    const domClasses = finishClasses(domRows, school.prefix);
+    if (isValidSchedule(domClasses)) {
+      console.log(`  → live via DOM: ${domClasses.length} lessen`);
+      return { classes: domClasses, live: true, source: 'dom' };
     }
 
-    // Strategie 3: volledige paginatekst → regelmatig patroon zoeken
-    if (classes.length === 0) {
-      const text = await page.evaluate(() => document.body.innerText);
-      const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
-      const DAY_WORDS = ['maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag','zondag',
-                         'monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
-      let currentDay = -1;
-      let idN = 1;
-      for (const line of lines) {
-        const lw = line.toLowerCase();
-        const dw = DAY_WORDS.find(d => lw.startsWith(d) || lw === d);
-        if (dw) { currentDay = parseDay(dw); continue; }
-        if (currentDay < 0) continue;
-        const time = parseTime(line);
-        if (!time) continue;
-        const rest = line.replace(/\d{1,2}[:.]\d{2}/, '').trim();
-        classes.push({
-          id: `${prefix}${idN++}`, day: currentDay, time, dur: 60,
-          type: rest || 'Les', level: 'Alle niveaus',
-        });
-      }
-    }
-
-    if (DEBUG) {
+    // Nog niets → rooster-links van deze pagina toevoegen (zelfde domein)
+    const host = new URL(school.url).host;
+    for (const l of res.links) {
       try {
-        mkdirSync('debug-output', { recursive: true });
-        await page.screenshot({ path: `debug-output/${prefix}-timetable.png`, fullPage: true });
-        writeFileSync(`debug-output/${prefix}-timetable.html`, await page.content());
-      } catch(_) {}
+        if (new URL(l).host === host && !tried.has(l)) pendingLinks.push(l);
+      } catch (_) {}
     }
-  } finally {
-    await page.close();
+    if (pendingLinks.length) console.log(`  … niets gevonden, probeer: ${pendingLinks[0]}`);
   }
 
-  console.log(`  → ${classes.length} lessen gevonden`);
-  return classes;
+  console.log(`  ✗ geen geldig rooster gevonden (json-responses: ${jsonBag.length}, dom-rijen: ${domRows.length})`);
+  if (DEBUG && jsonBag.length) {
+    console.log(`  JSON-urls gezien:`);
+    [...new Set(jsonBag.map(b => b.url))].slice(0, 15).forEach(u => console.log(`    - ${u.slice(0, 130)}`));
+  }
+  return { classes: [], live: false, source: null };
 }
 
 // ── Hoofd ──────────────────────────────────────────────────────────
 
 (async () => {
   const old = loadOld();
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({
+    headless: true,
+    args: ['--disable-blink-features=AutomationControlled', '--lang=nl-NL'],
+  });
+  const context = await browser.newContext({
+    locale: 'nl-NL',
+    timezoneId: 'Europe/Amsterdam',
+    viewport: { width: 1366, height: 900 },
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    extraHTTPHeaders: { 'Accept-Language': 'nl-NL,nl;q=0.9,en;q=0.8' },
+  });
 
-  let colosseumClasses, sbClasses, commitClasses, impactClasses, tigersClasses;
+  const schools = {};
+  let liveCount = 0;
 
   try {
-    [colosseumClasses, sbClasses, commitClasses, impactClasses, tigersClasses] = await Promise.all([
-      fetchTimetable(browser,
-        'https://thecolosseum.nl/en/rooster/',
-        'c', 'colosseum'),
-      fetchVirtuagym(browser,
-        'https://sbgym.nl/lesrooster/',
-        's', 'SB Gym'),
-      fetchVirtuagym(browser,
-        'https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/',
-        'm', 'Commit'),
-      fetchTimetable(browser,
-        'https://impactfit.nl/lesrooster/',
-        'i', 'Impact Fit'),
-      fetchTimetable(browser,
-        'https://tigersgym.nl/',
-        't', 'Tigers Gym'),
-    ]);
+    for (const school of SCHOOLS) {
+      const { classes, live, source } = await fetchSchool(context, school);
+      const oldSchool = old?.schools?.[school.key];
+      if (live) liveCount++;
+      schools[school.key] = {
+        name: school.name,
+        url:  school.url,
+        addr: school.addr,
+        workit: school.workit,
+        ...(school.workitUrl ? { workitUrl: school.workitUrl } : {}),
+        live,
+        source: live ? source : (oldSchool?.live ? 'stale' : null),
+        fetchedAt: live ? new Date().toISOString() : (oldSchool?.fetchedAt ?? null),
+        classes: live ? classes : (oldSchool?.classes ?? []),
+      };
+    }
   } finally {
     await browser.close();
   }
 
-  const fallback = (key, fresh) =>
-    fresh.length > 0 ? fresh : (old?.schools?.[key]?.classes ?? []);
-
   const result = {
     updated: new Date().toISOString(),
     note: 'Automatisch bijgewerkt door GitHub Actions',
-    schools: {
-      colosseum: {
-        name: 'The Colosseum',
-        url:  'https://thecolosseum.nl/en/rooster/',
-        addr: 'Utrecht',
-        workit: true,
-        workitUrl: 'https://workit.nl/locaties/4251-the-colosseum-gym',
-        classes: fallback('colosseum', colosseumClasses),
-      },
-      sbgym: {
-        name: 'SB Gym',
-        url:  'https://sbgym.nl/lesrooster/',
-        addr: 'Utrecht',
-        workit: false,
-        classes: fallback('sbgym', sbClasses),
-      },
-      commit: {
-        name: 'Commit Rivierenwijk',
-        url:  'https://www.commit-i-do.com/locaties/rivierenwijk/groepslessen-rivierenwijk/',
-        addr: 'Amaliadwarsstraat 2A, Utrecht',
-        workit: true,
-        workitUrl: 'https://workit.nl/locaties/4317-commit-rivierenwijk',
-        classes: fallback('commit', commitClasses),
-      },
-      impactfit: {
-        name: 'Impact Fit',
-        url:  'https://impactfit.nl/lesrooster/',
-        addr: 'Utrecht',
-        workit: false,
-        classes: fallback('impactfit', impactClasses),
-      },
-      tigers: {
-        name: 'Tigers Gym',
-        url:  'https://tigersgym.nl/',
-        addr: 'Kroonstraat 9, Utrecht',
-        workit: false,
-        classes: fallback('tigers', tigersClasses),
-      },
-    },
+    schools,
   };
 
   writeFileSync(OUTPUT, JSON.stringify(result, null, 2));
-  console.log(`\n✓ schedules.json geschreven (${new Date().toISOString()})`);
-  console.log(`  Colosseum:  ${result.schools.colosseum.classes.length} lessen`);
-  console.log(`  SB Gym:     ${result.schools.sbgym.classes.length} lessen`);
-  console.log(`  Commit:     ${result.schools.commit.classes.length} lessen`);
-  console.log(`  Impact Fit: ${result.schools.impactfit.classes.length} lessen`);
-  console.log(`  Tigers Gym: ${result.schools.tigers.classes.length} lessen`);
+  console.log(`\n✓ schedules.json geschreven — ${liveCount}/${SCHOOLS.length} gyms live`);
+  for (const s of SCHOOLS) {
+    const r = schools[s.key];
+    console.log(`  ${r.live ? '🟢' : '🔴'} ${s.name.padEnd(20)} ${String(r.classes.length).padStart(3)} lessen ${r.live ? `(live, ${r.source})` : '(laatst bekende rooster)'}`);
+  }
+
+  // Bij 0 live gyms: laat de workflow falen zodat dit zichtbaar is
+  if (liveCount === 0) {
+    console.error('\n✗ Geen enkele gym leverde live data — zie debug-output artifact.');
+    process.exit(1);
+  }
 })();

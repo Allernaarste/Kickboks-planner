@@ -2,7 +2,7 @@ name: Rooster ophalen
 
 on:
   schedule:
-    - cron: '0 4 * * 1'   # Elke maandag 06:00 NL (04:00 UTC)
+    - cron: '0 4 * * *'   # Dagelijks 06:00 NL (04:00 UTC)
   workflow_dispatch:        # Handmatig starten via GitHub-knop
 
 jobs:
@@ -24,12 +24,13 @@ jobs:
           npx playwright install --with-deps chromium
 
       - name: Haal roosters op
+        id: fetch
         run: node scripts/fetch-schedules.mjs
         env:
           DEBUG_SCHEDULES: '1'
         continue-on-error: true
 
-      - name: Upload debug-screenshots (bij fouten)
+      - name: Upload debug-screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -45,3 +46,9 @@ jobs:
           git add schedules.json
           git diff --staged --quiet || git commit -m "Rooster bijgewerkt $(date -u '+%d-%m-%Y')"
           git push
+
+      - name: Faal als geen enkele gym live data leverde
+        if: steps.fetch.outcome == 'failure'
+        run: |
+          echo "::error::Scraper kon voor geen enkele gym live data ophalen — zie rooster-debug artifact"
+          exit 1
