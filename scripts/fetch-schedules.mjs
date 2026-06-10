@@ -98,6 +98,27 @@ async function scrapeFrameDOM(frame) {
         for (const [w, n] of Object.entries(DAYS)) if (w.length > 2 && k.includes(w)) return n;
         return null;
       };
+      // Datum (dd-mm of dd/mm of "9 jun") → weekdag
+      const MONTHS = { jan:0,feb:1,mrt:2,mar:2,apr:3,mei:4,may:4,jun:5,jul:6,aug:7,sep:8,okt:9,oct:9,nov:10,dec:11 };
+      const dayOfDate = t => {
+        const k = String(t ?? '').toLowerCase();
+        let m = k.match(/\b(\d{1,2})[-\/](\d{1,2})(?:[-\/](\d{2,4}))?\b/);
+        if (m) {
+          const y = m[3] ? (+m[3] < 100 ? 2000 + +m[3] : +m[3]) : new Date().getFullYear();
+          const d = new Date(y, +m[2] - 1, +m[1]);
+          return isNaN(d) ? null : d.getDay();
+        }
+        m = k.match(/\b(\d{1,2})\s+(jan|feb|mrt|mar|apr|mei|may|jun|jul|aug|sep|okt|oct|nov|dec)/);
+        if (m) {
+          const d = new Date(new Date().getFullYear(), MONTHS[m[2]], +m[1]);
+          return isNaN(d) ? null : d.getDay();
+        }
+        return null;
+      };
+      // Openingstijden-regel: alleen een tijdsbereik, geen lesnaam
+      const isOpeningHours = t =>
+        /^[^0-9]*\d{1,2}[:.]\d{2}\s*[-–]\s*\d{1,2}[:.]\d{2}\s*(uur)?\s*$/i.test(String(t ?? '').trim()) ||
+        /geopend|gesloten|opening/i.test(String(t ?? ''));
       const out = [];
 
       // 1. Tabellen: rij per les of kolom per dag
@@ -108,23 +129,26 @@ async function scrapeFrameDOM(frame) {
         const rows = [...table.querySelectorAll('tr')];
         rows.forEach(tr => {
           const cells = [...tr.querySelectorAll('td,th')];
-          // rij-vorm: [dag, tijd, les, ...]
-          const rowDay = dayOf(cells[0]?.innerText);
-          const rowTime = cells.map(c => c.innerText).map(t => (t.match(/\b\d{1,2}[:.]\d{2}\b/) || [])[0]).find(Boolean);
+          // rij-vorm: [dag of datum, tijd, les, ...]
+          const rowText = cells.map(c => c.innerText.trim());
+          const rowDay = dayOf(rowText[0]) ?? rowText.map(dayOfDate).find(d => d != null) ?? null;
+          const rowTime = rowText.map(t => (t.match(/\b\d{1,2}[:.]\d{2}\b/) || [])[0]).find(Boolean);
           if (rowDay != null && rowTime) {
-            const name = cells.map(c => c.innerText.trim())
-              .find(t => t.length > 2 && !/^\d{1,2}[:.]\d{2}/.test(t) && dayOf(t) == null);
+            const name = rowText.find(t =>
+              t.length > 2 && !/^\d{1,2}[:.]\d{2}/.test(t) && dayOf(t) == null &&
+              dayOfDate(t) == null && !isOpeningHours(t) && !/^\d[\d\s\-\/:.]*$/.test(t));
             if (name) out.push({ day: rowDay, time: rowTime, name, via: 'table-row' });
             return;
           }
-          // kolom-vorm: kolomkop = dag
+          // kolom-vorm: kolomkop = dag(naam of datum), of cel begint zelf met datum
           cells.forEach((cell, ci) => {
-            const d = headerDays[ci];
-            if (d == null) return;
             const txt = cell.innerText.trim();
+            const d = headerDays[ci] ?? dayOfDate(headers[ci]) ?? dayOfDate(txt.split('\n')[0]);
+            if (d == null) return;
             const times = txt.match(/\b\d{1,2}[:.]\d{2}\b/g);
             if (!times) return;
             txt.split('\n').forEach(line => {
+              if (isOpeningHours(line)) return;
               const tm = line.match(/\b(\d{1,2}[:.]\d{2})\b/);
               if (!tm) return;
               const name = line.replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?/g, '').replace(/[|·•]/g, ' ').trim();
@@ -135,14 +159,14 @@ async function scrapeFrameDOM(frame) {
       });
 
       // 2. Dag-containers met les-items
-      document.querySelectorAll('[class*="day"],[class*="rooster"],[class*="schedule"],[class*="timetable"],[class*="weekday"]').forEach(container => {
+      document.querySelectorAll('[class*="day"],[class*="rooster"],[class*="schedule"],[class*="timetable"],[class*="weekday"],[data-day]').forEach(container => {
         const title = container.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="header"],[class*="day-name"],[class*="dayname"]')?.innerText ?? container.getAttribute('data-day') ?? '';
-        const d = dayOf(title);
+        const d = dayOf(title) ?? dayOfDate(title);
         if (d == null) return;
         container.querySelectorAll('*').forEach(item => {
           if (item.children.length > 3) return;
           const text = item.innerText?.trim() ?? '';
-          if (text.length < 5 || text.length > 120) return;
+          if (text.length < 5 || text.length > 120 || isOpeningHours(text)) return;
           const tm = text.match(/\b(\d{1,2}[:.]\d{2})\b/);
           if (!tm) return;
           const name = text.replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?/g, '').replace(/\n/g, ' ').trim();
@@ -155,9 +179,10 @@ async function scrapeFrameDOM(frame) {
         const lines = (document.body?.innerText ?? '').split('\n').map(l => l.trim()).filter(Boolean);
         let cur = null;
         for (const line of lines) {
-          const d = dayOf(line);
-          if (d != null && line.length < 30) { cur = d; continue; }
+          const d = dayOf(line) ?? dayOfDate(line.length < 30 ? line : '');
+          if (d != null && line.length < 30 && !/\d{1,2}[:.]\d{2}.*\d{1,2}[:.]\d{2}/.test(line)) { cur = d; continue; }
           if (cur == null) continue;
+          if (isOpeningHours(line)) continue;
           const tm = line.match(/\b(\d{1,2}[:.]\d{2})\b/);
           if (!tm) continue;
           const name = line.replace(/\d{1,2}[:.]\d{2}(\s*[-–]\s*\d{1,2}[:.]\d{2})?/g, '').replace(/[|·•]/g, ' ').trim();
@@ -202,18 +227,45 @@ async function visit(context, url, school, jsonBag) {
     // Lazy-load triggeren en widgets tijd geven
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)).catch(() => {});
     await page.waitForTimeout(5000);
+    // Rooster/lessen-tabs aanklikken (in hoofdframe én widget-frames)
+    for (const f of page.frames()) {
+      try {
+        await f.evaluate(() => {
+          const els = [...document.querySelectorAll('a,button,[role="tab"],[role="button"],li')];
+          const el = els.find(e => /^(rooster|lesrooster|lessen|classes|schedule|agenda|groepslessen)$/i
+            .test((e.innerText ?? '').trim()));
+          if (el) el.click();
+        });
+      } catch (_) {}
+    }
+    await page.waitForTimeout(3000);
   } catch (e) {
     console.warn(`  ! laadprobleem ${url}: ${e.message.split('\n')[0]}`);
   }
 
   // Frames loggen + DOM-scrapen
   const frames = page.frames();
-  console.log(`  frames: ${frames.length} → ${frames.map(f => f.url().slice(0, 90)).join(' | ')}`);
+  console.log(`  frames: ${frames.length}`);
+  frames.forEach(f => console.log(`    · ${f.url().slice(0, 200)}`));
   let domRows = [];
   for (const f of frames) {
     const rows = await scrapeFrameDOM(f);
     if (rows.length) console.log(`  DOM ${f === page.mainFrame() ? 'main' : 'iframe'} (${f.url().slice(0,60)}): ${rows.length} rijen via ${[...new Set(rows.map(r => r.via))].join(',')}`);
     domRows.push(...rows);
+  }
+
+  // Diagnose: tijd-regels per frame (eerste 25)
+  if (DEBUG) {
+    for (const f of frames) {
+      const lines = await f.evaluate(() =>
+        (document.body?.innerText ?? '').split('\n').map(l => l.trim())
+          .filter(l => /\d{1,2}[:.]\d{2}/.test(l)).slice(0, 25)
+      ).catch(() => []);
+      if (lines.length) {
+        console.log(`  tijdregels in ${f.url().slice(0, 80)}:`);
+        lines.forEach(l => console.log(`      | ${l.slice(0, 110)}`));
+      }
+    }
   }
 
   // Links naar rooster-pagina's verzamelen (voor actief doorzoeken)
@@ -231,9 +283,14 @@ async function visit(context, url, school, jsonBag) {
       writeFileSync(`debug-output/${tag}.html`, await page.content());
     } catch (_) {}
   }
+  const frameUrls = frames.map(f => f.url()).filter(u => u.startsWith('http'));
   await page.close();
-  return { domRows, links };
+  return { domRows, links, frameUrls };
 }
+
+// Widget-/rooster-iframes die het waard zijn om direct als pagina te openen
+const FRAME_FOLLOW   = /virtuagym|appybee|europewebcompany|sportbit|trainin|eversports|fitmanager|agenda|classes|schedule|rooster|widget/i;
+const FRAME_IGNORE   = /google|youtube|gtm|googletagmanager|facebook|hotjar|cookie|maps|recaptcha|vimeo|sw_iframe/i;
 
 
 async function fetchSchool(context, school) {
@@ -243,7 +300,7 @@ async function fetchSchool(context, school) {
   let domRows = [];
   let pendingLinks = [school.url, ...(school.altUrls ?? [])];
 
-  for (let round = 0; round < 3 && pendingLinks.length; round++) {
+  for (let round = 0; round < 6 && pendingLinks.length; round++) {
     const url = pendingLinks.shift();
     if (tried.has(url)) continue;
     tried.add(url);
@@ -251,21 +308,32 @@ async function fetchSchool(context, school) {
     const res = await visit(context, url, school, jsonBag);
     domRows.push(...res.domRows);
 
+    // Rooster-widget-iframes direct als pagina openen (hoogste prioriteit)
+    for (const fu of res.frameUrls) {
+      if (!tried.has(fu) && FRAME_FOLLOW.test(fu) && !FRAME_IGNORE.test(fu)) pendingLinks.unshift(fu);
+    }
+
     // JSON-kandidaten evalueren
     const fromJson = jsonBag.flatMap(({ url: ju, json }) => {
       const cls = extractClassesFromJSON(json);
       if (cls.length) console.log(`  ✓ JSON-bron: ${ju.slice(0, 100)} → ${cls.length} lessen`);
       return cls;
     });
+    const DAGEN = ['zo','ma','di','wo','do','vr','za'];
+    const sample = cls => cls.slice(0, 12).forEach(c =>
+      console.log(`    ${DAGEN[c.day]} ${c.time} ${c.type}${c.level ? ' ('+c.level+')' : ''}`));
+
     const jsonClasses = finishClasses(fromJson, school.prefix);
     if (isValidSchedule(jsonClasses)) {
       console.log(`  → live via API: ${jsonClasses.length} lessen`);
+      sample(jsonClasses);
       return { classes: jsonClasses, live: true, source: 'api' };
     }
 
     const domClasses = finishClasses(domRows, school.prefix);
     if (isValidSchedule(domClasses)) {
       console.log(`  → live via DOM: ${domClasses.length} lessen`);
+      sample(domClasses);
       return { classes: domClasses, live: true, source: 'dom' };
     }
 
@@ -280,9 +348,16 @@ async function fetchSchool(context, school) {
   }
 
   console.log(`  ✗ geen geldig rooster gevonden (json-responses: ${jsonBag.length}, dom-rijen: ${domRows.length})`);
-  if (DEBUG && jsonBag.length) {
-    console.log(`  JSON-urls gezien:`);
-    [...new Set(jsonBag.map(b => b.url))].slice(0, 15).forEach(u => console.log(`    - ${u.slice(0, 130)}`));
+  if (DEBUG) {
+    if (jsonBag.length) {
+      console.log(`  JSON-urls gezien:`);
+      [...new Set(jsonBag.map(b => b.url))].slice(0, 15).forEach(u => console.log(`    - ${u.slice(0, 130)}`));
+    }
+    if (domRows.length) {
+      console.log(`  voorbeeld dom-rijen (ruwe data, max 15):`);
+      domRows.slice(0, 15).forEach(r =>
+        console.log(`    [${r.via}] day=${r.day} time=${r.time} name=${JSON.stringify(String(r.name ?? '').slice(0, 50))}`));
+    }
   }
   return { classes: [], live: false, source: null };
 }
