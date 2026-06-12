@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-11T08:51:24.980Z",
+  "updated": "2026-06-12T08:29:27.378Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-11T08:47:56.853Z",
+      "fetchedAt": "2026-06-12T08:26:46.669Z",
       "classes": [
         {
           "id": "c01",
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-11T08:48:09.126Z",
+      "fetchedAt": "2026-06-12T08:26:58.530Z",
       "classes": [
         {
           "id": "s01",
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-11T08:48:39.526Z",
+      "fetchedAt": "2026-06-12T08:27:11.637Z",
       "classes": [
         {
           "id": "m01",
@@ -1246,21 +1246,13 @@
         {
           "id": "m45",
           "day": 5,
-          "time": "11:30",
-          "dur": 60,
-          "type": "Booty and core class (COMMIT) Nathalie Poortvliet",
-          "level": ""
-        },
-        {
-          "id": "m46",
-          "day": 5,
           "time": "16:20",
           "dur": 60,
           "type": "BodyPump (LesMills) Anneke Westerlaken (ZZP)",
           "level": ""
         },
         {
-          "id": "m47",
+          "id": "m46",
           "day": 5,
           "time": "17:30",
           "dur": 60,
@@ -1268,7 +1260,7 @@
           "level": ""
         },
         {
-          "id": "m48",
+          "id": "m47",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -1276,9 +1268,17 @@
           "level": ""
         },
         {
-          "id": "m49",
+          "id": "m48",
           "day": 6,
           "time": "08:00",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m49",
+          "day": 6,
+          "time": "09:00",
           "dur": 60,
           "type": "Boksen (COMMIT) Justus Blok",
           "level": ""
@@ -1288,19 +1288,11 @@
           "day": 6,
           "time": "09:00",
           "dur": 60,
-          "type": "Boksen (COMMIT) Justus Blok",
-          "level": ""
-        },
-        {
-          "id": "m51",
-          "day": 6,
-          "time": "09:00",
-          "dur": 60,
           "type": "Functional (COMMIT) Rosan Van Veldhuisen",
           "level": ""
         },
         {
-          "id": "m52",
+          "id": "m51",
           "day": 6,
           "time": "11:30",
           "dur": 60,
@@ -1471,7 +1463,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-11T08:51:24.909Z",
+      "fetchedAt": "2026-06-12T08:29:27.315Z",
       "classes": [
         {
           "id": "t01",
