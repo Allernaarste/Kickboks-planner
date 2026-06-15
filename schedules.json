@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T08:20:11.892Z",
+  "updated": "2026-06-15T10:27:43.168Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,8 +8,8 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": true,
-      "source": "dom",
+      "live": false,
+      "source": "stale",
       "fetchedAt": "2026-06-14T08:17:12.974Z",
       "classes": [
         {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-14T08:17:25.398Z",
+      "fetchedAt": "2026-06-15T10:25:15.917Z",
       "classes": [
         {
           "id": "s01",
@@ -564,7 +564,7 @@
           "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
+          "type": "Jeugd Wedstrijd Groep Hamza &",
           "level": ""
         },
         {
@@ -748,7 +748,7 @@
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Amin",
+          "type": "Jeugd training tot 7 jaar Chaimae",
           "level": ""
         },
         {
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-14T08:17:56.482Z",
+      "fetchedAt": "2026-06-15T10:25:28.642Z",
       "classes": [
         {
           "id": "m01",
@@ -904,7 +904,7 @@
           "day": 0,
           "time": "09:00",
           "dur": 60,
-          "type": "Strength Beginner (COMMIT) Enya Hoogewoning",
+          "type": "Strength Beginner (COMMIT) Twan Kusters",
           "level": ""
         },
         {
@@ -912,7 +912,7 @@
           "day": 0,
           "time": "10:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Enya Hoogewoning",
+          "type": "Functional (COMMIT) Twan Kusters",
           "level": ""
         },
         {
@@ -982,21 +982,13 @@
         {
           "id": "m12",
           "day": 1,
-          "time": "08:00",
-          "dur": 60,
-          "type": "Functional (COMMIT) Jan Folgerts",
-          "level": ""
-        },
-        {
-          "id": "m13",
-          "day": 1,
           "time": "09:00",
           "dur": 60,
           "type": "Body and mind flow (COMMIT) Sia Yang",
           "level": ""
         },
         {
-          "id": "m14",
+          "id": "m13",
           "day": 1,
           "time": "10:00",
           "dur": 60,
@@ -1004,7 +996,7 @@
           "level": ""
         },
         {
-          "id": "m15",
+          "id": "m14",
           "day": 1,
           "time": "17:00",
           "dur": 60,
@@ -1012,15 +1004,7 @@
           "level": ""
         },
         {
-          "id": "m16",
-          "day": 1,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Meditatie (COMMIT) Janna van leeuwen",
-          "level": ""
-        },
-        {
-          "id": "m17",
+          "id": "m15",
           "day": 1,
           "time": "19:00",
           "dur": 60,
@@ -1028,7 +1012,7 @@
           "level": ""
         },
         {
-          "id": "m18",
+          "id": "m16",
           "day": 1,
           "time": "19:00",
           "dur": 60,
@@ -1036,7 +1020,7 @@
           "level": ""
         },
         {
-          "id": "m19",
+          "id": "m17",
           "day": 1,
           "time": "20:00",
           "dur": 60,
@@ -1044,11 +1028,27 @@
           "level": ""
         },
         {
-          "id": "m20",
+          "id": "m18",
+          "day": 1,
+          "time": "20:00",
+          "dur": 60,
+          "type": "BodyPump (LesMills) Ralf v/d Boom",
+          "level": ""
+        },
+        {
+          "id": "m19",
           "day": 2,
           "time": "08:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Enya Hoogewoning",
+          "type": "Functional (COMMIT) Milan Rozemuller",
+          "level": ""
+        },
+        {
+          "id": "m20",
+          "day": 2,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Fit 50 (COMMIT) Milan Rozemuller",
           "level": ""
         },
         {
@@ -1056,15 +1056,15 @@
           "day": 2,
           "time": "10:00",
           "dur": 60,
-          "type": "Fit 50 (COMMIT) Enya Hoogewoning",
+          "type": "Yin Yoga (COMMIT) Zoe González",
           "level": ""
         },
         {
           "id": "m22",
           "day": 2,
-          "time": "10:00",
+          "time": "17:00",
           "dur": 60,
-          "type": "Yin Yoga (COMMIT) Zoe González",
+          "type": "Fitrace (COMMIT) Jan Folgerts",
           "level": ""
         },
         {
@@ -1072,7 +1072,7 @@
           "day": 2,
           "time": "20:00",
           "dur": 60,
-          "type": "Strength Experienced (COMMIT) Twan Kusters",
+          "type": "Strength Experienced (COMMIT) Boaz Knol",
           "level": ""
         },
         {
@@ -1136,11 +1136,19 @@
           "day": 3,
           "time": "17:00",
           "dur": 60,
-          "type": "Yin Yoga (COMMIT) Zoe González",
+          "type": "Strength Beginner (COMMIT) Rosan Van Veldhuisen",
           "level": ""
         },
         {
           "id": "m32",
+          "day": 3,
+          "time": "17:00",
+          "dur": 60,
+          "type": "Yin Yoga (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m33",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1148,7 +1156,7 @@
           "level": ""
         },
         {
-          "id": "m33",
+          "id": "m34",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -1156,7 +1164,7 @@
           "level": ""
         },
         {
-          "id": "m34",
+          "id": "m35",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -1164,15 +1172,15 @@
           "level": ""
         },
         {
-          "id": "m35",
+          "id": "m36",
           "day": 4,
           "time": "07:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Andy Hendrikx",
+          "type": "Functional (COMMIT) Jan Folgerts",
           "level": ""
         },
         {
-          "id": "m36",
+          "id": "m37",
           "day": 4,
           "time": "08:00",
           "dur": 60,
@@ -1180,7 +1188,7 @@
           "level": ""
         },
         {
-          "id": "m37",
+          "id": "m38",
           "day": 4,
           "time": "08:45",
           "dur": 60,
@@ -1188,7 +1196,7 @@
           "level": ""
         },
         {
-          "id": "m38",
+          "id": "m39",
           "day": 4,
           "time": "10:00",
           "dur": 60,
@@ -1196,7 +1204,7 @@
           "level": ""
         },
         {
-          "id": "m39",
+          "id": "m40",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -1204,7 +1212,7 @@
           "level": ""
         },
         {
-          "id": "m40",
+          "id": "m41",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -1212,19 +1220,11 @@
           "level": ""
         },
         {
-          "id": "m41",
+          "id": "m42",
           "day": 5,
           "time": "07:00",
           "dur": 60,
-          "type": "Strength Experienced (COMMIT) Andy Hendrikx",
-          "level": ""
-        },
-        {
-          "id": "m42",
-          "day": 5,
-          "time": "09:00",
-          "dur": 60,
-          "type": "Fit race (COMMIT) Andy Hendrikx",
+          "type": "Strength Experienced (COMMIT) Milan Rozemuller",
           "level": ""
         },
         {
@@ -1246,13 +1246,21 @@
         {
           "id": "m45",
           "day": 5,
-          "time": "16:20",
+          "time": "11:30",
           "dur": 60,
-          "type": "BodyPump (LesMills) Anneke Westerlaken (ZZP)",
+          "type": "Booty and core class (COMMIT) Nathalie Poortvliet",
           "level": ""
         },
         {
           "id": "m46",
+          "day": 5,
+          "time": "16:20",
+          "dur": 60,
+          "type": "BodyPump (LesMills) Shirley van Toorn (GLI)",
+          "level": ""
+        },
+        {
+          "id": "m47",
           "day": 5,
           "time": "17:30",
           "dur": 60,
@@ -1260,7 +1268,7 @@
           "level": ""
         },
         {
-          "id": "m47",
+          "id": "m48",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -1268,17 +1276,9 @@
           "level": ""
         },
         {
-          "id": "m48",
-          "day": 6,
-          "time": "08:00",
-          "dur": 60,
-          "type": "Boksen (COMMIT) Justus Blok",
-          "level": ""
-        },
-        {
           "id": "m49",
           "day": 6,
-          "time": "09:00",
+          "time": "08:00",
           "dur": 60,
           "type": "Boksen (COMMIT) Justus Blok",
           "level": ""
@@ -1288,11 +1288,19 @@
           "day": 6,
           "time": "09:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Rosan Van Veldhuisen",
+          "type": "Boksen (COMMIT) Justus Blok",
           "level": ""
         },
         {
           "id": "m51",
+          "day": 6,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Rosan Van Veldhuisen",
+          "level": ""
+        },
+        {
+          "id": "m52",
           "day": 6,
           "time": "11:30",
           "dur": 60,
@@ -1463,7 +1471,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-14T08:20:11.822Z",
+      "fetchedAt": "2026-06-15T10:27:43.102Z",
       "classes": [
         {
           "id": "t01",
