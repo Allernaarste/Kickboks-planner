@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T10:27:43.168Z",
+  "updated": "2026-06-16T09:35:37.122Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -9,7 +9,7 @@
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": false,
-      "source": "stale",
+      "source": null,
       "fetchedAt": "2026-06-14T08:17:12.974Z",
       "classes": [
         {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-15T10:25:15.917Z",
+      "fetchedAt": "2026-06-16T09:33:06.362Z",
       "classes": [
         {
           "id": "s01",
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-15T10:25:28.642Z",
+      "fetchedAt": "2026-06-16T09:33:19.456Z",
       "classes": [
         {
           "id": "m01",
@@ -904,7 +904,7 @@
           "day": 0,
           "time": "09:00",
           "dur": 60,
-          "type": "Strength Beginner (COMMIT) Twan Kusters",
+          "type": "Strength Beginner (COMMIT) Boaz Knol",
           "level": ""
         },
         {
@@ -912,7 +912,7 @@
           "day": 0,
           "time": "10:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Twan Kusters",
+          "type": "Functional (COMMIT) Boaz Knol",
           "level": ""
         },
         {
@@ -1016,7 +1016,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Strength Beginner (COMMIT) Twan Kusters",
+          "type": "Strength Beginner (COMMIT) Boaz Knol",
           "level": ""
         },
         {
@@ -1080,7 +1080,7 @@
           "day": 3,
           "time": "07:00",
           "dur": 60,
-          "type": "Fitrace (COMMIT) Twan Kusters",
+          "type": "Fitrace (COMMIT) Rosan Van Veldhuisen",
           "level": ""
         },
         {
@@ -1096,7 +1096,7 @@
           "day": 3,
           "time": "08:00",
           "dur": 60,
-          "type": "Strength Experienced (COMMIT) Twan Kusters",
+          "type": "Strength Experienced (COMMIT) Enya Hoogewoning",
           "level": ""
         },
         {
@@ -1230,13 +1230,29 @@
         {
           "id": "m43",
           "day": 5,
-          "time": "10:00",
+          "time": "08:00",
           "dur": 60,
-          "type": "Fit 50 (COMMIT) Andy Hendrikx",
+          "type": "Functional (COMMIT) Enya Hoogewoning",
           "level": ""
         },
         {
           "id": "m44",
+          "day": 5,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Fit race (COMMIT) Milan Rozemuller",
+          "level": ""
+        },
+        {
+          "id": "m45",
+          "day": 5,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Fit 50 (COMMIT) Milan Rozemuller",
+          "level": ""
+        },
+        {
+          "id": "m46",
           "day": 5,
           "time": "10:30",
           "dur": 60,
@@ -1244,7 +1260,7 @@
           "level": ""
         },
         {
-          "id": "m45",
+          "id": "m47",
           "day": 5,
           "time": "11:30",
           "dur": 60,
@@ -1252,7 +1268,7 @@
           "level": ""
         },
         {
-          "id": "m46",
+          "id": "m48",
           "day": 5,
           "time": "16:20",
           "dur": 60,
@@ -1260,7 +1276,7 @@
           "level": ""
         },
         {
-          "id": "m47",
+          "id": "m49",
           "day": 5,
           "time": "17:30",
           "dur": 60,
@@ -1268,7 +1284,7 @@
           "level": ""
         },
         {
-          "id": "m48",
+          "id": "m50",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -1276,7 +1292,7 @@
           "level": ""
         },
         {
-          "id": "m49",
+          "id": "m51",
           "day": 6,
           "time": "08:00",
           "dur": 60,
@@ -1284,7 +1300,7 @@
           "level": ""
         },
         {
-          "id": "m50",
+          "id": "m52",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -1292,7 +1308,7 @@
           "level": ""
         },
         {
-          "id": "m51",
+          "id": "m53",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -1300,7 +1316,7 @@
           "level": ""
         },
         {
-          "id": "m52",
+          "id": "m54",
           "day": 6,
           "time": "11:30",
           "dur": 60,
@@ -1471,7 +1487,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-15T10:27:43.102Z",
+      "fetchedAt": "2026-06-16T09:35:37.060Z",
       "classes": [
         {
           "id": "t01",
