@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-16T09:35:37.122Z",
+  "updated": "2026-06-17T09:10:20.512Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-16T09:33:06.362Z",
+      "fetchedAt": "2026-06-17T09:07:53.837Z",
       "classes": [
         {
           "id": "s01",
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-16T09:33:19.456Z",
+      "fetchedAt": "2026-06-17T09:08:06.530Z",
       "classes": [
         {
           "id": "m01",
@@ -1078,9 +1078,9 @@
         {
           "id": "m24",
           "day": 3,
-          "time": "07:00",
+          "time": "08:00",
           "dur": 60,
-          "type": "Fitrace (COMMIT) Rosan Van Veldhuisen",
+          "type": "Pilates (COMMIT) Nieske Koort",
           "level": ""
         },
         {
@@ -1088,19 +1088,11 @@
           "day": 3,
           "time": "08:00",
           "dur": 60,
-          "type": "Pilates (COMMIT) Nieske Koort",
-          "level": ""
-        },
-        {
-          "id": "m26",
-          "day": 3,
-          "time": "08:00",
-          "dur": 60,
           "type": "Strength Experienced (COMMIT) Enya Hoogewoning",
           "level": ""
         },
         {
-          "id": "m27",
+          "id": "m26",
           "day": 3,
           "time": "09:00",
           "dur": 60,
@@ -1108,7 +1100,7 @@
           "level": ""
         },
         {
-          "id": "m28",
+          "id": "m27",
           "day": 3,
           "time": "10:00",
           "dur": 60,
@@ -1116,7 +1108,7 @@
           "level": ""
         },
         {
-          "id": "m29",
+          "id": "m28",
           "day": 3,
           "time": "11:00",
           "dur": 60,
@@ -1124,7 +1116,7 @@
           "level": ""
         },
         {
-          "id": "m30",
+          "id": "m29",
           "day": 3,
           "time": "16:00",
           "dur": 60,
@@ -1132,7 +1124,7 @@
           "level": ""
         },
         {
-          "id": "m31",
+          "id": "m30",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -1140,7 +1132,7 @@
           "level": ""
         },
         {
-          "id": "m32",
+          "id": "m31",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -1148,7 +1140,7 @@
           "level": ""
         },
         {
-          "id": "m33",
+          "id": "m32",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1156,7 +1148,7 @@
           "level": ""
         },
         {
-          "id": "m34",
+          "id": "m33",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -1164,7 +1156,7 @@
           "level": ""
         },
         {
-          "id": "m35",
+          "id": "m34",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -1172,7 +1164,7 @@
           "level": ""
         },
         {
-          "id": "m36",
+          "id": "m35",
           "day": 4,
           "time": "07:00",
           "dur": 60,
@@ -1180,7 +1172,7 @@
           "level": ""
         },
         {
-          "id": "m37",
+          "id": "m36",
           "day": 4,
           "time": "08:00",
           "dur": 60,
@@ -1188,7 +1180,23 @@
           "level": ""
         },
         {
+          "id": "m37",
+          "day": 4,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Chia Pudding Jord Borsboom",
+          "level": ""
+        },
+        {
           "id": "m38",
+          "day": 4,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Eiwit Oats Jord Borsboom",
+          "level": ""
+        },
+        {
+          "id": "m39",
           "day": 4,
           "time": "08:45",
           "dur": 60,
@@ -1196,7 +1204,7 @@
           "level": ""
         },
         {
-          "id": "m39",
+          "id": "m40",
           "day": 4,
           "time": "10:00",
           "dur": 60,
@@ -1204,15 +1212,15 @@
           "level": ""
         },
         {
-          "id": "m40",
+          "id": "m41",
           "day": 4,
           "time": "20:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Twan Kusters",
+          "type": "Functional (COMMIT) Boaz Knol",
           "level": ""
         },
         {
-          "id": "m41",
+          "id": "m42",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -1220,7 +1228,7 @@
           "level": ""
         },
         {
-          "id": "m42",
+          "id": "m43",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -1228,7 +1236,23 @@
           "level": ""
         },
         {
-          "id": "m43",
+          "id": "m44",
+          "day": 5,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Chia Pudding Jord Borsboom",
+          "level": ""
+        },
+        {
+          "id": "m45",
+          "day": 5,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Eiwit Oats Jord Borsboom",
+          "level": ""
+        },
+        {
+          "id": "m46",
           "day": 5,
           "time": "08:00",
           "dur": 60,
@@ -1236,7 +1260,7 @@
           "level": ""
         },
         {
-          "id": "m44",
+          "id": "m47",
           "day": 5,
           "time": "09:00",
           "dur": 60,
@@ -1244,7 +1268,7 @@
           "level": ""
         },
         {
-          "id": "m45",
+          "id": "m48",
           "day": 5,
           "time": "10:00",
           "dur": 60,
@@ -1252,7 +1276,7 @@
           "level": ""
         },
         {
-          "id": "m46",
+          "id": "m49",
           "day": 5,
           "time": "10:30",
           "dur": 60,
@@ -1260,7 +1284,7 @@
           "level": ""
         },
         {
-          "id": "m47",
+          "id": "m50",
           "day": 5,
           "time": "11:30",
           "dur": 60,
@@ -1268,7 +1292,7 @@
           "level": ""
         },
         {
-          "id": "m48",
+          "id": "m51",
           "day": 5,
           "time": "16:20",
           "dur": 60,
@@ -1276,7 +1300,7 @@
           "level": ""
         },
         {
-          "id": "m49",
+          "id": "m52",
           "day": 5,
           "time": "17:30",
           "dur": 60,
@@ -1284,7 +1308,7 @@
           "level": ""
         },
         {
-          "id": "m50",
+          "id": "m53",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -1292,7 +1316,7 @@
           "level": ""
         },
         {
-          "id": "m51",
+          "id": "m54",
           "day": 6,
           "time": "08:00",
           "dur": 60,
@@ -1300,7 +1324,7 @@
           "level": ""
         },
         {
-          "id": "m52",
+          "id": "m55",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -1308,7 +1332,7 @@
           "level": ""
         },
         {
-          "id": "m53",
+          "id": "m56",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -1316,7 +1340,7 @@
           "level": ""
         },
         {
-          "id": "m54",
+          "id": "m57",
           "day": 6,
           "time": "11:30",
           "dur": 60,
@@ -1487,7 +1511,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-16T09:35:37.060Z",
+      "fetchedAt": "2026-06-17T09:10:20.449Z",
       "classes": [
         {
           "id": "t01",
