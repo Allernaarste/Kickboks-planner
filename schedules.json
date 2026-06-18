@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T09:10:20.512Z",
+  "updated": "2026-06-18T08:51:39.199Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-17T09:07:53.837Z",
+      "fetchedAt": "2026-06-18T08:48:56.070Z",
       "classes": [
         {
           "id": "s01",
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-17T09:08:06.530Z",
+      "fetchedAt": "2026-06-18T08:49:26.896Z",
       "classes": [
         {
           "id": "m01",
@@ -1511,7 +1511,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-17T09:10:20.449Z",
+      "fetchedAt": "2026-06-18T08:51:39.140Z",
       "classes": [
         {
           "id": "t01",
