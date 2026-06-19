@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T08:51:39.199Z",
+  "updated": "2026-06-19T09:09:52.329Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,9 +8,9 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": false,
-      "source": null,
-      "fetchedAt": "2026-06-14T08:17:12.974Z",
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-06-19T09:06:51.986Z",
       "classes": [
         {
           "id": "c01",
@@ -433,7 +433,7 @@
           "day": 5,
           "time": "18:30",
           "dur": 60,
-          "type": "Zaktraining kickboksen",
+          "type": "Boksles",
           "level": ""
         },
         {
@@ -441,19 +441,11 @@
           "day": 5,
           "time": "18:30",
           "dur": 60,
-          "type": "Boksles",
-          "level": ""
-        },
-        {
-          "id": "c55",
-          "day": 5,
-          "time": "18:30",
-          "dur": 60,
           "type": "MMA/Grappling (Beginners-Gevorderden)",
           "level": ""
         },
         {
-          "id": "c56",
+          "id": "c55",
           "day": 5,
           "time": "19:30",
           "dur": 60,
@@ -461,7 +453,7 @@
           "level": ""
         },
         {
-          "id": "c57",
+          "id": "c56",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -469,7 +461,7 @@
           "level": ""
         },
         {
-          "id": "c58",
+          "id": "c57",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -477,7 +469,7 @@
           "level": ""
         },
         {
-          "id": "c59",
+          "id": "c58",
           "day": 6,
           "time": "09:30",
           "dur": 60,
@@ -485,7 +477,7 @@
           "level": ""
         },
         {
-          "id": "c60",
+          "id": "c59",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -493,7 +485,7 @@
           "level": ""
         },
         {
-          "id": "c61",
+          "id": "c60",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -501,7 +493,7 @@
           "level": ""
         },
         {
-          "id": "c62",
+          "id": "c61",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -509,7 +501,7 @@
           "level": ""
         },
         {
-          "id": "c63",
+          "id": "c62",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -525,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-18T08:48:56.070Z",
+      "fetchedAt": "2026-06-19T09:07:05.142Z",
       "classes": [
         {
           "id": "s01",
@@ -889,7 +881,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-18T08:49:26.896Z",
+      "fetchedAt": "2026-06-19T09:07:35.905Z",
       "classes": [
         {
           "id": "m01",
@@ -1294,21 +1286,13 @@
         {
           "id": "m51",
           "day": 5,
-          "time": "16:20",
-          "dur": 60,
-          "type": "BodyPump (LesMills) Shirley van Toorn (GLI)",
-          "level": ""
-        },
-        {
-          "id": "m52",
-          "day": 5,
           "time": "17:30",
           "dur": 60,
           "type": "Yin Yoga (COMMIT) Sia Yang",
           "level": ""
         },
         {
-          "id": "m53",
+          "id": "m52",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -1316,9 +1300,17 @@
           "level": ""
         },
         {
-          "id": "m54",
+          "id": "m53",
           "day": 6,
           "time": "08:00",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m54",
+          "day": 6,
+          "time": "09:00",
           "dur": 60,
           "type": "Boksen (COMMIT) Justus Blok",
           "level": ""
@@ -1328,19 +1320,11 @@
           "day": 6,
           "time": "09:00",
           "dur": 60,
-          "type": "Boksen (COMMIT) Justus Blok",
-          "level": ""
-        },
-        {
-          "id": "m56",
-          "day": 6,
-          "time": "09:00",
-          "dur": 60,
           "type": "Functional (COMMIT) Rosan Van Veldhuisen",
           "level": ""
         },
         {
-          "id": "m57",
+          "id": "m56",
           "day": 6,
           "time": "11:30",
           "dur": 60,
@@ -1511,7 +1495,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-18T08:51:39.140Z",
+      "fetchedAt": "2026-06-19T09:09:52.262Z",
       "classes": [
         {
           "id": "t01",
