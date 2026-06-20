@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T09:09:52.329Z",
+  "updated": "2026-06-20T07:54:19.329Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-19T09:06:51.986Z",
+      "fetchedAt": "2026-06-20T07:51:24.260Z",
       "classes": [
         {
           "id": "c01",
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-19T09:07:05.142Z",
+      "fetchedAt": "2026-06-20T07:51:36.782Z",
       "classes": [
         {
           "id": "s01",
@@ -844,7 +844,7 @@
           "day": 6,
           "time": "10:00",
           "dur": 60,
-          "type": "Bokszaktraining Micah",
+          "type": "Bokszaktraining Haytam",
           "level": ""
         },
         {
@@ -868,7 +868,7 @@
           "day": 6,
           "time": "11:00",
           "dur": 60,
-          "type": "Kickboksen beginners & gevorderden Micah",
+          "type": "Kickboksen beginners & gevorderden Chaimae",
           "level": ""
         }
       ]
@@ -881,7 +881,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-19T09:07:35.905Z",
+      "fetchedAt": "2026-06-20T07:52:07.523Z",
       "classes": [
         {
           "id": "m01",
@@ -1495,7 +1495,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-19T09:09:52.262Z",
+      "fetchedAt": "2026-06-20T07:54:19.271Z",
       "classes": [
         {
           "id": "t01",
