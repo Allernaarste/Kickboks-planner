@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T09:51:50.323Z",
+  "updated": "2026-06-23T07:53:29.123Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-22T09:48:56.228Z",
+      "fetchedAt": "2026-06-23T07:50:33.795Z",
       "classes": [
         {
           "id": "c01",
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-22T09:49:08.031Z",
+      "fetchedAt": "2026-06-23T07:50:46.649Z",
       "classes": [
         {
           "id": "s01",
@@ -572,7 +572,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Said",
+          "type": "Bokszaktraining Ayoub",
           "level": ""
         },
         {
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-22T09:49:38.396Z",
+      "fetchedAt": "2026-06-23T07:51:17.238Z",
       "classes": [
         {
           "id": "m01",
@@ -984,7 +984,7 @@
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "Hatha Yoga (COMMIT) Isa Kraai",
+          "type": "BodyBalance Janna van leeuwen",
           "level": ""
         },
         {
@@ -1567,7 +1567,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-22T09:51:50.249Z",
+      "fetchedAt": "2026-06-23T07:53:29.061Z",
       "classes": [
         {
           "id": "t01",
