@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T07:53:29.123Z",
+  "updated": "2026-06-24T07:44:57.902Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-23T07:50:33.795Z",
+      "fetchedAt": "2026-06-24T07:41:58.952Z",
       "classes": [
         {
           "id": "c01",
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-23T07:50:46.649Z",
+      "fetchedAt": "2026-06-24T07:42:11.134Z",
       "classes": [
         {
           "id": "s01",
@@ -748,7 +748,7 @@
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Amin",
+          "type": "Jeugd training tot 7 jaar Chaimae",
           "level": ""
         },
         {
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-23T07:51:17.238Z",
+      "fetchedAt": "2026-06-24T07:42:42.165Z",
       "classes": [
         {
           "id": "m01",
@@ -1567,7 +1567,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-23T07:53:29.061Z",
+      "fetchedAt": "2026-06-24T07:44:57.828Z",
       "classes": [
         {
           "id": "t01",
