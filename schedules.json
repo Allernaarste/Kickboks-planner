@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T07:50:24.446Z",
+  "updated": "2026-06-26T08:01:02.938Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -9,7 +9,7 @@
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": false,
-      "source": "stale",
+      "source": null,
       "fetchedAt": "2026-06-24T07:41:58.952Z",
       "classes": [
         {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-25T07:47:38.693Z",
+      "fetchedAt": "2026-06-26T07:58:23.296Z",
       "classes": [
         {
           "id": "s01",
@@ -738,29 +738,13 @@
         {
           "id": "s27",
           "day": 4,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Quinty",
-          "level": ""
-        },
-        {
-          "id": "s28",
-          "day": 4,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Jeugd training tot 7 jaar Chaimae",
-          "level": ""
-        },
-        {
-          "id": "s29",
-          "day": 4,
           "time": "19:00",
           "dur": 60,
           "type": "Bokszaktraining Chaimae",
           "level": ""
         },
         {
-          "id": "s30",
+          "id": "s28",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -768,7 +752,7 @@
           "level": ""
         },
         {
-          "id": "s31",
+          "id": "s29",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -776,7 +760,7 @@
           "level": ""
         },
         {
-          "id": "s32",
+          "id": "s30",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -784,7 +768,7 @@
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s31",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -792,7 +776,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s32",
           "day": 4,
           "time": "20:15",
           "dur": 60,
@@ -800,7 +784,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s33",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -808,31 +792,7 @@
           "level": ""
         },
         {
-          "id": "s36",
-          "day": 5,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Badr",
-          "level": ""
-        },
-        {
-          "id": "s37",
-          "day": 5,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Najim",
-          "level": ""
-        },
-        {
-          "id": "s38",
-          "day": 5,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Jeugd training tot 7 jaar Lotte",
-          "level": ""
-        },
-        {
-          "id": "s39",
+          "id": "s34",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -840,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s40",
+          "id": "s35",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -848,7 +808,7 @@
           "level": ""
         },
         {
-          "id": "s41",
+          "id": "s36",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -856,7 +816,7 @@
           "level": ""
         },
         {
-          "id": "s42",
+          "id": "s37",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -864,7 +824,7 @@
           "level": ""
         },
         {
-          "id": "s43",
+          "id": "s38",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -872,7 +832,7 @@
           "level": ""
         },
         {
-          "id": "s44",
+          "id": "s39",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -889,7 +849,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-25T07:48:09.611Z",
+      "fetchedAt": "2026-06-26T07:58:53.700Z",
       "classes": [
         {
           "id": "m01",
@@ -1567,7 +1527,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-25T07:50:24.394Z",
+      "fetchedAt": "2026-06-26T08:01:02.865Z",
       "classes": [
         {
           "id": "t01",
