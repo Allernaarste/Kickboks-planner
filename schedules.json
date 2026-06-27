@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T08:01:02.938Z",
+  "updated": "2026-06-27T07:00:24.013Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-26T07:58:23.296Z",
+      "fetchedAt": "2026-06-27T06:57:57.545Z",
       "classes": [
         {
           "id": "s01",
@@ -849,7 +849,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-26T07:58:53.700Z",
+      "fetchedAt": "2026-06-27T06:58:10.426Z",
       "classes": [
         {
           "id": "m01",
@@ -1286,21 +1286,13 @@
         {
           "id": "m55",
           "day": 5,
-          "time": "16:20",
-          "dur": 60,
-          "type": "BodyPump (LesMills) Anneke Westerlaken (ZZP)",
-          "level": ""
-        },
-        {
-          "id": "m56",
-          "day": 5,
           "time": "17:30",
           "dur": 60,
           "type": "Yin Yoga (COMMIT) Sia Yang",
           "level": ""
         },
         {
-          "id": "m57",
+          "id": "m56",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -1308,9 +1300,17 @@
           "level": ""
         },
         {
-          "id": "m58",
+          "id": "m57",
           "day": 6,
           "time": "08:00",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m58",
+          "day": 6,
+          "time": "09:00",
           "dur": 60,
           "type": "Boksen (COMMIT) Justus Blok",
           "level": ""
@@ -1320,19 +1320,11 @@
           "day": 6,
           "time": "09:00",
           "dur": 60,
-          "type": "Boksen (COMMIT) Justus Blok",
-          "level": ""
-        },
-        {
-          "id": "m60",
-          "day": 6,
-          "time": "09:00",
-          "dur": 60,
           "type": "Functional (COMMIT) Rosan Van Veldhuisen",
           "level": ""
         },
         {
-          "id": "m61",
+          "id": "m60",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -1340,7 +1332,7 @@
           "level": ""
         },
         {
-          "id": "m62",
+          "id": "m61",
           "day": 6,
           "time": "12:00",
           "dur": 60,
@@ -1348,7 +1340,7 @@
           "level": ""
         },
         {
-          "id": "m63",
+          "id": "m62",
           "day": 6,
           "time": "13:30",
           "dur": 60,
@@ -1356,7 +1348,7 @@
           "level": ""
         },
         {
-          "id": "m64",
+          "id": "m63",
           "day": 6,
           "time": "14:30",
           "dur": 60,
@@ -1527,7 +1519,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-26T08:01:02.865Z",
+      "fetchedAt": "2026-06-27T07:00:23.939Z",
       "classes": [
         {
           "id": "t01",
