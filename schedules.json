@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T07:57:24.756Z",
+  "updated": "2026-06-29T09:07:16.764Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,8 +8,8 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": true,
-      "source": "dom",
+      "live": false,
+      "source": "stale",
       "fetchedAt": "2026-06-28T07:52:31.657Z",
       "classes": [
         {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-28T07:52:43.824Z",
+      "fetchedAt": "2026-06-29T09:04:47.300Z",
       "classes": [
         {
           "id": "s01",
@@ -540,7 +540,7 @@
           "day": 0,
           "time": "19:00",
           "dur": 60,
-          "type": "LADY'S ONLY Mounia",
+          "type": "Conditie Traning in DOORN ! LADY ONLY Mounia",
           "level": ""
         },
         {
@@ -572,7 +572,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Ayoub",
+          "type": "Bokszaktraining Said",
           "level": ""
         },
         {
@@ -620,7 +620,7 @@
           "day": 2,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Vera",
+          "type": "Jeugd training tot 7 jaar Badr",
           "level": ""
         },
         {
@@ -738,17 +738,17 @@
         {
           "id": "s27",
           "day": 4,
-          "time": "19:00",
+          "time": "18:00",
           "dur": 60,
-          "type": "Bokszaktraining Chaimae",
+          "type": "Jeugd Training 8 t/m 13 jaar Quinty",
           "level": ""
         },
         {
           "id": "s28",
           "day": 4,
-          "time": "19:00",
+          "time": "18:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Haytam",
+          "type": "Jeugd training tot 7 jaar Amin",
           "level": ""
         },
         {
@@ -756,7 +756,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training André",
+          "type": "Bokszaktraining Chaimae",
           "level": ""
         },
         {
@@ -764,11 +764,27 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "P T A André",
+          "type": "Kickboksen Techniek Haytam",
           "level": ""
         },
         {
           "id": "s31",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kracht - Circuit Training André",
+          "level": ""
+        },
+        {
+          "id": "s32",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
+        },
+        {
+          "id": "s33",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -776,7 +792,7 @@
           "level": ""
         },
         {
-          "id": "s32",
+          "id": "s34",
           "day": 4,
           "time": "20:15",
           "dur": 60,
@@ -784,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s35",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -792,7 +808,31 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s36",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Training 8 t/m 13 jaar Badr",
+          "level": ""
+        },
+        {
+          "id": "s37",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Wedstrijd Groep Najim",
+          "level": ""
+        },
+        {
+          "id": "s38",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Lotte",
+          "level": ""
+        },
+        {
+          "id": "s39",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -800,7 +840,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s40",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -808,7 +848,7 @@
           "level": ""
         },
         {
-          "id": "s36",
+          "id": "s41",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -816,7 +856,15 @@
           "level": ""
         },
         {
-          "id": "s37",
+          "id": "s42",
+          "day": 6,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Kracht - Circuit Training André",
+          "level": ""
+        },
+        {
+          "id": "s43",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -824,19 +872,11 @@
           "level": ""
         },
         {
-          "id": "s38",
+          "id": "s44",
           "day": 6,
           "time": "11:00",
           "dur": 60,
           "type": "Kickboksen beginners & gevorderden Micah",
-          "level": ""
-        },
-        {
-          "id": "s39",
-          "day": 6,
-          "time": "11:00",
-          "dur": 60,
-          "type": "Exclusieve Circuittraining André",
           "level": ""
         }
       ]
@@ -849,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-28T07:52:56.310Z",
+      "fetchedAt": "2026-06-29T09:05:18.121Z",
       "classes": [
         {
           "id": "m01",
@@ -944,7 +984,7 @@
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "BodyBalance Janna van leeuwen",
+          "type": "Hatha Yoga (COMMIT) Isa Kraai",
           "level": ""
         },
         {
@@ -1038,13 +1078,21 @@
         {
           "id": "m24",
           "day": 2,
-          "time": "19:00",
+          "time": "17:00",
           "dur": 60,
-          "type": "Vinyasa Yoga (COMMIT) Dionne van Haaren",
+          "type": "Somatics (COMMIT) Zoe González",
           "level": ""
         },
         {
           "id": "m25",
+          "day": 2,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Restorative Yoga (COMMIT) Zoe González",
+          "level": ""
+        },
+        {
+          "id": "m26",
           "day": 2,
           "time": "20:00",
           "dur": 60,
@@ -1052,7 +1100,7 @@
           "level": ""
         },
         {
-          "id": "m26",
+          "id": "m27",
           "day": 3,
           "time": "07:00",
           "dur": 60,
@@ -1060,19 +1108,11 @@
           "level": ""
         },
         {
-          "id": "m27",
-          "day": 3,
-          "time": "08:00",
-          "dur": 60,
-          "type": "Chia Pudding Jord Borsboom",
-          "level": ""
-        },
-        {
           "id": "m28",
           "day": 3,
           "time": "08:00",
           "dur": 60,
-          "type": "Eiwit Oats Jord Borsboom",
+          "type": "Chia Pudding Jord Borsboom",
           "level": ""
         },
         {
@@ -1080,7 +1120,7 @@
           "day": 3,
           "time": "08:00",
           "dur": 60,
-          "type": "Pilates (COMMIT) Nieske Koort",
+          "type": "Eiwit Oats Jord Borsboom",
           "level": ""
         },
         {
@@ -1088,11 +1128,19 @@
           "day": 3,
           "time": "08:00",
           "dur": 60,
-          "type": "Strength Experienced (COMMIT) Rosan Van Veldhuisen",
+          "type": "Pilates (COMMIT) Nieske Koort",
           "level": ""
         },
         {
           "id": "m31",
+          "day": 3,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Strength Experienced (COMMIT) Rosan Van Veldhuisen",
+          "level": ""
+        },
+        {
+          "id": "m32",
           "day": 3,
           "time": "09:00",
           "dur": 60,
@@ -1100,7 +1148,7 @@
           "level": ""
         },
         {
-          "id": "m32",
+          "id": "m33",
           "day": 3,
           "time": "10:00",
           "dur": 60,
@@ -1108,7 +1156,7 @@
           "level": ""
         },
         {
-          "id": "m33",
+          "id": "m34",
           "day": 3,
           "time": "11:00",
           "dur": 60,
@@ -1116,7 +1164,7 @@
           "level": ""
         },
         {
-          "id": "m34",
+          "id": "m35",
           "day": 3,
           "time": "16:00",
           "dur": 60,
@@ -1124,7 +1172,7 @@
           "level": ""
         },
         {
-          "id": "m35",
+          "id": "m36",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -1132,31 +1180,7 @@
           "level": ""
         },
         {
-          "id": "m36",
-          "day": 3,
-          "time": "17:00",
-          "dur": 60,
-          "type": "Yin Yoga (COMMIT) Zoe González",
-          "level": ""
-        },
-        {
           "id": "m37",
-          "day": 3,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Somatics (COMMIT) Zoe González",
-          "level": ""
-        },
-        {
-          "id": "m38",
-          "day": 3,
-          "time": "19:00",
-          "dur": 60,
-          "type": "Restorative Yoga (COMMIT) Zoe González",
-          "level": ""
-        },
-        {
-          "id": "m39",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -1164,7 +1188,7 @@
           "level": ""
         },
         {
-          "id": "m40",
+          "id": "m38",
           "day": 4,
           "time": "07:00",
           "dur": 60,
@@ -1172,7 +1196,7 @@
           "level": ""
         },
         {
-          "id": "m41",
+          "id": "m39",
           "day": 4,
           "time": "08:00",
           "dur": 60,
@@ -1180,7 +1204,7 @@
           "level": ""
         },
         {
-          "id": "m42",
+          "id": "m40",
           "day": 4,
           "time": "08:00",
           "dur": 60,
@@ -1188,7 +1212,7 @@
           "level": ""
         },
         {
-          "id": "m43",
+          "id": "m41",
           "day": 4,
           "time": "08:00",
           "dur": 60,
@@ -1196,7 +1220,7 @@
           "level": ""
         },
         {
-          "id": "m44",
+          "id": "m42",
           "day": 4,
           "time": "08:45",
           "dur": 60,
@@ -1204,7 +1228,7 @@
           "level": ""
         },
         {
-          "id": "m45",
+          "id": "m43",
           "day": 4,
           "time": "10:00",
           "dur": 60,
@@ -1212,7 +1236,7 @@
           "level": ""
         },
         {
-          "id": "m46",
+          "id": "m44",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -1220,7 +1244,7 @@
           "level": ""
         },
         {
-          "id": "m47",
+          "id": "m45",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -1228,15 +1252,15 @@
           "level": ""
         },
         {
-          "id": "m48",
+          "id": "m46",
           "day": 5,
           "time": "07:00",
           "dur": 60,
-          "type": "Strength Experienced (COMMIT) Boaz Knol",
+          "type": "Strength Experienced (COMMIT) Andy Hendrikx",
           "level": ""
         },
         {
-          "id": "m49",
+          "id": "m47",
           "day": 5,
           "time": "08:00",
           "dur": 60,
@@ -1244,7 +1268,7 @@
           "level": ""
         },
         {
-          "id": "m50",
+          "id": "m48",
           "day": 5,
           "time": "08:00",
           "dur": 60,
@@ -1252,23 +1276,31 @@
           "level": ""
         },
         {
-          "id": "m51",
+          "id": "m49",
+          "day": 5,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Boaz Knol",
+          "level": ""
+        },
+        {
+          "id": "m50",
           "day": 5,
           "time": "09:00",
           "dur": 60,
-          "type": "Fit race (COMMIT) Enya Hoogewoning",
+          "type": "Fit race (COMMIT) Andy Hendrikx",
+          "level": ""
+        },
+        {
+          "id": "m51",
+          "day": 5,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Fit 50 (COMMIT) Andy Hendrikx",
           "level": ""
         },
         {
           "id": "m52",
-          "day": 5,
-          "time": "10:00",
-          "dur": 60,
-          "type": "Fit 50 (COMMIT) Enya Hoogewoning",
-          "level": ""
-        },
-        {
-          "id": "m53",
           "day": 5,
           "time": "10:30",
           "dur": 60,
@@ -1276,11 +1308,19 @@
           "level": ""
         },
         {
-          "id": "m54",
+          "id": "m53",
           "day": 5,
           "time": "11:30",
           "dur": 60,
           "type": "Booty and core class (COMMIT) Nathalie Poortvliet",
+          "level": ""
+        },
+        {
+          "id": "m54",
+          "day": 5,
+          "time": "16:20",
+          "dur": 60,
+          "type": "BodyPump (LesMills) Shirley van Toorn (GLI)",
           "level": ""
         },
         {
@@ -1320,39 +1360,15 @@
           "day": 6,
           "time": "09:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Rosan Van Veldhuisen",
+          "type": "Functional (COMMIT) Bengt Vlietstra",
           "level": ""
         },
         {
           "id": "m60",
           "day": 6,
-          "time": "11:00",
+          "time": "11:30",
           "dur": 60,
-          "type": "Somatics (COMMIT) Zoe González",
-          "level": ""
-        },
-        {
-          "id": "m61",
-          "day": 6,
-          "time": "12:00",
-          "dur": 60,
-          "type": "Yin Yoga (COMMIT) Zoe González",
-          "level": ""
-        },
-        {
-          "id": "m62",
-          "day": 6,
-          "time": "13:30",
-          "dur": 60,
-          "type": "Somatics (COMMIT) Zoe González",
-          "level": ""
-        },
-        {
-          "id": "m63",
-          "day": 6,
-          "time": "14:30",
-          "dur": 60,
-          "type": "Restorative Yoga (COMMIT) Zoe González",
+          "type": "Yoga in het bos (Amelisweerd) Isa Kraai",
           "level": ""
         }
       ]
@@ -1519,7 +1535,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-06-28T07:57:24.687Z",
+      "fetchedAt": "2026-06-29T09:07:16.667Z",
       "classes": [
         {
           "id": "t01",
