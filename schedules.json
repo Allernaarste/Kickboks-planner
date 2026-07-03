@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T07:40:47.823Z",
+  "updated": "2026-07-03T07:28:31.229Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-02T07:37:57.118Z",
+      "fetchedAt": "2026-07-03T07:25:41.091Z",
       "classes": [
         {
           "id": "s01",
@@ -780,7 +780,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training André",
+          "type": "Kracht - Circuit Training Quinty",
           "level": ""
         },
         {
@@ -897,7 +897,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-02T07:38:09.618Z",
+      "fetchedAt": "2026-07-03T07:26:15.644Z",
       "classes": [
         {
           "id": "m01",
@@ -1310,21 +1310,13 @@
         {
           "id": "m52",
           "day": 5,
-          "time": "16:20",
-          "dur": 60,
-          "type": "BodyPump (LesMills) Shirley van Toorn (GLI)",
-          "level": ""
-        },
-        {
-          "id": "m53",
-          "day": 5,
           "time": "17:30",
           "dur": 60,
           "type": "Yin Yoga (COMMIT) Sia Yang",
           "level": ""
         },
         {
-          "id": "m54",
+          "id": "m53",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -1332,9 +1324,17 @@
           "level": ""
         },
         {
-          "id": "m55",
+          "id": "m54",
           "day": 6,
           "time": "08:00",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Justus Blok",
+          "level": ""
+        },
+        {
+          "id": "m55",
+          "day": 6,
+          "time": "09:00",
           "dur": 60,
           "type": "Boksen (COMMIT) Justus Blok",
           "level": ""
@@ -1344,19 +1344,11 @@
           "day": 6,
           "time": "09:00",
           "dur": 60,
-          "type": "Boksen (COMMIT) Justus Blok",
-          "level": ""
-        },
-        {
-          "id": "m57",
-          "day": 6,
-          "time": "09:00",
-          "dur": 60,
           "type": "Functional (COMMIT) Bengt Vlietstra",
           "level": ""
         },
         {
-          "id": "m58",
+          "id": "m57",
           "day": 6,
           "time": "11:30",
           "dur": 60,
@@ -1527,7 +1519,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-02T07:40:47.764Z",
+      "fetchedAt": "2026-07-03T07:28:31.173Z",
       "classes": [
         {
           "id": "t01",
