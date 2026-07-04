@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T07:28:31.229Z",
+  "updated": "2026-07-04T06:54:50.818Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-03T07:25:41.091Z",
+      "fetchedAt": "2026-07-04T06:52:26.339Z",
       "classes": [
         {
           "id": "s01",
@@ -836,7 +836,7 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Lotte",
+          "type": "Jeugd training tot 7 jaar Amin",
           "level": ""
         },
         {
@@ -897,7 +897,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-03T07:26:15.644Z",
+      "fetchedAt": "2026-07-04T06:52:38.835Z",
       "classes": [
         {
           "id": "m01",
@@ -1519,7 +1519,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-03T07:28:31.173Z",
+      "fetchedAt": "2026-07-04T06:54:50.750Z",
       "classes": [
         {
           "id": "t01",
@@ -1651,14 +1651,6 @@
         },
         {
           "id": "t17",
-          "day": 3,
-          "time": "19:30",
-          "dur": 60,
-          "type": "HOE LAAT?",
-          "level": ""
-        },
-        {
-          "id": "t18",
           "day": 4,
           "time": "10:15",
           "dur": 60,
@@ -1666,7 +1658,7 @@
           "level": ""
         },
         {
-          "id": "t19",
+          "id": "t18",
           "day": 4,
           "time": "18:15",
           "dur": 60,
@@ -1674,7 +1666,7 @@
           "level": ""
         },
         {
-          "id": "t20",
+          "id": "t19",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -1682,7 +1674,7 @@
           "level": ""
         },
         {
-          "id": "t21",
+          "id": "t20",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -1690,7 +1682,7 @@
           "level": ""
         },
         {
-          "id": "t22",
+          "id": "t21",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -1698,7 +1690,7 @@
           "level": ""
         },
         {
-          "id": "t23",
+          "id": "t22",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1706,7 +1698,7 @@
           "level": ""
         },
         {
-          "id": "t24",
+          "id": "t23",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1714,7 +1706,7 @@
           "level": ""
         },
         {
-          "id": "t25",
+          "id": "t24",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1722,7 +1714,7 @@
           "level": ""
         },
         {
-          "id": "t26",
+          "id": "t25",
           "day": 6,
           "time": "19:00",
           "dur": 60,
