@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T06:54:50.818Z",
+  "updated": "2026-07-05T07:29:20.752Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,9 +8,9 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": false,
-      "source": null,
-      "fetchedAt": "2026-06-30T07:54:28.799Z",
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-07-05T07:26:21.913Z",
       "classes": [
         {
           "id": "c01",
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-04T06:52:26.339Z",
+      "fetchedAt": "2026-07-05T07:26:34.742Z",
       "classes": [
         {
           "id": "s01",
@@ -545,10 +545,10 @@
         },
         {
           "id": "s03",
-          "day": 0,
-          "time": "19:00",
+          "day": 1,
+          "time": "17:00",
           "dur": 60,
-          "type": "Conditie Traning in DOORN ! LADY ONLY Mounia",
+          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
           "level": ""
         },
         {
@@ -556,19 +556,11 @@
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
-          "level": ""
-        },
-        {
-          "id": "s05",
-          "day": 1,
-          "time": "17:00",
-          "dur": 60,
           "type": "Jeugd training tot 7 jaar Amin",
           "level": ""
         },
         {
-          "id": "s06",
+          "id": "s05",
           "day": 1,
           "time": "18:00",
           "dur": 60,
@@ -576,7 +568,7 @@
           "level": ""
         },
         {
-          "id": "s07",
+          "id": "s06",
           "day": 1,
           "time": "19:00",
           "dur": 60,
@@ -584,7 +576,7 @@
           "level": ""
         },
         {
-          "id": "s08",
+          "id": "s07",
           "day": 1,
           "time": "19:00",
           "dur": 60,
@@ -592,7 +584,7 @@
           "level": ""
         },
         {
-          "id": "s09",
+          "id": "s08",
           "day": 1,
           "time": "20:00",
           "dur": 60,
@@ -600,7 +592,7 @@
           "level": ""
         },
         {
-          "id": "s10",
+          "id": "s09",
           "day": 1,
           "time": "20:00",
           "dur": 60,
@@ -608,7 +600,7 @@
           "level": ""
         },
         {
-          "id": "s11",
+          "id": "s10",
           "day": 2,
           "time": "09:15",
           "dur": 60,
@@ -616,7 +608,7 @@
           "level": ""
         },
         {
-          "id": "s12",
+          "id": "s11",
           "day": 2,
           "time": "18:00",
           "dur": 60,
@@ -624,7 +616,7 @@
           "level": ""
         },
         {
-          "id": "s13",
+          "id": "s12",
           "day": 2,
           "time": "18:00",
           "dur": 60,
@@ -632,7 +624,7 @@
           "level": ""
         },
         {
-          "id": "s14",
+          "id": "s13",
           "day": 2,
           "time": "19:00",
           "dur": 60,
@@ -640,7 +632,7 @@
           "level": ""
         },
         {
-          "id": "s15",
+          "id": "s14",
           "day": 2,
           "time": "19:00",
           "dur": 60,
@@ -648,7 +640,7 @@
           "level": ""
         },
         {
-          "id": "s16",
+          "id": "s15",
           "day": 2,
           "time": "19:00",
           "dur": 60,
@@ -656,7 +648,7 @@
           "level": ""
         },
         {
-          "id": "s17",
+          "id": "s16",
           "day": 2,
           "time": "19:00",
           "dur": 60,
@@ -664,7 +656,7 @@
           "level": ""
         },
         {
-          "id": "s18",
+          "id": "s17",
           "day": 2,
           "time": "20:00",
           "dur": 60,
@@ -672,7 +664,7 @@
           "level": ""
         },
         {
-          "id": "s19",
+          "id": "s18",
           "day": 2,
           "time": "20:00",
           "dur": 60,
@@ -680,7 +672,7 @@
           "level": ""
         },
         {
-          "id": "s20",
+          "id": "s19",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -688,7 +680,7 @@
           "level": ""
         },
         {
-          "id": "s21",
+          "id": "s20",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -696,7 +688,7 @@
           "level": ""
         },
         {
-          "id": "s22",
+          "id": "s21",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -704,7 +696,7 @@
           "level": ""
         },
         {
-          "id": "s23",
+          "id": "s22",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -712,7 +704,7 @@
           "level": ""
         },
         {
-          "id": "s24",
+          "id": "s23",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -720,7 +712,7 @@
           "level": ""
         },
         {
-          "id": "s25",
+          "id": "s24",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -728,7 +720,7 @@
           "level": ""
         },
         {
-          "id": "s26",
+          "id": "s25",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -736,7 +728,7 @@
           "level": ""
         },
         {
-          "id": "s27",
+          "id": "s26",
           "day": 4,
           "time": "09:15",
           "dur": 60,
@@ -744,7 +736,7 @@
           "level": ""
         },
         {
-          "id": "s28",
+          "id": "s27",
           "day": 4,
           "time": "18:00",
           "dur": 60,
@@ -752,7 +744,7 @@
           "level": ""
         },
         {
-          "id": "s29",
+          "id": "s28",
           "day": 4,
           "time": "18:00",
           "dur": 60,
@@ -760,7 +752,7 @@
           "level": ""
         },
         {
-          "id": "s30",
+          "id": "s29",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -768,7 +760,7 @@
           "level": ""
         },
         {
-          "id": "s31",
+          "id": "s30",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -776,7 +768,7 @@
           "level": ""
         },
         {
-          "id": "s32",
+          "id": "s31",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -784,7 +776,7 @@
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s32",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -792,7 +784,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s33",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -800,7 +792,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s34",
           "day": 4,
           "time": "20:15",
           "dur": 60,
@@ -808,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s36",
+          "id": "s35",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -816,7 +808,7 @@
           "level": ""
         },
         {
-          "id": "s37",
+          "id": "s36",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -824,7 +816,7 @@
           "level": ""
         },
         {
-          "id": "s38",
+          "id": "s37",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -832,7 +824,7 @@
           "level": ""
         },
         {
-          "id": "s39",
+          "id": "s38",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -840,7 +832,7 @@
           "level": ""
         },
         {
-          "id": "s40",
+          "id": "s39",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -848,7 +840,7 @@
           "level": ""
         },
         {
-          "id": "s41",
+          "id": "s40",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -856,7 +848,7 @@
           "level": ""
         },
         {
-          "id": "s42",
+          "id": "s41",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -864,7 +856,7 @@
           "level": ""
         },
         {
-          "id": "s43",
+          "id": "s42",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -872,7 +864,7 @@
           "level": ""
         },
         {
-          "id": "s44",
+          "id": "s43",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -880,7 +872,7 @@
           "level": ""
         },
         {
-          "id": "s45",
+          "id": "s44",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -897,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-04T06:52:38.835Z",
+      "fetchedAt": "2026-07-05T07:27:05.368Z",
       "classes": [
         {
           "id": "m01",
@@ -936,7 +928,7 @@
           "day": 0,
           "time": "11:00",
           "dur": 60,
-          "type": "Fitrace (COMMIT) Boaz Knol",
+          "type": "Fitrace (COMMIT) Twan Kusters",
           "level": ""
         },
         {
@@ -1519,7 +1511,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-04T06:54:50.750Z",
+      "fetchedAt": "2026-07-05T07:29:20.691Z",
       "classes": [
         {
           "id": "t01",
