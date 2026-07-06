@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T07:29:20.752Z",
+  "updated": "2026-07-06T08:23:55.232Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-05T07:26:21.913Z",
+      "fetchedAt": "2026-07-06T08:20:57.759Z",
       "classes": [
         {
           "id": "c01",
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-05T07:26:34.742Z",
+      "fetchedAt": "2026-07-06T08:21:10.005Z",
       "classes": [
         {
           "id": "s01",
@@ -538,9 +538,9 @@
         {
           "id": "s02",
           "day": 0,
-          "time": "10:00",
+          "time": "19:00",
           "dur": 60,
-          "type": "Conditie Traning in DOORN ! LADY ONLY Mounia",
+          "type": "LADY'S ONLY Mounia",
           "level": ""
         },
         {
@@ -620,7 +620,7 @@
           "day": 2,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Badr",
+          "type": "Jeugd training tot 7 jaar Vera",
           "level": ""
         },
         {
@@ -700,7 +700,7 @@
           "day": 3,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Chaimae",
+          "type": "Bokszaktraining Said",
           "level": ""
         },
         {
@@ -772,7 +772,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Quinty",
+          "type": "Kracht - Circuit Training André",
           "level": ""
         },
         {
@@ -828,7 +828,7 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Amin",
+          "type": "Jeugd training tot 7 jaar Lotte",
           "level": ""
         },
         {
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-05T07:27:05.368Z",
+      "fetchedAt": "2026-07-06T08:21:41.062Z",
       "classes": [
         {
           "id": "m01",
@@ -910,9 +910,9 @@
         {
           "id": "m03",
           "day": 0,
-          "time": "10:00",
+          "time": "09:45",
           "dur": 60,
-          "type": "Functional (COMMIT) Twan Kusters",
+          "type": "Down Under Obstacle Run Aschwin Valkenburg",
           "level": ""
         },
         {
@@ -920,23 +920,23 @@
           "day": 0,
           "time": "10:00",
           "dur": 60,
-          "type": "Pilates (COMMIT) Sia Yang",
+          "type": "Functional (COMMIT) Twan Kusters",
           "level": ""
         },
         {
           "id": "m05",
           "day": 0,
-          "time": "11:00",
+          "time": "10:00",
           "dur": 60,
-          "type": "Fitrace (COMMIT) Twan Kusters",
+          "type": "Pilates (COMMIT) Sia Yang",
           "level": ""
         },
         {
           "id": "m06",
-          "day": 1,
-          "time": "07:00",
+          "day": 0,
+          "time": "11:00",
           "dur": 60,
-          "type": "Boksen (COMMIT) Justus Blok",
+          "type": "Fitrace (COMMIT) Boaz Knol",
           "level": ""
         },
         {
@@ -944,15 +944,15 @@
           "day": 1,
           "time": "07:00",
           "dur": 60,
-          "type": "Strength Experienced (COMMIT) Twan Kusters",
+          "type": "Boksen (COMMIT) Justus Blok",
           "level": ""
         },
         {
           "id": "m08",
           "day": 1,
-          "time": "08:00",
+          "time": "07:00",
           "dur": 60,
-          "type": "Chia Pudding Jord Borsboom",
+          "type": "Strength Experienced (COMMIT) Twan Kusters",
           "level": ""
         },
         {
@@ -960,11 +960,19 @@
           "day": 1,
           "time": "08:00",
           "dur": 60,
-          "type": "Eiwit Oats Jord Borsboom",
+          "type": "Chia Pudding Jord Borsboom",
           "level": ""
         },
         {
           "id": "m10",
+          "day": 1,
+          "time": "08:00",
+          "dur": 60,
+          "type": "Eiwit Oats Jord Borsboom",
+          "level": ""
+        },
+        {
+          "id": "m11",
           "day": 1,
           "time": "09:00",
           "dur": 60,
@@ -972,7 +980,7 @@
           "level": ""
         },
         {
-          "id": "m11",
+          "id": "m12",
           "day": 1,
           "time": "10:00",
           "dur": 60,
@@ -980,7 +988,7 @@
           "level": ""
         },
         {
-          "id": "m12",
+          "id": "m13",
           "day": 1,
           "time": "17:00",
           "dur": 60,
@@ -988,7 +996,7 @@
           "level": ""
         },
         {
-          "id": "m13",
+          "id": "m14",
           "day": 1,
           "time": "18:00",
           "dur": 60,
@@ -996,7 +1004,7 @@
           "level": ""
         },
         {
-          "id": "m14",
+          "id": "m15",
           "day": 1,
           "time": "19:00",
           "dur": 60,
@@ -1004,7 +1012,7 @@
           "level": ""
         },
         {
-          "id": "m15",
+          "id": "m16",
           "day": 1,
           "time": "19:00",
           "dur": 60,
@@ -1012,15 +1020,15 @@
           "level": ""
         },
         {
-          "id": "m16",
+          "id": "m17",
           "day": 1,
           "time": "20:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Boaz Knol",
+          "type": "Functional (COMMIT) Hugo Bouma",
           "level": ""
         },
         {
-          "id": "m17",
+          "id": "m18",
           "day": 1,
           "time": "20:00",
           "dur": 60,
@@ -1028,7 +1036,7 @@
           "level": ""
         },
         {
-          "id": "m18",
+          "id": "m19",
           "day": 2,
           "time": "08:00",
           "dur": 60,
@@ -1036,7 +1044,7 @@
           "level": ""
         },
         {
-          "id": "m19",
+          "id": "m20",
           "day": 2,
           "time": "08:00",
           "dur": 60,
@@ -1044,7 +1052,7 @@
           "level": ""
         },
         {
-          "id": "m20",
+          "id": "m21",
           "day": 2,
           "time": "08:00",
           "dur": 60,
@@ -1052,7 +1060,7 @@
           "level": ""
         },
         {
-          "id": "m21",
+          "id": "m22",
           "day": 2,
           "time": "10:00",
           "dur": 60,
@@ -1060,27 +1068,19 @@
           "level": ""
         },
         {
-          "id": "m22",
-          "day": 2,
-          "time": "10:00",
-          "dur": 60,
-          "type": "Yin Yoga (COMMIT) Zoe González",
-          "level": ""
-        },
-        {
           "id": "m23",
           "day": 2,
           "time": "17:00",
           "dur": 60,
-          "type": "Somatics (COMMIT) Zoe González",
+          "type": "Fitrace (COMMIT) Jan Folgerts",
           "level": ""
         },
         {
           "id": "m24",
           "day": 2,
-          "time": "18:00",
+          "time": "20:00",
           "dur": 60,
-          "type": "Restorative Yoga (COMMIT) Zoe González",
+          "type": "Boksen (COMMIT) Mouhib Oueslati",
           "level": ""
         },
         {
@@ -1158,13 +1158,21 @@
         {
           "id": "m34",
           "day": 3,
+          "time": "12:30",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Mouhib Oueslati",
+          "level": ""
+        },
+        {
+          "id": "m35",
+          "day": 3,
           "time": "16:00",
           "dur": 60,
           "type": "Fit 50 (COMMIT) Enya Hoogewoning",
           "level": ""
         },
         {
-          "id": "m35",
+          "id": "m36",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -1172,7 +1180,7 @@
           "level": ""
         },
         {
-          "id": "m36",
+          "id": "m37",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -1180,7 +1188,7 @@
           "level": ""
         },
         {
-          "id": "m37",
+          "id": "m38",
           "day": 4,
           "time": "07:00",
           "dur": 60,
@@ -1188,7 +1196,15 @@
           "level": ""
         },
         {
-          "id": "m38",
+          "id": "m39",
+          "day": 4,
+          "time": "08:00",
+          "dur": 60,
+          "type": "BBB - buik, benen, billen (COMMIT) Nieske Koort",
+          "level": ""
+        },
+        {
+          "id": "m40",
           "day": 4,
           "time": "08:00",
           "dur": 60,
@@ -1196,7 +1212,7 @@
           "level": ""
         },
         {
-          "id": "m39",
+          "id": "m41",
           "day": 4,
           "time": "08:00",
           "dur": 60,
@@ -1204,7 +1220,7 @@
           "level": ""
         },
         {
-          "id": "m40",
+          "id": "m42",
           "day": 4,
           "time": "08:45",
           "dur": 60,
@@ -1212,7 +1228,7 @@
           "level": ""
         },
         {
-          "id": "m41",
+          "id": "m43",
           "day": 4,
           "time": "10:00",
           "dur": 60,
@@ -1220,7 +1236,15 @@
           "level": ""
         },
         {
-          "id": "m42",
+          "id": "m44",
+          "day": 4,
+          "time": "18:45",
+          "dur": 60,
+          "type": "Boksen (COMMIT) Mouhib Oueslati",
+          "level": ""
+        },
+        {
+          "id": "m45",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -1228,15 +1252,7 @@
           "level": ""
         },
         {
-          "id": "m43",
-          "day": 4,
-          "time": "20:00",
-          "dur": 60,
-          "type": "BodyBalance (LesMills) Sharon van Tongeren",
-          "level": ""
-        },
-        {
-          "id": "m44",
+          "id": "m46",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -1244,7 +1260,7 @@
           "level": ""
         },
         {
-          "id": "m45",
+          "id": "m47",
           "day": 5,
           "time": "08:00",
           "dur": 60,
@@ -1252,7 +1268,7 @@
           "level": ""
         },
         {
-          "id": "m46",
+          "id": "m48",
           "day": 5,
           "time": "08:00",
           "dur": 60,
@@ -1260,23 +1276,23 @@
           "level": ""
         },
         {
-          "id": "m47",
+          "id": "m49",
           "day": 5,
           "time": "08:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Boaz Knol",
+          "type": "Functional (COMMIT) Andy Hendrikx",
           "level": ""
         },
         {
-          "id": "m48",
+          "id": "m50",
           "day": 5,
           "time": "09:00",
           "dur": 60,
-          "type": "Fit race (COMMIT) Andy Hendrikx",
+          "type": "Fit race (COMMIT) Enya Hoogewoning",
           "level": ""
         },
         {
-          "id": "m49",
+          "id": "m51",
           "day": 5,
           "time": "10:00",
           "dur": 60,
@@ -1284,7 +1300,7 @@
           "level": ""
         },
         {
-          "id": "m50",
+          "id": "m52",
           "day": 5,
           "time": "10:30",
           "dur": 60,
@@ -1292,7 +1308,7 @@
           "level": ""
         },
         {
-          "id": "m51",
+          "id": "m53",
           "day": 5,
           "time": "11:30",
           "dur": 60,
@@ -1300,7 +1316,15 @@
           "level": ""
         },
         {
-          "id": "m52",
+          "id": "m54",
+          "day": 5,
+          "time": "16:20",
+          "dur": 60,
+          "type": "BodyPump (LesMills) Shirley van Toorn (GLI)",
+          "level": ""
+        },
+        {
+          "id": "m55",
           "day": 5,
           "time": "17:30",
           "dur": 60,
@@ -1308,7 +1332,7 @@
           "level": ""
         },
         {
-          "id": "m53",
+          "id": "m56",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -1316,7 +1340,7 @@
           "level": ""
         },
         {
-          "id": "m54",
+          "id": "m57",
           "day": 6,
           "time": "08:00",
           "dur": 60,
@@ -1324,7 +1348,7 @@
           "level": ""
         },
         {
-          "id": "m55",
+          "id": "m58",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -1332,15 +1356,7 @@
           "level": ""
         },
         {
-          "id": "m56",
-          "day": 6,
-          "time": "09:00",
-          "dur": 60,
-          "type": "Functional (COMMIT) Bengt Vlietstra",
-          "level": ""
-        },
-        {
-          "id": "m57",
+          "id": "m59",
           "day": 6,
           "time": "11:30",
           "dur": 60,
@@ -1511,7 +1527,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-05T07:29:20.691Z",
+      "fetchedAt": "2026-07-06T08:23:55.179Z",
       "classes": [
         {
           "id": "t01",
