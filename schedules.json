@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T06:31:49.159Z",
+  "updated": "2026-07-09T07:44:51.864Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-08T06:28:50.941Z",
+      "fetchedAt": "2026-07-09T07:42:15.088Z",
       "classes": [
         {
           "id": "c01",
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-08T06:29:03.146Z",
+      "fetchedAt": "2026-07-09T07:42:26.717Z",
       "classes": [
         {
           "id": "s01",
@@ -748,7 +748,7 @@
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Amin",
+          "type": "Jeugd training tot 7 jaar Mounia",
           "level": ""
         },
         {
@@ -756,7 +756,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Chaimae",
+          "type": "Bokszaktraining Mounia",
           "level": ""
         },
         {
@@ -796,7 +796,7 @@
           "day": 4,
           "time": "20:15",
           "dur": 60,
-          "type": "LADY'S ONLY Chaimae",
+          "type": "LADY'S ONLY Mounia",
           "level": ""
         },
         {
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-08T06:29:34.618Z",
+      "fetchedAt": "2026-07-09T07:42:57.692Z",
       "classes": [
         {
           "id": "m01",
@@ -1485,8 +1485,8 @@
       "url": "https://tigersgym.nl/",
       "addr": "Kroonstraat 9, Utrecht",
       "workit": false,
-      "live": true,
-      "source": "dom",
+      "live": false,
+      "source": "stale",
       "fetchedAt": "2026-07-08T06:31:49.098Z",
       "classes": [
         {
