@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T07:44:51.864Z",
+  "updated": "2026-07-10T07:39:04.078Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-09T07:42:15.088Z",
+      "fetchedAt": "2026-07-10T07:36:16.588Z",
       "classes": [
         {
           "id": "c01",
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-09T07:42:26.717Z",
+      "fetchedAt": "2026-07-10T07:36:28.765Z",
       "classes": [
         {
           "id": "s01",
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-09T07:42:57.692Z",
+      "fetchedAt": "2026-07-10T07:36:41.719Z",
       "classes": [
         {
           "id": "m01",
@@ -1318,6 +1318,14 @@
         {
           "id": "m54",
           "day": 6,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Functional (COMMIT) Hugo Bouma",
+          "level": ""
+        },
+        {
+          "id": "m55",
+          "day": 6,
           "time": "11:30",
           "dur": 60,
           "type": "Yoga in het bos (Amelisweerd) Isa Kraai",
@@ -1485,9 +1493,9 @@
       "url": "https://tigersgym.nl/",
       "addr": "Kroonstraat 9, Utrecht",
       "workit": false,
-      "live": false,
-      "source": "stale",
-      "fetchedAt": "2026-07-08T06:31:49.098Z",
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-07-10T07:39:04.015Z",
       "classes": [
         {
           "id": "t01",
