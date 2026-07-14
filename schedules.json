@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T06:56:21.008Z",
+  "updated": "2026-07-14T06:18:22.665Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,8 +8,8 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": true,
-      "source": "dom",
+      "live": false,
+      "source": "stale",
       "fetchedAt": "2026-07-13T06:53:44.657Z",
       "classes": [
         {
@@ -525,7 +525,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-13T06:53:57.725Z",
+      "fetchedAt": "2026-07-14T06:15:45.282Z",
       "classes": [
         {
           "id": "s01",
@@ -580,7 +580,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Jahfarr",
+          "type": "Kickboksen Techniek Nassim",
           "level": ""
         },
         {
@@ -852,7 +852,7 @@
           "day": 6,
           "time": "10:00",
           "dur": 60,
-          "type": "Bokszaktraining Micah",
+          "type": "Bokszaktraining Chaimae",
           "level": ""
         },
         {
@@ -876,7 +876,7 @@
           "day": 6,
           "time": "11:00",
           "dur": 60,
-          "type": "Kickboksen beginners & gevorderden Micah",
+          "type": "Kickboksen beginners & gevorderden Chaimae",
           "level": ""
         }
       ]
@@ -889,7 +889,7 @@
       "workitUrl": "https://workit.nl/locaties/4317-commit-rivierenwijk",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-13T06:54:28.078Z",
+      "fetchedAt": "2026-07-14T06:15:57.970Z",
       "classes": [
         {
           "id": "m01",
@@ -904,7 +904,7 @@
           "day": 0,
           "time": "09:00",
           "dur": 60,
-          "type": "Strength Beginner (COMMIT) Twan Kusters",
+          "type": "Strength Beginner (COMMIT) Enya Hoogewoning",
           "level": ""
         },
         {
@@ -912,7 +912,7 @@
           "day": 0,
           "time": "10:00",
           "dur": 60,
-          "type": "Functional (COMMIT) Twan Kusters",
+          "type": "Functional (COMMIT) Enya Hoogewoning",
           "level": ""
         },
         {
@@ -1455,7 +1455,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-13T06:56:20.946Z",
+      "fetchedAt": "2026-07-14T06:18:22.584Z",
       "classes": [
         {
           "id": "t01",
