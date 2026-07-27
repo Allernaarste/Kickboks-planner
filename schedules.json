@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T06:40:08.164Z",
+  "updated": "2026-07-27T07:34:11.051Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-26T06:37:31.623Z",
+      "fetchedAt": "2026-07-27T07:31:25.712Z",
       "classes": [
         {
           "id": "c01",
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-26T06:37:54.950Z",
+      "fetchedAt": "2026-07-27T07:31:38.079Z",
       "classes": [
         {
           "id": "s01",
@@ -540,7 +540,7 @@
           "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
+          "type": "Jeugd Training 8 t/m 14 jaar Quinty",
           "level": ""
         },
         {
@@ -548,7 +548,7 @@
           "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Hamza &",
+          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
           "level": ""
         },
         {
@@ -556,7 +556,7 @@
           "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Amin",
+          "type": "Jeugd training tot 7 jaar Quinty",
           "level": ""
         },
         {
@@ -564,7 +564,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Nassim",
+          "type": "Bokszaktraining Mounia",
           "level": ""
         },
         {
@@ -620,7 +620,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Lotte",
+          "type": "Kracht - Circuit Training André",
           "level": ""
         },
         {
@@ -676,11 +676,19 @@
           "day": 3,
           "time": "20:00",
           "dur": 60,
-          "type": "Kickboksen PRO Niveau Said",
+          "type": "Bokszaktraining Michael",
           "level": ""
         },
         {
           "id": "s21",
+          "day": 3,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Kickboksen PRO Niveau Said",
+          "level": ""
+        },
+        {
+          "id": "s22",
           "day": 4,
           "time": "09:15",
           "dur": 60,
@@ -688,7 +696,7 @@
           "level": ""
         },
         {
-          "id": "s22",
+          "id": "s23",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -696,7 +704,7 @@
           "level": ""
         },
         {
-          "id": "s23",
+          "id": "s24",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -704,15 +712,15 @@
           "level": ""
         },
         {
-          "id": "s24",
+          "id": "s25",
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Nassim",
+          "type": "Kracht - Circuit Training André",
           "level": ""
         },
         {
-          "id": "s25",
+          "id": "s26",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -720,7 +728,7 @@
           "level": ""
         },
         {
-          "id": "s26",
+          "id": "s27",
           "day": 4,
           "time": "20:15",
           "dur": 60,
@@ -728,7 +736,7 @@
           "level": ""
         },
         {
-          "id": "s27",
+          "id": "s28",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -736,7 +744,7 @@
           "level": ""
         },
         {
-          "id": "s28",
+          "id": "s29",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -744,7 +752,7 @@
           "level": ""
         },
         {
-          "id": "s29",
+          "id": "s30",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -752,7 +760,7 @@
           "level": ""
         },
         {
-          "id": "s30",
+          "id": "s31",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -760,7 +768,7 @@
           "level": ""
         },
         {
-          "id": "s31",
+          "id": "s32",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -768,7 +776,7 @@
           "level": ""
         },
         {
-          "id": "s32",
+          "id": "s33",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -776,7 +784,7 @@
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s34",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -784,7 +792,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s35",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -792,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s36",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -800,7 +808,7 @@
           "level": ""
         },
         {
-          "id": "s36",
+          "id": "s37",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -1383,7 +1391,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-26T06:40:08.085Z",
+      "fetchedAt": "2026-07-27T07:34:10.988Z",
       "classes": [
         {
           "id": "t01",
