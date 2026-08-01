@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T06:46:52.856Z",
+  "updated": "2026-08-01T06:32:26.961Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-31T06:44:03.096Z",
+      "fetchedAt": "2026-08-01T06:29:34.811Z",
       "classes": [
         {
           "id": "c01",
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-31T06:44:15.735Z",
+      "fetchedAt": "2026-08-01T06:29:53.842Z",
       "classes": [
         {
           "id": "s01",
@@ -1391,7 +1391,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-07-31T06:46:52.786Z",
+      "fetchedAt": "2026-08-01T06:32:26.900Z",
       "classes": [
         {
           "id": "t01",
@@ -1523,6 +1523,14 @@
         },
         {
           "id": "t17",
+          "day": 3,
+          "time": "19:30",
+          "dur": 60,
+          "type": "HOE LAAT?",
+          "level": ""
+        },
+        {
+          "id": "t18",
           "day": 4,
           "time": "10:15",
           "dur": 60,
@@ -1530,7 +1538,7 @@
           "level": ""
         },
         {
-          "id": "t18",
+          "id": "t19",
           "day": 4,
           "time": "18:15",
           "dur": 60,
@@ -1538,7 +1546,7 @@
           "level": ""
         },
         {
-          "id": "t19",
+          "id": "t20",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -1546,7 +1554,7 @@
           "level": ""
         },
         {
-          "id": "t20",
+          "id": "t21",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -1554,7 +1562,7 @@
           "level": ""
         },
         {
-          "id": "t21",
+          "id": "t22",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -1562,7 +1570,7 @@
           "level": ""
         },
         {
-          "id": "t22",
+          "id": "t23",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1570,7 +1578,7 @@
           "level": ""
         },
         {
-          "id": "t23",
+          "id": "t24",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1578,7 +1586,7 @@
           "level": ""
         },
         {
-          "id": "t24",
+          "id": "t25",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1586,7 +1594,7 @@
           "level": ""
         },
         {
-          "id": "t25",
+          "id": "t26",
           "day": 6,
           "time": "19:00",
           "dur": 60,
