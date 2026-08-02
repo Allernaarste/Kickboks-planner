@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T06:32:26.961Z",
+  "updated": "2026-08-02T06:36:03.569Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-01T06:29:34.811Z",
+      "fetchedAt": "2026-08-02T06:33:16.052Z",
       "classes": [
         {
           "id": "c01",
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-01T06:29:53.842Z",
+      "fetchedAt": "2026-08-02T06:33:30.630Z",
       "classes": [
         {
           "id": "s01",
@@ -532,7 +532,7 @@
           "day": 0,
           "time": "19:00",
           "dur": 60,
-          "type": "LADY'S ONLY Mounia",
+          "type": "LADY'S ONLY Chaimae",
           "level": ""
         },
         {
@@ -1391,7 +1391,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-01T06:32:26.900Z",
+      "fetchedAt": "2026-08-02T06:36:03.502Z",
       "classes": [
         {
           "id": "t01",
