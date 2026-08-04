@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T07:28:45.971Z",
+  "updated": "2026-08-04T06:33:05.863Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-03T07:25:58.724Z",
+      "fetchedAt": "2026-08-04T06:28:12.429Z",
       "classes": [
         {
           "id": "c01",
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-03T07:26:11.648Z",
+      "fetchedAt": "2026-08-04T06:28:25.042Z",
       "classes": [
         {
           "id": "s01",
@@ -580,7 +580,7 @@
           "day": 1,
           "time": "20:00",
           "dur": 60,
-          "type": "Kickboksen PRO Niveau Najim",
+          "type": "Kickboksen PRO Niveau Trainer onbekend",
           "level": ""
         },
         {
@@ -1383,7 +1383,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-03T07:28:45.905Z",
+      "fetchedAt": "2026-08-04T06:33:05.806Z",
       "classes": [
         {
           "id": "t01",
