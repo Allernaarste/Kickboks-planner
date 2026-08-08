@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T05:43:09.801Z",
+  "updated": "2026-08-08T05:03:54.609Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,8 +8,8 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": true,
-      "source": "dom",
+      "live": false,
+      "source": "stale",
       "fetchedAt": "2026-08-07T05:40:17.672Z",
       "classes": [
         {
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-07T05:40:31.513Z",
+      "fetchedAt": "2026-08-08T05:01:19.756Z",
       "classes": [
         {
           "id": "s01",
@@ -780,7 +780,7 @@
           "day": 6,
           "time": "10:00",
           "dur": 60,
-          "type": "Bokszaktraining Micah",
+          "type": "Bokszaktraining Mohamed Amin",
           "level": ""
         },
         {
@@ -804,7 +804,7 @@
           "day": 6,
           "time": "11:00",
           "dur": 60,
-          "type": "Kickboksen beginners & gevorderden Micah",
+          "type": "Kickboksen beginners & gevorderden Mohamed Amin",
           "level": ""
         }
       ]
@@ -1383,7 +1383,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-07T05:43:09.726Z",
+      "fetchedAt": "2026-08-08T05:03:54.547Z",
       "classes": [
         {
           "id": "t01",
