@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T05:11:36.638Z",
+  "updated": "2026-08-12T05:40:04.529Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-11T05:08:49.854Z",
+      "fetchedAt": "2026-08-12T05:37:16.162Z",
       "classes": [
         {
           "id": "c01",
@@ -509,7 +509,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-11T05:09:03.902Z",
+      "fetchedAt": "2026-08-12T05:37:29.133Z",
       "classes": [
         {
           "id": "s01",
@@ -524,7 +524,7 @@
           "day": 0,
           "time": "19:00",
           "dur": 60,
-          "type": "LADY'S ONLY Yamila",
+          "type": "Conditie Traning in DOORN ! LADY ONLY Chaimae",
           "level": ""
         },
         {
@@ -617,14 +617,6 @@
         },
         {
           "id": "s14",
-          "day": 2,
-          "time": "20:00",
-          "dur": 60,
-          "type": "Bokszaktraining Badr",
-          "level": ""
-        },
-        {
-          "id": "s15",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -632,7 +624,7 @@
           "level": ""
         },
         {
-          "id": "s16",
+          "id": "s15",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -640,7 +632,7 @@
           "level": ""
         },
         {
-          "id": "s17",
+          "id": "s16",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -648,7 +640,7 @@
           "level": ""
         },
         {
-          "id": "s18",
+          "id": "s17",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -656,7 +648,7 @@
           "level": ""
         },
         {
-          "id": "s19",
+          "id": "s18",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -664,7 +656,7 @@
           "level": ""
         },
         {
-          "id": "s20",
+          "id": "s19",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -672,7 +664,7 @@
           "level": ""
         },
         {
-          "id": "s21",
+          "id": "s20",
           "day": 4,
           "time": "09:15",
           "dur": 60,
@@ -680,7 +672,7 @@
           "level": ""
         },
         {
-          "id": "s22",
+          "id": "s21",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -688,11 +680,19 @@
           "level": ""
         },
         {
+          "id": "s22",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Techniek Said",
+          "level": ""
+        },
+        {
           "id": "s23",
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Haytam",
+          "type": "Kracht - Circuit Training Nassim",
           "level": ""
         },
         {
@@ -700,19 +700,11 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Nassim",
-          "level": ""
-        },
-        {
-          "id": "s25",
-          "day": 4,
-          "time": "19:00",
-          "dur": 60,
           "type": "P T A André",
           "level": ""
         },
         {
-          "id": "s26",
+          "id": "s25",
           "day": 4,
           "time": "20:15",
           "dur": 60,
@@ -720,7 +712,7 @@
           "level": ""
         },
         {
-          "id": "s27",
+          "id": "s26",
           "day": 5,
           "time": "07:00",
           "dur": 60,
@@ -728,7 +720,7 @@
           "level": ""
         },
         {
-          "id": "s28",
+          "id": "s27",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -736,7 +728,7 @@
           "level": ""
         },
         {
-          "id": "s29",
+          "id": "s28",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -744,7 +736,7 @@
           "level": ""
         },
         {
-          "id": "s30",
+          "id": "s29",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -752,15 +744,15 @@
           "level": ""
         },
         {
-          "id": "s31",
+          "id": "s30",
           "day": 5,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Najim",
+          "type": "Bokszaktraining Mohamed Amin",
           "level": ""
         },
         {
-          "id": "s32",
+          "id": "s31",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -768,7 +760,7 @@
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s32",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -776,7 +768,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s33",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -784,7 +776,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s34",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -792,7 +784,7 @@
           "level": ""
         },
         {
-          "id": "s36",
+          "id": "s35",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -1375,7 +1367,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-11T05:11:36.580Z",
+      "fetchedAt": "2026-08-12T05:40:04.459Z",
       "classes": [
         {
           "id": "t01",
