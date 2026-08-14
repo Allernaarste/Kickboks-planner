@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T05:43:13.889Z",
+  "updated": "2026-08-14T05:41:08.029Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-13T05:40:25.518Z",
+      "fetchedAt": "2026-08-14T05:38:18.638Z",
       "classes": [
         {
           "id": "c01",
@@ -509,7 +509,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-13T05:40:39.298Z",
+      "fetchedAt": "2026-08-14T05:38:32.671Z",
       "classes": [
         {
           "id": "s01",
@@ -714,9 +714,9 @@
         {
           "id": "s26",
           "day": 5,
-          "time": "07:00",
+          "time": "18:00",
           "dur": 60,
-          "type": "Bokszaktraining Micah",
+          "type": "Jeugd Training 8 t/m 13 jaar Lotte",
           "level": ""
         },
         {
@@ -724,7 +724,7 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Lotte",
+          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
           "level": ""
         },
         {
@@ -732,19 +732,11 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
-          "level": ""
-        },
-        {
-          "id": "s29",
-          "day": 5,
-          "time": "18:00",
-          "dur": 60,
           "type": "Jeugd training tot 7 jaar Lotte",
           "level": ""
         },
         {
-          "id": "s30",
+          "id": "s29",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -752,7 +744,7 @@
           "level": ""
         },
         {
-          "id": "s31",
+          "id": "s30",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -760,7 +752,7 @@
           "level": ""
         },
         {
-          "id": "s32",
+          "id": "s31",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -768,7 +760,7 @@
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s32",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -776,7 +768,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s33",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -784,7 +776,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s34",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -1367,7 +1359,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-13T05:43:13.820Z",
+      "fetchedAt": "2026-08-14T05:41:07.957Z",
       "classes": [
         {
           "id": "t01",
