@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T04:38:20.790Z",
+  "updated": "2026-08-17T04:44:20.566Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-16T04:35:33.832Z",
+      "fetchedAt": "2026-08-17T04:41:26.437Z",
       "classes": [
         {
           "id": "c01",
@@ -214,10 +214,10 @@
         },
         {
           "id": "c26",
-          "day": 3,
-          "time": "09:00",
+          "day": 2,
+          "time": "20:00",
           "dur": 60,
-          "type": "Kickboksen",
+          "type": "MMA/Worstelen en Cage control (Gevorderden)",
           "level": ""
         },
         {
@@ -225,11 +225,19 @@
           "day": 3,
           "time": "09:00",
           "dur": 60,
-          "type": "Zaktraining kickboksen",
+          "type": "Kickboksen",
           "level": ""
         },
         {
           "id": "c28",
+          "day": 3,
+          "time": "09:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c29",
           "day": 3,
           "time": "11:00",
           "dur": 60,
@@ -237,19 +245,11 @@
           "level": ""
         },
         {
-          "id": "c29",
+          "id": "c30",
           "day": 3,
           "time": "12:00",
           "dur": 60,
           "type": "Vrije Zaktraining",
-          "level": ""
-        },
-        {
-          "id": "c30",
-          "day": 3,
-          "time": "18:30",
-          "dur": 60,
-          "type": "Kickboksen",
           "level": ""
         },
         {
@@ -257,7 +257,7 @@
           "day": 3,
           "time": "18:30",
           "dur": 60,
-          "type": "Zaktraining kickboksen",
+          "type": "Kickboksen",
           "level": ""
         },
         {
@@ -265,7 +265,7 @@
           "day": 3,
           "time": "18:30",
           "dur": 60,
-          "type": "KIDS Zaktraining 5 t/m 17 jaar",
+          "type": "Zaktraining kickboksen",
           "level": ""
         },
         {
@@ -273,15 +273,15 @@
           "day": 3,
           "time": "18:30",
           "dur": 60,
-          "type": "Hyrox",
+          "type": "KIDS Zaktraining 5 t/m 17 jaar",
           "level": ""
         },
         {
           "id": "c34",
           "day": 3,
-          "time": "19:30",
+          "time": "18:30",
           "dur": 60,
-          "type": "Kickboksen Sparren",
+          "type": "Hyrox",
           "level": ""
         },
         {
@@ -289,7 +289,7 @@
           "day": 3,
           "time": "19:30",
           "dur": 60,
-          "type": "Zaktraining boksen",
+          "type": "Kickboksen Sparren",
           "level": ""
         },
         {
@@ -297,11 +297,19 @@
           "day": 3,
           "time": "19:30",
           "dur": 60,
-          "type": "MMA Sparren (Gevorderden)",
+          "type": "Zaktraining boksen",
           "level": ""
         },
         {
           "id": "c37",
+          "day": 3,
+          "time": "19:30",
+          "dur": 60,
+          "type": "MMA Sparren (Gevorderden)",
+          "level": ""
+        },
+        {
+          "id": "c38",
           "day": 3,
           "time": "19:45",
           "dur": 60,
@@ -309,7 +317,7 @@
           "level": ""
         },
         {
-          "id": "c38",
+          "id": "c39",
           "day": 4,
           "time": "09:00",
           "dur": 60,
@@ -317,7 +325,7 @@
           "level": ""
         },
         {
-          "id": "c39",
+          "id": "c40",
           "day": 4,
           "time": "18:00",
           "dur": 60,
@@ -325,7 +333,7 @@
           "level": ""
         },
         {
-          "id": "c40",
+          "id": "c41",
           "day": 4,
           "time": "18:00",
           "dur": 60,
@@ -333,19 +341,11 @@
           "level": ""
         },
         {
-          "id": "c41",
-          "day": 4,
-          "time": "19:00",
-          "dur": 60,
-          "type": "Zaktraining kickboksen",
-          "level": ""
-        },
-        {
           "id": "c42",
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "KIDS Kickboksen 11 t/m 17 jaar",
+          "type": "Zaktraining kickboksen",
           "level": ""
         },
         {
@@ -353,15 +353,15 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "MMA/Worstelen en cage control (Beginners)",
+          "type": "KIDS Kickboksen 11 t/m 17 jaar",
           "level": ""
         },
         {
           "id": "c44",
           "day": 4,
-          "time": "20:00",
+          "time": "19:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "MMA/Worstelen en cage control (Beginners)",
           "level": ""
         },
         {
@@ -369,15 +369,15 @@
           "day": 4,
           "time": "20:00",
           "dur": 60,
-          "type": "Kickboksen techniek (vanaf 13 jaar)",
+          "type": "Vrije Zaktraining",
           "level": ""
         },
         {
           "id": "c46",
-          "day": 5,
-          "time": "09:00",
+          "day": 4,
+          "time": "20:00",
           "dur": 60,
-          "type": "Kickboksen",
+          "type": "Kickboksen techniek (vanaf 13 jaar)",
           "level": ""
         },
         {
@@ -385,13 +385,13 @@
           "day": 5,
           "time": "09:00",
           "dur": 60,
-          "type": "Zaktraining kickboksen",
+          "type": "Kickboksen",
           "level": ""
         },
         {
           "id": "c48",
           "day": 5,
-          "time": "10:00",
+          "time": "09:00",
           "dur": 60,
           "type": "Zaktraining kickboksen",
           "level": ""
@@ -399,13 +399,21 @@
         {
           "id": "c49",
           "day": 5,
+          "time": "10:00",
+          "dur": 60,
+          "type": "Zaktraining kickboksen",
+          "level": ""
+        },
+        {
+          "id": "c50",
+          "day": 5,
           "time": "10:30",
           "dur": 60,
           "type": "Hyrox",
           "level": ""
         },
         {
-          "id": "c50",
+          "id": "c51",
           "day": 5,
           "time": "12:00",
           "dur": 60,
@@ -413,7 +421,7 @@
           "level": ""
         },
         {
-          "id": "c51",
+          "id": "c52",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -421,7 +429,7 @@
           "level": ""
         },
         {
-          "id": "c52",
+          "id": "c53",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -429,7 +437,7 @@
           "level": ""
         },
         {
-          "id": "c53",
+          "id": "c54",
           "day": 5,
           "time": "18:30",
           "dur": 60,
@@ -437,7 +445,7 @@
           "level": ""
         },
         {
-          "id": "c54",
+          "id": "c55",
           "day": 5,
           "time": "19:30",
           "dur": 60,
@@ -445,7 +453,7 @@
           "level": ""
         },
         {
-          "id": "c55",
+          "id": "c56",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -453,7 +461,7 @@
           "level": ""
         },
         {
-          "id": "c56",
+          "id": "c57",
           "day": 6,
           "time": "09:00",
           "dur": 60,
@@ -461,7 +469,7 @@
           "level": ""
         },
         {
-          "id": "c57",
+          "id": "c58",
           "day": 6,
           "time": "09:30",
           "dur": 60,
@@ -469,7 +477,7 @@
           "level": ""
         },
         {
-          "id": "c58",
+          "id": "c59",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -477,7 +485,7 @@
           "level": ""
         },
         {
-          "id": "c59",
+          "id": "c60",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -485,7 +493,7 @@
           "level": ""
         },
         {
-          "id": "c60",
+          "id": "c61",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -493,7 +501,7 @@
           "level": ""
         },
         {
-          "id": "c61",
+          "id": "c62",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -509,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-16T04:35:46.927Z",
+      "fetchedAt": "2026-08-17T04:41:40.716Z",
       "classes": [
         {
           "id": "s01",
@@ -524,7 +532,7 @@
           "day": 0,
           "time": "19:00",
           "dur": 60,
-          "type": "Conditie Traning in DOORN ! LADY ONLY Chaimae",
+          "type": "LADY'S ONLY Mounia",
           "level": ""
         },
         {
@@ -556,7 +564,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Mohamed Amin",
+          "type": "Bokszaktraining Said",
           "level": ""
         },
         {
@@ -572,23 +580,23 @@
           "day": 1,
           "time": "20:00",
           "dur": 60,
-          "type": "Kickboksen PRO Niveau Najim",
+          "type": "Bokszaktraining Michael",
           "level": ""
         },
         {
           "id": "s09",
-          "day": 2,
-          "time": "09:15",
+          "day": 1,
+          "time": "20:00",
           "dur": 60,
-          "type": "LADY'S ONLY Yamila",
+          "type": "Kickboksen PRO Niveau Najim",
           "level": ""
         },
         {
           "id": "s10",
           "day": 2,
-          "time": "19:00",
+          "time": "09:15",
           "dur": 60,
-          "type": "Bokszaktraining Micah",
+          "type": "LADY'S ONLY Mounia",
           "level": ""
         },
         {
@@ -596,7 +604,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Mohamed Amin",
+          "type": "Bokszaktraining Micah",
           "level": ""
         },
         {
@@ -604,7 +612,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Lotte",
+          "type": "Kickboksen Techniek Najim",
           "level": ""
         },
         {
@@ -612,23 +620,23 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "P T A André",
+          "type": "Kracht - Circuit Training Vera",
           "level": ""
         },
         {
           "id": "s14",
-          "day": 3,
-          "time": "18:00",
+          "day": 2,
+          "time": "19:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 14 jaar Quinty",
+          "type": "P T A André",
           "level": ""
         },
         {
           "id": "s15",
-          "day": 3,
-          "time": "18:00",
+          "day": 2,
+          "time": "20:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
+          "type": "Bokszaktraining Badr",
           "level": ""
         },
         {
@@ -636,19 +644,35 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Quinty",
+          "type": "Jeugd Training 8 t/m 14 jaar Quinty",
           "level": ""
         },
         {
           "id": "s17",
           "day": 3,
-          "time": "19:00",
+          "time": "18:00",
           "dur": 60,
-          "type": "Bokszaktraining Chaimae",
+          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
           "level": ""
         },
         {
           "id": "s18",
+          "day": 3,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Quinty",
+          "level": ""
+        },
+        {
+          "id": "s19",
+          "day": 3,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Said",
+          "level": ""
+        },
+        {
+          "id": "s20",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -656,7 +680,15 @@
           "level": ""
         },
         {
-          "id": "s19",
+          "id": "s21",
+          "day": 3,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Bokszaktraining Michael",
+          "level": ""
+        },
+        {
+          "id": "s22",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -664,35 +696,11 @@
           "level": ""
         },
         {
-          "id": "s20",
+          "id": "s23",
           "day": 4,
           "time": "09:15",
           "dur": 60,
-          "type": "LADY'S ONLY Chaimae",
-          "level": ""
-        },
-        {
-          "id": "s21",
-          "day": 4,
-          "time": "19:00",
-          "dur": 60,
-          "type": "Bokszaktraining Chaimae",
-          "level": ""
-        },
-        {
-          "id": "s22",
-          "day": 4,
-          "time": "19:00",
-          "dur": 60,
-          "type": "Kickboksen Techniek Said",
-          "level": ""
-        },
-        {
-          "id": "s23",
-          "day": 4,
-          "time": "19:00",
-          "dur": 60,
-          "type": "Kracht - Circuit Training Nassim",
+          "type": "LADY'S ONLY Mounia",
           "level": ""
         },
         {
@@ -700,11 +708,35 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "P T A André",
+          "type": "Bokszaktraining Chaimae",
           "level": ""
         },
         {
           "id": "s25",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kickboksen Techniek Haytam",
+          "level": ""
+        },
+        {
+          "id": "s26",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Kracht - Circuit Training Nassim",
+          "level": ""
+        },
+        {
+          "id": "s27",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
+        },
+        {
+          "id": "s28",
           "day": 4,
           "time": "20:15",
           "dur": 60,
@@ -712,15 +744,23 @@
           "level": ""
         },
         {
-          "id": "s26",
+          "id": "s29",
           "day": 5,
-          "time": "18:00",
+          "time": "07:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Lotte",
+          "type": "Bokszaktraining Micah",
           "level": ""
         },
         {
-          "id": "s27",
+          "id": "s30",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd Training 8 t/m 13 jaar Badr",
+          "level": ""
+        },
+        {
+          "id": "s31",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -728,7 +768,7 @@
           "level": ""
         },
         {
-          "id": "s28",
+          "id": "s32",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -736,7 +776,7 @@
           "level": ""
         },
         {
-          "id": "s29",
+          "id": "s33",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -744,7 +784,7 @@
           "level": ""
         },
         {
-          "id": "s30",
+          "id": "s34",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -752,7 +792,7 @@
           "level": ""
         },
         {
-          "id": "s31",
+          "id": "s35",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -760,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s32",
+          "id": "s36",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -768,7 +808,7 @@
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s37",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -776,7 +816,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s38",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -1359,7 +1399,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-16T04:38:20.723Z",
+      "fetchedAt": "2026-08-17T04:44:20.495Z",
       "classes": [
         {
           "id": "t01",
