@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T04:42:01.942Z",
+  "updated": "2026-08-21T04:40:50.205Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-20T04:36:59.293Z",
+      "fetchedAt": "2026-08-21T04:37:57.774Z",
       "classes": [
         {
           "id": "c01",
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-20T04:37:11.652Z",
+      "fetchedAt": "2026-08-21T04:38:11.798Z",
       "classes": [
         {
           "id": "s01",
@@ -746,9 +746,9 @@
         {
           "id": "s29",
           "day": 5,
-          "time": "07:00",
+          "time": "18:00",
           "dur": 60,
-          "type": "Bokszaktraining Micah",
+          "type": "Jeugd Training 8 t/m 13 jaar Badr",
           "level": ""
         },
         {
@@ -756,7 +756,7 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Badr",
+          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
           "level": ""
         },
         {
@@ -764,19 +764,11 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
-          "level": ""
-        },
-        {
-          "id": "s32",
-          "day": 5,
-          "time": "18:00",
-          "dur": 60,
           "type": "Jeugd training tot 7 jaar Lotte",
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s32",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -784,7 +776,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s33",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -792,7 +784,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s34",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -800,7 +792,7 @@
           "level": ""
         },
         {
-          "id": "s36",
+          "id": "s35",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -808,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s37",
+          "id": "s36",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -816,7 +808,7 @@
           "level": ""
         },
         {
-          "id": "s38",
+          "id": "s37",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -1399,10 +1391,18 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-20T04:42:01.873Z",
+      "fetchedAt": "2026-08-21T04:40:50.142Z",
       "classes": [
         {
           "id": "t01",
+          "day": 0,
+          "time": "07:30",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Maud",
+          "level": ""
+        },
+        {
+          "id": "t02",
           "day": 0,
           "time": "10:15",
           "dur": 60,
@@ -1410,7 +1410,7 @@
           "level": ""
         },
         {
-          "id": "t02",
+          "id": "t03",
           "day": 0,
           "time": "19:15",
           "dur": 60,
@@ -1418,7 +1418,7 @@
           "level": ""
         },
         {
-          "id": "t03",
+          "id": "t04",
           "day": 1,
           "time": "17:00",
           "dur": 60,
@@ -1426,19 +1426,11 @@
           "level": ""
         },
         {
-          "id": "t04",
-          "day": 1,
-          "time": "17:00",
-          "dur": 60,
-          "type": "Techniek (geen sparren) Federico",
-          "level": ""
-        },
-        {
           "id": "t05",
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "Basis / Beginnersles Federico",
+          "type": "Techniek (geen sparren) Ingmar",
           "level": ""
         },
         {
@@ -1446,23 +1438,23 @@
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "Kickboksen Ivar",
+          "type": "Basis / Beginnersles Federico",
           "level": ""
         },
         {
           "id": "t07",
-          "day": 3,
-          "time": "08:30",
+          "day": 1,
+          "time": "17:00",
           "dur": 60,
-          "type": "Kickboksen Federico",
+          "type": "Kickboksen Ivar",
           "level": ""
         },
         {
           "id": "t08",
-          "day": 3,
-          "time": "08:30",
+          "day": 1,
+          "time": "19:30",
           "dur": 60,
-          "type": "Techniek (geen sparren) Jeroen",
+          "type": "Gevorderden/wedstrijd (Invite only) Mark",
           "level": ""
         },
         {
@@ -1470,7 +1462,7 @@
           "day": 3,
           "time": "08:30",
           "dur": 60,
-          "type": "Techniek (geen sparren) Maud",
+          "type": "Kickboksen Federico",
           "level": ""
         },
         {
@@ -1478,11 +1470,27 @@
           "day": 3,
           "time": "08:30",
           "dur": 60,
-          "type": "Kickboksen (bij goed weer in het Griftpark) Ingmar",
+          "type": "Techniek (geen sparren) Jeroen",
           "level": ""
         },
         {
           "id": "t11",
+          "day": 3,
+          "time": "08:30",
+          "dur": 60,
+          "type": "Techniek (geen sparren) Maud",
+          "level": ""
+        },
+        {
+          "id": "t12",
+          "day": 3,
+          "time": "08:30",
+          "dur": 60,
+          "type": "Kickboksen (bij goed weer in het Griftpark) Ingmar",
+          "level": ""
+        },
+        {
+          "id": "t13",
           "day": 3,
           "time": "09:00",
           "dur": 60,
@@ -1490,7 +1498,7 @@
           "level": ""
         },
         {
-          "id": "t12",
+          "id": "t14",
           "day": 3,
           "time": "09:00",
           "dur": 60,
@@ -1498,7 +1506,7 @@
           "level": ""
         },
         {
-          "id": "t13",
+          "id": "t15",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1506,7 +1514,7 @@
           "level": ""
         },
         {
-          "id": "t14",
+          "id": "t16",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1514,7 +1522,7 @@
           "level": ""
         },
         {
-          "id": "t15",
+          "id": "t17",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -1522,27 +1530,11 @@
           "level": ""
         },
         {
-          "id": "t16",
+          "id": "t18",
           "day": 3,
           "time": "18:00",
           "dur": 60,
           "type": "Basis / Beginnersles (geen sparren) Mark",
-          "level": ""
-        },
-        {
-          "id": "t17",
-          "day": 3,
-          "time": "19:30",
-          "dur": 60,
-          "type": "HOE LAAT?",
-          "level": ""
-        },
-        {
-          "id": "t18",
-          "day": 4,
-          "time": "10:15",
-          "dur": 60,
-          "type": "Recharging Breathing session Ingmar",
           "level": ""
         },
         {
@@ -1556,21 +1548,13 @@
         {
           "id": "t20",
           "day": 5,
-          "time": "07:00",
+          "time": "18:30",
           "dur": 60,
-          "type": "Techniek (geen sparren) Jeroen",
+          "type": "Basis / Beginnersles Mark",
           "level": ""
         },
         {
           "id": "t21",
-          "day": 5,
-          "time": "07:00",
-          "dur": 60,
-          "type": "Techniek (geen sparren) Maud",
-          "level": ""
-        },
-        {
-          "id": "t22",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -1578,7 +1562,7 @@
           "level": ""
         },
         {
-          "id": "t23",
+          "id": "t22",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1586,7 +1570,7 @@
           "level": ""
         },
         {
-          "id": "t24",
+          "id": "t23",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1594,7 +1578,7 @@
           "level": ""
         },
         {
-          "id": "t25",
+          "id": "t24",
           "day": 6,
           "time": "19:00",
           "dur": 60,
@@ -1602,7 +1586,7 @@
           "level": ""
         },
         {
-          "id": "t26",
+          "id": "t25",
           "day": 6,
           "time": "19:00",
           "dur": 60,
