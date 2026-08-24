@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T04:39:13.302Z",
+  "updated": "2026-08-24T04:46:08.350Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-23T04:36:46.148Z",
+      "fetchedAt": "2026-08-24T04:43:28.833Z",
       "classes": [
         {
           "id": "c01",
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-23T04:36:58.675Z",
+      "fetchedAt": "2026-08-24T04:43:41.681Z",
       "classes": [
         {
           "id": "s01",
@@ -540,7 +540,7 @@
           "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 14 jaar Quinty",
+          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
           "level": ""
         },
         {
@@ -548,7 +548,7 @@
           "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
+          "type": "Jeugd Wedstrijd Groep Hamza &",
           "level": ""
         },
         {
@@ -556,7 +556,7 @@
           "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Quinty",
+          "type": "Jeugd training tot 7 jaar Amin",
           "level": ""
         },
         {
@@ -612,7 +612,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Najim",
+          "type": "Kickboksen Techniek Said",
           "level": ""
         },
         {
@@ -644,7 +644,7 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 14 jaar Vera",
+          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
           "level": ""
         },
         {
@@ -652,7 +652,7 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
+          "type": "Jeugd Wedstrijd Groep Hamza &",
           "level": ""
         },
         {
@@ -660,7 +660,7 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Vera",
+          "type": "Jeugd training tot 7 jaar Amin",
           "level": ""
         },
         {
@@ -716,7 +716,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Said",
+          "type": "Kickboksen Techniek Haytam",
           "level": ""
         },
         {
@@ -724,7 +724,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Nassim",
+          "type": "Kracht - Circuit Training André",
           "level": ""
         },
         {
@@ -738,25 +738,25 @@
         {
           "id": "s28",
           "day": 4,
+          "time": "20:00",
+          "dur": 60,
+          "type": "Sparren Training Said",
+          "level": ""
+        },
+        {
+          "id": "s29",
+          "day": 4,
           "time": "20:15",
           "dur": 60,
           "type": "LADY'S ONLY Chaimae",
           "level": ""
         },
         {
-          "id": "s29",
-          "day": 5,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Badr",
-          "level": ""
-        },
-        {
           "id": "s30",
           "day": 5,
-          "time": "18:00",
+          "time": "07:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
+          "type": "Bokszaktraining Micah",
           "level": ""
         },
         {
@@ -764,19 +764,35 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Lotte",
+          "type": "Jeugd Training 8 t/m 13 jaar Badr",
           "level": ""
         },
         {
           "id": "s32",
           "day": 5,
-          "time": "19:00",
+          "time": "18:00",
           "dur": 60,
-          "type": "Bokszaktraining Mohamed Amin",
+          "type": "Jeugd Wedstrijd Groep Najim",
           "level": ""
         },
         {
           "id": "s33",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Lotte",
+          "level": ""
+        },
+        {
+          "id": "s34",
+          "day": 5,
+          "time": "19:00",
+          "dur": 60,
+          "type": "Bokszaktraining Najim",
+          "level": ""
+        },
+        {
+          "id": "s35",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -784,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s36",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -792,15 +808,15 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s37",
           "day": 6,
           "time": "10:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Nassim",
+          "type": "Kracht - Circuit Training André",
           "level": ""
         },
         {
-          "id": "s36",
+          "id": "s38",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -808,7 +824,7 @@
           "level": ""
         },
         {
-          "id": "s37",
+          "id": "s39",
           "day": 6,
           "time": "11:00",
           "dur": 60,
@@ -1391,7 +1407,7 @@
       "workit": false,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-23T04:39:13.236Z",
+      "fetchedAt": "2026-08-24T04:46:08.295Z",
       "classes": [
         {
           "id": "t01",
