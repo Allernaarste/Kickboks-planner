@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T04:46:08.350Z",
+  "updated": "2026-08-25T04:41:42.770Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-24T04:43:28.833Z",
+      "fetchedAt": "2026-08-25T04:39:02.630Z",
       "classes": [
         {
           "id": "c01",
@@ -41,7 +41,7 @@
           "day": 0,
           "time": "10:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -73,7 +73,7 @@
           "day": 1,
           "time": "10:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -81,7 +81,7 @@
           "day": 1,
           "time": "11:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -89,7 +89,7 @@
           "day": 1,
           "time": "12:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -113,7 +113,7 @@
           "day": 1,
           "time": "18:30",
           "dur": 60,
-          "type": "KIDS Zaktraining 5 t/m 17 jaar",
+          "type": "KIDS Zaktraining 6 t/m 12 jaar",
           "level": ""
         },
         {
@@ -209,7 +209,7 @@
           "day": 2,
           "time": "20:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -241,7 +241,7 @@
           "day": 3,
           "time": "11:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -249,7 +249,7 @@
           "day": 3,
           "time": "12:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -273,7 +273,7 @@
           "day": 3,
           "time": "18:30",
           "dur": 60,
-          "type": "KIDS Zaktraining 5 t/m 17 jaar",
+          "type": "KIDS Zaktraining 6 t/m 12 jaar",
           "level": ""
         },
         {
@@ -369,7 +369,7 @@
           "day": 4,
           "time": "20:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -377,7 +377,7 @@
           "day": 4,
           "time": "20:00",
           "dur": 60,
-          "type": "Kickboksen techniek (vanaf 13 jaar)",
+          "type": "Kickboksen techniek (vanaf 15 jaar)",
           "level": ""
         },
         {
@@ -417,7 +417,7 @@
           "day": 5,
           "time": "12:00",
           "dur": 60,
-          "type": "Vrije Zaktraining",
+          "type": "Vrije Training",
           "level": ""
         },
         {
@@ -465,7 +465,7 @@
           "day": 6,
           "time": "09:00",
           "dur": 60,
-          "type": "Kickboksen techniek (vanaf 13 jaar)",
+          "type": "Kickboksen techniek (vanaf 15 jaar)",
           "level": ""
         },
         {
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-08-24T04:43:41.681Z",
+      "fetchedAt": "2026-08-25T04:39:16.327Z",
       "classes": [
         {
           "id": "s01",
@@ -1405,8 +1405,8 @@
       "url": "https://tigersgym.nl/",
       "addr": "Kroonstraat 9, Utrecht",
       "workit": false,
-      "live": true,
-      "source": "dom",
+      "live": false,
+      "source": "stale",
       "fetchedAt": "2026-08-24T04:46:08.295Z",
       "classes": [
         {
