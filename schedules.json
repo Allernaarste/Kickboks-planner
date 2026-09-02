@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T09:22:16.276Z",
+  "updated": "2026-09-02T08:39:20.651Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,9 +8,9 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": false,
-      "source": "stale",
-      "fetchedAt": "2026-08-31T10:36:55.361Z",
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-09-02T08:36:42.130Z",
       "classes": [
         {
           "id": "c01",
@@ -517,7 +517,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-01T09:17:47.959Z",
+      "fetchedAt": "2026-09-02T08:36:55.221Z",
       "classes": [
         {
           "id": "s01",
@@ -676,7 +676,7 @@
           "day": 3,
           "time": "17:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Amin",
+          "type": "Jeugd training tot 7 jaar Pim",
           "level": ""
         },
         {
