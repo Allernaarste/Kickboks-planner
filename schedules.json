@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06T08:31:35.355Z",
+  "updated": "2026-09-07T09:03:31.700Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -8,9 +8,9 @@
       "addr": "Utrecht",
       "workit": true,
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
-      "live": false,
-      "source": "stale",
-      "fetchedAt": "2026-09-05T08:06:24.231Z",
+      "live": true,
+      "source": "dom",
+      "fetchedAt": "2026-09-07T08:58:58.207Z",
       "classes": [
         {
           "id": "c01",
@@ -57,7 +57,7 @@
           "day": 1,
           "time": "09:00",
           "dur": 60,
-          "type": "Kickboksen",
+          "type": "Zaktraining kickboksen",
           "level": ""
         },
         {
@@ -65,7 +65,7 @@
           "day": 1,
           "time": "09:00",
           "dur": 60,
-          "type": "Zaktraining kickboksen",
+          "type": "Hyrox Vrij Trainen",
           "level": ""
         },
         {
@@ -87,9 +87,9 @@
         {
           "id": "c10",
           "day": 1,
-          "time": "12:00",
+          "time": "18:30",
           "dur": 60,
-          "type": "Vrije Training",
+          "type": "Kickboksen",
           "level": ""
         },
         {
@@ -97,7 +97,7 @@
           "day": 1,
           "time": "18:30",
           "dur": 60,
-          "type": "Kickboksen",
+          "type": "Zaktraining kickboksen",
           "level": ""
         },
         {
@@ -105,15 +105,15 @@
           "day": 1,
           "time": "18:30",
           "dur": 60,
-          "type": "Zaktraining kickboksen",
+          "type": "KIDS Zaktraining 6 t/m 12 jaar",
           "level": ""
         },
         {
           "id": "c13",
           "day": 1,
-          "time": "18:30",
+          "time": "19:30",
           "dur": 60,
-          "type": "KIDS Zaktraining 6 t/m 12 jaar",
+          "type": "Kickboksen Sparren",
           "level": ""
         },
         {
@@ -121,7 +121,7 @@
           "day": 1,
           "time": "19:30",
           "dur": 60,
-          "type": "Kickboksen wedstrijdgroep",
+          "type": "Zaktraining boksen",
           "level": ""
         },
         {
@@ -129,7 +129,7 @@
           "day": 1,
           "time": "19:30",
           "dur": 60,
-          "type": "Zaktraining boksen",
+          "type": "MMA/Grappling (Beginners-Gevorderden)",
           "level": ""
         },
         {
@@ -137,7 +137,7 @@
           "day": 1,
           "time": "19:30",
           "dur": 60,
-          "type": "MMA/Grappling (Beginners-Gevorderden)",
+          "type": "Hyrox Vrij Trainen",
           "level": ""
         },
         {
@@ -493,7 +493,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-06T08:29:15.203Z",
+      "fetchedAt": "2026-09-07T08:59:11.721Z",
       "classes": [
         {
           "id": "s01",
@@ -540,7 +540,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Mohamed Amin",
+          "type": "Bokszaktraining Said",
           "level": ""
         },
         {
@@ -644,7 +644,7 @@
           "day": 3,
           "time": "17:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 14 jaar Mohamed Amin",
+          "type": "Jeugd Training 8 t/m 14 jaar Said",
           "level": ""
         },
         {
@@ -708,7 +708,7 @@
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Badr",
+          "type": "Jeugd Training 8 t/m 13 jaar Quinty",
           "level": ""
         },
         {
