@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T09:03:31.700Z",
+  "updated": "2026-09-08T08:41:46.893Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-07T08:58:58.207Z",
+      "fetchedAt": "2026-09-08T08:39:11.557Z",
       "classes": [
         {
           "id": "c01",
@@ -493,7 +493,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-07T08:59:11.721Z",
+      "fetchedAt": "2026-09-08T08:39:24.607Z",
       "classes": [
         {
           "id": "s01",
@@ -644,7 +644,7 @@
           "day": 3,
           "time": "17:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 14 jaar Said",
+          "type": "Jeugd Training 8 t/m 14 jaar Vera",
           "level": ""
         },
         {
@@ -684,7 +684,7 @@
           "day": 3,
           "time": "20:00",
           "dur": 60,
-          "type": "Bokszaktraining Michael",
+          "type": "Bokszaktraining Chaimae",
           "level": ""
         },
         {
@@ -708,7 +708,7 @@
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Quinty",
+          "type": "Jeugd Training 8 t/m 13 jaar Mounia",
           "level": ""
         },
         {
