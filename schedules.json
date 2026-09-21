@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T09:09:31.302Z",
+  "updated": "2026-09-21T09:42:37.847Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-20T09:06:51.475Z",
+      "fetchedAt": "2026-09-21T09:39:58.425Z",
       "classes": [
         {
           "id": "c01",
@@ -501,7 +501,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-20T09:07:05.989Z",
+      "fetchedAt": "2026-09-21T09:40:11.308Z",
       "classes": [
         {
           "id": "s01",
@@ -548,7 +548,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Mohamed Amin",
+          "type": "Bokszaktraining Said",
           "level": ""
         },
         {
@@ -612,7 +612,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Said",
+          "type": "Kickboksen Techniek Najim",
           "level": ""
         },
         {
@@ -636,15 +636,15 @@
           "day": 2,
           "time": "20:00",
           "dur": 60,
-          "type": "Bokszaktraining Badr",
+          "type": "Sparren Training Said",
           "level": ""
         },
         {
           "id": "s18",
           "day": 2,
-          "time": "20:00",
+          "time": "20:15",
           "dur": 60,
-          "type": "Sparren Training Said",
+          "type": "LADIES ONLY Kickboks techniek Chaimae",
           "level": ""
         },
         {
@@ -668,7 +668,7 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Said",
+          "type": "Jeugd Wedstrijd Groep Hamza &",
           "level": ""
         },
         {
@@ -716,7 +716,7 @@
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Vera",
+          "type": "Jeugd Training 8 t/m 13 jaar Quinty",
           "level": ""
         },
         {
@@ -764,7 +764,7 @@
           "day": 4,
           "time": "20:00",
           "dur": 60,
-          "type": "Sparren Training Sergei",
+          "type": "Sparren Training Said",
           "level": ""
         },
         {
@@ -778,21 +778,13 @@
         {
           "id": "s35",
           "day": 5,
-          "time": "07:05",
-          "dur": 60,
-          "type": "Bokszaktraining Micah",
-          "level": ""
-        },
-        {
-          "id": "s36",
-          "day": 5,
           "time": "09:15",
           "dur": 60,
           "type": "LADIES ONLY Kracht training Loraine",
           "level": ""
         },
         {
-          "id": "s37",
+          "id": "s36",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -800,7 +792,7 @@
           "level": ""
         },
         {
-          "id": "s38",
+          "id": "s37",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -808,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s39",
+          "id": "s38",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -816,7 +808,7 @@
           "level": ""
         },
         {
-          "id": "s40",
+          "id": "s39",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -824,7 +816,7 @@
           "level": ""
         },
         {
-          "id": "s41",
+          "id": "s40",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -832,7 +824,7 @@
           "level": ""
         },
         {
-          "id": "s42",
+          "id": "s41",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -840,7 +832,7 @@
           "level": ""
         },
         {
-          "id": "s43",
+          "id": "s42",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -848,7 +840,7 @@
           "level": ""
         },
         {
-          "id": "s44",
+          "id": "s43",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -856,7 +848,7 @@
           "level": ""
         },
         {
-          "id": "s45",
+          "id": "s44",
           "day": 6,
           "time": "11:00",
           "dur": 60,
