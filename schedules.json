@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22T09:07:13.809Z",
+  "updated": "2026-09-23T09:10:15.855Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-22T09:04:41.795Z",
+      "fetchedAt": "2026-09-23T09:07:31.313Z",
       "classes": [
         {
           "id": "c01",
@@ -501,7 +501,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-22T09:04:57.051Z",
+      "fetchedAt": "2026-09-23T09:07:44.566Z",
       "classes": [
         {
           "id": "s01",
@@ -540,7 +540,7 @@
           "day": 1,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Hamza &",
+          "type": "Jeugd Wedstrijd Groep Mohamed Amin",
           "level": ""
         },
         {
@@ -612,7 +612,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Najim",
+          "type": "Kickboksen Techniek Said",
           "level": ""
         },
         {
@@ -668,7 +668,7 @@
           "day": 3,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Hamza &",
+          "type": "Jeugd Wedstrijd Groep Said",
           "level": ""
         },
         {
