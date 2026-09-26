@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T09:28:07.299Z",
+  "updated": "2026-09-26T09:13:32.944Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-25T09:25:38.225Z",
+      "fetchedAt": "2026-09-26T09:11:05.922Z",
       "classes": [
         {
           "id": "c01",
@@ -423,7 +423,7 @@
         {
           "id": "c52",
           "day": 5,
-          "time": "18:30",
+          "time": "19:00",
           "dur": 60,
           "type": "MMA/Grappling (Beginners-Gevorderden)",
           "level": ""
@@ -501,7 +501,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-25T09:25:53.739Z",
+      "fetchedAt": "2026-09-26T09:11:19.885Z",
       "classes": [
         {
           "id": "s01",
