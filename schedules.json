@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T10:21:29.334Z",
+  "updated": "2026-10-01T10:48:42.085Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-30T10:19:01.952Z",
+      "fetchedAt": "2026-10-01T10:45:51.334Z",
       "classes": [
         {
           "id": "c01",
@@ -501,7 +501,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-09-30T10:19:14.978Z",
+      "fetchedAt": "2026-10-01T10:46:06.130Z",
       "classes": [
         {
           "id": "s01",
