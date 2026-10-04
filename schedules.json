@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T09:45:27.862Z",
+  "updated": "2026-10-04T10:29:02.773Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-10-03T09:42:34.558Z",
+      "fetchedAt": "2026-10-04T10:26:24.450Z",
       "classes": [
         {
           "id": "c01",
@@ -501,14 +501,14 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-10-03T09:42:50.378Z",
+      "fetchedAt": "2026-10-04T10:26:38.522Z",
       "classes": [
         {
           "id": "s01",
           "day": 0,
           "time": "10:00",
           "dur": 60,
-          "type": "Bokszaktraining gecombineerd met kracht Micah",
+          "type": "Bokszaktraining gecombineerd met kracht Mohamed Amin",
           "level": ""
         },
         {
