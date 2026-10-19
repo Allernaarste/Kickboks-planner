@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T08:38:27.492Z",
+  "updated": "2026-10-19T09:40:58.536Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-10-18T08:35:47.468Z",
+      "fetchedAt": "2026-10-19T09:38:19.156Z",
       "classes": [
         {
           "id": "c01",
@@ -493,7 +493,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-10-18T08:36:01.663Z",
+      "fetchedAt": "2026-10-19T09:38:34.752Z",
       "classes": [
         {
           "id": "s01",
@@ -524,7 +524,7 @@
           "day": 1,
           "time": "17:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Chaimae",
+          "type": "Jeugd training tot 7 jaar Amin",
           "level": ""
         },
         {
@@ -540,7 +540,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Nassim",
+          "type": "Bokszaktraining Said",
           "level": ""
         },
         {
@@ -548,7 +548,7 @@
           "day": 1,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Mohamed Amin",
+          "type": "Kickboksen Techniek Jahfarr",
           "level": ""
         },
         {
@@ -602,9 +602,9 @@
         {
           "id": "s14",
           "day": 2,
-          "time": "18:30",
+          "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training André",
+          "type": "Bokszaktraining Micah",
           "level": ""
         },
         {
@@ -612,7 +612,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Micah",
+          "type": "Kickboksen Techniek Najim",
           "level": ""
         },
         {
@@ -620,27 +620,19 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Mohamed Amin",
+          "type": "P T A André",
           "level": ""
         },
         {
           "id": "s17",
           "day": 2,
-          "time": "19:00",
+          "time": "19:30",
           "dur": 60,
-          "type": "P T A André",
+          "type": "Kracht - Circuit Training Vera",
           "level": ""
         },
         {
           "id": "s18",
-          "day": 2,
-          "time": "19:30",
-          "dur": 60,
-          "type": "Kracht - Circuit Training André",
-          "level": ""
-        },
-        {
-          "id": "s19",
           "day": 2,
           "time": "20:00",
           "dur": 60,
@@ -648,7 +640,7 @@
           "level": ""
         },
         {
-          "id": "s20",
+          "id": "s19",
           "day": 2,
           "time": "20:15",
           "dur": 60,
@@ -656,7 +648,7 @@
           "level": ""
         },
         {
-          "id": "s21",
+          "id": "s20",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -664,15 +656,15 @@
           "level": ""
         },
         {
-          "id": "s22",
+          "id": "s21",
           "day": 3,
           "time": "17:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar .",
+          "type": "Jeugd training tot 7 jaar Pim",
           "level": ""
         },
         {
-          "id": "s23",
+          "id": "s22",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -680,15 +672,15 @@
           "level": ""
         },
         {
-          "id": "s24",
+          "id": "s23",
           "day": 3,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Mohamed Amin",
+          "type": "Bokszaktraining Said",
           "level": ""
         },
         {
-          "id": "s25",
+          "id": "s24",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -696,7 +688,7 @@
           "level": ""
         },
         {
-          "id": "s26",
+          "id": "s25",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -704,7 +696,7 @@
           "level": ""
         },
         {
-          "id": "s27",
+          "id": "s26",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -712,7 +704,7 @@
           "level": ""
         },
         {
-          "id": "s28",
+          "id": "s27",
           "day": 4,
           "time": "09:15",
           "dur": 60,
@@ -720,7 +712,7 @@
           "level": ""
         },
         {
-          "id": "s29",
+          "id": "s28",
           "day": 4,
           "time": "18:00",
           "dur": 60,
@@ -728,15 +720,15 @@
           "level": ""
         },
         {
-          "id": "s30",
+          "id": "s29",
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Mounia",
+          "type": "Jeugd training tot 7 jaar .",
           "level": ""
         },
         {
-          "id": "s31",
+          "id": "s30",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -744,7 +736,7 @@
           "level": ""
         },
         {
-          "id": "s32",
+          "id": "s31",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -752,7 +744,7 @@
           "level": ""
         },
         {
-          "id": "s33",
+          "id": "s32",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -760,7 +752,7 @@
           "level": ""
         },
         {
-          "id": "s34",
+          "id": "s33",
           "day": 4,
           "time": "19:00",
           "dur": 60,
@@ -768,7 +760,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s34",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -776,7 +768,7 @@
           "level": ""
         },
         {
-          "id": "s36",
+          "id": "s35",
           "day": 4,
           "time": "20:15",
           "dur": 60,
@@ -784,15 +776,15 @@
           "level": ""
         },
         {
-          "id": "s37",
+          "id": "s36",
           "day": 5,
-          "time": "09:15",
+          "time": "09:30",
           "dur": 60,
           "type": "LADIES ONLY Kracht training Loraine",
           "level": ""
         },
         {
-          "id": "s38",
+          "id": "s37",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -800,15 +792,15 @@
           "level": ""
         },
         {
-          "id": "s39",
+          "id": "s38",
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Hamza",
+          "type": "Jeugd Wedstrijd Groep Najim",
           "level": ""
         },
         {
-          "id": "s40",
+          "id": "s39",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -816,15 +808,15 @@
           "level": ""
         },
         {
-          "id": "s41",
+          "id": "s40",
           "day": 5,
           "time": "19:00",
           "dur": 60,
-          "type": "Bokszaktraining Badr",
+          "type": "Bokszaktraining Najim",
           "level": ""
         },
         {
-          "id": "s42",
+          "id": "s41",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -832,7 +824,7 @@
           "level": ""
         },
         {
-          "id": "s43",
+          "id": "s42",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -840,7 +832,7 @@
           "level": ""
         },
         {
-          "id": "s44",
+          "id": "s43",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -848,7 +840,7 @@
           "level": ""
         },
         {
-          "id": "s45",
+          "id": "s44",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -856,7 +848,7 @@
           "level": ""
         },
         {
-          "id": "s46",
+          "id": "s45",
           "day": 6,
           "time": "11:00",
           "dur": 60,
