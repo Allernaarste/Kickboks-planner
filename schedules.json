@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T09:03:39.391Z",
+  "updated": "2026-10-26T09:52:03.293Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-10-25T08:58:46.458Z",
+      "fetchedAt": "2026-10-26T09:47:11.423Z",
       "classes": [
         {
           "id": "c01",
@@ -493,7 +493,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-10-25T08:58:59.609Z",
+      "fetchedAt": "2026-10-26T09:47:24.425Z",
       "classes": [
         {
           "id": "s01",
@@ -602,9 +602,9 @@
         {
           "id": "s14",
           "day": 2,
-          "time": "19:00",
+          "time": "18:30",
           "dur": 60,
-          "type": "Bokszaktraining Micah",
+          "type": "Kracht - Circuit Training André",
           "level": ""
         },
         {
@@ -612,7 +612,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Said",
+          "type": "Bokszaktraining Micah",
           "level": ""
         },
         {
@@ -620,19 +620,27 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "P T A André",
+          "type": "Kickboksen Techniek Najim",
           "level": ""
         },
         {
           "id": "s17",
           "day": 2,
-          "time": "19:30",
+          "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Vera",
+          "type": "P T A André",
           "level": ""
         },
         {
           "id": "s18",
+          "day": 2,
+          "time": "19:30",
+          "dur": 60,
+          "type": "Kracht - Circuit Training André",
+          "level": ""
+        },
+        {
+          "id": "s19",
           "day": 2,
           "time": "20:00",
           "dur": 60,
@@ -640,7 +648,7 @@
           "level": ""
         },
         {
-          "id": "s19",
+          "id": "s20",
           "day": 2,
           "time": "20:15",
           "dur": 60,
@@ -648,7 +656,7 @@
           "level": ""
         },
         {
-          "id": "s20",
+          "id": "s21",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -656,7 +664,7 @@
           "level": ""
         },
         {
-          "id": "s21",
+          "id": "s22",
           "day": 3,
           "time": "17:00",
           "dur": 60,
@@ -664,7 +672,7 @@
           "level": ""
         },
         {
-          "id": "s22",
+          "id": "s23",
           "day": 3,
           "time": "18:00",
           "dur": 60,
@@ -672,7 +680,7 @@
           "level": ""
         },
         {
-          "id": "s23",
+          "id": "s24",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -680,7 +688,7 @@
           "level": ""
         },
         {
-          "id": "s24",
+          "id": "s25",
           "day": 3,
           "time": "19:00",
           "dur": 60,
@@ -688,7 +696,7 @@
           "level": ""
         },
         {
-          "id": "s25",
+          "id": "s26",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -696,7 +704,7 @@
           "level": ""
         },
         {
-          "id": "s26",
+          "id": "s27",
           "day": 3,
           "time": "20:00",
           "dur": 60,
@@ -704,7 +712,7 @@
           "level": ""
         },
         {
-          "id": "s27",
+          "id": "s28",
           "day": 4,
           "time": "09:15",
           "dur": 60,
@@ -712,27 +720,19 @@
           "level": ""
         },
         {
-          "id": "s28",
-          "day": 4,
-          "time": "18:00",
-          "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Vera",
-          "level": ""
-        },
-        {
           "id": "s29",
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Mounia",
+          "type": "Jeugd Training 8 t/m 13 jaar Chaimae",
           "level": ""
         },
         {
           "id": "s30",
           "day": 4,
-          "time": "19:00",
+          "time": "18:00",
           "dur": 60,
-          "type": "Bokszaktraining Chaimae",
+          "type": "Jeugd training tot 7 jaar Lotte",
           "level": ""
         },
         {
@@ -740,7 +740,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Haytam",
+          "type": "Bokszaktraining Chaimae",
           "level": ""
         },
         {
@@ -748,7 +748,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Vera",
+          "type": "Kickboksen Techniek Haytam",
           "level": ""
         },
         {
@@ -756,11 +756,19 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "P T A André",
+          "type": "Kracht - Circuit Training André",
           "level": ""
         },
         {
           "id": "s34",
+          "day": 4,
+          "time": "19:00",
+          "dur": 60,
+          "type": "P T A André",
+          "level": ""
+        },
+        {
+          "id": "s35",
           "day": 4,
           "time": "20:00",
           "dur": 60,
@@ -768,7 +776,7 @@
           "level": ""
         },
         {
-          "id": "s35",
+          "id": "s36",
           "day": 4,
           "time": "20:15",
           "dur": 60,
@@ -776,7 +784,7 @@
           "level": ""
         },
         {
-          "id": "s36",
+          "id": "s37",
           "day": 5,
           "time": "09:30",
           "dur": 60,
@@ -784,7 +792,7 @@
           "level": ""
         },
         {
-          "id": "s37",
+          "id": "s38",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -792,7 +800,7 @@
           "level": ""
         },
         {
-          "id": "s38",
+          "id": "s39",
           "day": 5,
           "time": "18:00",
           "dur": 60,
@@ -800,15 +808,15 @@
           "level": ""
         },
         {
-          "id": "s39",
+          "id": "s40",
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Lotte",
+          "type": "Jeugd training tot 7 jaar Amin",
           "level": ""
         },
         {
-          "id": "s40",
+          "id": "s41",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -816,7 +824,7 @@
           "level": ""
         },
         {
-          "id": "s41",
+          "id": "s42",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -824,7 +832,7 @@
           "level": ""
         },
         {
-          "id": "s42",
+          "id": "s43",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -832,15 +840,15 @@
           "level": ""
         },
         {
-          "id": "s43",
+          "id": "s44",
           "day": 6,
           "time": "10:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training Vera",
+          "type": "Kracht - Circuit Training André",
           "level": ""
         },
         {
-          "id": "s44",
+          "id": "s45",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -848,7 +856,7 @@
           "level": ""
         },
         {
-          "id": "s45",
+          "id": "s46",
           "day": 6,
           "time": "11:00",
           "dur": 60,
