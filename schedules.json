@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T11:08:32.394Z",
+  "updated": "2026-11-02T12:06:45.550Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-11-01T11:03:38.198Z",
+      "fetchedAt": "2026-11-02T12:01:53.975Z",
       "classes": [
         {
           "id": "c01",
@@ -493,7 +493,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-11-01T11:03:51.223Z",
+      "fetchedAt": "2026-11-02T12:02:06.668Z",
       "classes": [
         {
           "id": "s01",
@@ -620,7 +620,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Said",
+          "type": "Kickboksen Techniek Najim",
           "level": ""
         },
         {
@@ -724,7 +724,7 @@
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Chaimae",
+          "type": "Jeugd Training 8 t/m 13 jaar Vera",
           "level": ""
         },
         {
@@ -732,7 +732,7 @@
           "day": 4,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Lotte",
+          "type": "Jeugd training tot 7 jaar .",
           "level": ""
         },
         {
@@ -756,7 +756,7 @@
           "day": 4,
           "time": "19:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training André",
+          "type": "Kracht - Circuit Training Vera",
           "level": ""
         },
         {
@@ -804,7 +804,7 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Hamza",
+          "type": "Jeugd Wedstrijd Groep Najim",
           "level": ""
         },
         {
@@ -812,7 +812,7 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Amin",
+          "type": "Jeugd training tot 7 jaar Lotte",
           "level": ""
         },
         {
@@ -844,7 +844,7 @@
           "day": 6,
           "time": "10:00",
           "dur": 60,
-          "type": "Kracht - Circuit Training André",
+          "type": "Kracht - Circuit Training Vera",
           "level": ""
         },
         {
