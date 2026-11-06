@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T12:00:04.022Z",
+  "updated": "2026-11-06T11:56:23.641Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-11-05T11:55:14.538Z",
+      "fetchedAt": "2026-11-06T11:51:16.142Z",
       "classes": [
         {
           "id": "c01",
@@ -485,7 +485,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-11-05T11:55:27.527Z",
+      "fetchedAt": "2026-11-06T11:51:28.803Z",
       "classes": [
         {
           "id": "s01",
@@ -786,9 +786,9 @@
         {
           "id": "s38",
           "day": 5,
-          "time": "18:00",
+          "time": "09:30",
           "dur": 60,
-          "type": "Jeugd Training 8 t/m 13 jaar Badr",
+          "type": "LADY´S ONLY Sparren/ bokszak Khadija",
           "level": ""
         },
         {
@@ -796,7 +796,7 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd Wedstrijd Groep Najim",
+          "type": "Jeugd Training 8 t/m 13 jaar Badr",
           "level": ""
         },
         {
@@ -804,11 +804,19 @@
           "day": 5,
           "time": "18:00",
           "dur": 60,
-          "type": "Jeugd training tot 7 jaar Lotte",
+          "type": "Jeugd Wedstrijd Groep Najim",
           "level": ""
         },
         {
           "id": "s41",
+          "day": 5,
+          "time": "18:00",
+          "dur": 60,
+          "type": "Jeugd training tot 7 jaar Lotte",
+          "level": ""
+        },
+        {
+          "id": "s42",
           "day": 5,
           "time": "19:00",
           "dur": 60,
@@ -816,7 +824,7 @@
           "level": ""
         },
         {
-          "id": "s42",
+          "id": "s43",
           "day": 5,
           "time": "20:00",
           "dur": 60,
@@ -824,7 +832,7 @@
           "level": ""
         },
         {
-          "id": "s43",
+          "id": "s44",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -832,7 +840,7 @@
           "level": ""
         },
         {
-          "id": "s44",
+          "id": "s45",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -840,7 +848,7 @@
           "level": ""
         },
         {
-          "id": "s45",
+          "id": "s46",
           "day": 6,
           "time": "10:00",
           "dur": 60,
@@ -848,7 +856,7 @@
           "level": ""
         },
         {
-          "id": "s46",
+          "id": "s47",
           "day": 6,
           "time": "11:00",
           "dur": 60,
