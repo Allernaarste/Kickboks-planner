@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T12:33:29.234Z",
+  "updated": "2026-11-17T12:53:49.899Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-11-16T12:28:38.227Z",
+      "fetchedAt": "2026-11-17T12:49:01.669Z",
       "classes": [
         {
           "id": "c01",
@@ -493,7 +493,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-11-16T12:28:52.075Z",
+      "fetchedAt": "2026-11-17T12:49:13.873Z",
       "classes": [
         {
           "id": "s01",
@@ -772,7 +772,7 @@
           "day": 4,
           "time": "20:00",
           "dur": 60,
-          "type": "boksen Mustafa",
+          "type": "Boksen Mustafa",
           "level": ""
         },
         {
