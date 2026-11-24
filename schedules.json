@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T14:07:34.311Z",
+  "updated": "2026-11-24T14:38:34.203Z",
   "note": "Automatisch bijgewerkt door GitHub Actions",
   "schools": {
     "colosseum": {
@@ -10,7 +10,7 @@
       "workitUrl": "https://workit.nl/locaties/4251-the-colosseum-gym",
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-11-23T14:05:06.772Z",
+      "fetchedAt": "2026-11-24T14:36:10.561Z",
       "classes": [
         {
           "id": "c01",
@@ -485,7 +485,7 @@
       "workit": true,
       "live": true,
       "source": "dom",
-      "fetchedAt": "2026-11-23T14:05:19.426Z",
+      "fetchedAt": "2026-11-24T14:36:22.969Z",
       "classes": [
         {
           "id": "s01",
@@ -612,7 +612,7 @@
           "day": 2,
           "time": "19:00",
           "dur": 60,
-          "type": "Kickboksen Techniek Najim",
+          "type": "Kickboksen Techniek Said",
           "level": ""
         },
         {
@@ -636,7 +636,7 @@
           "day": 2,
           "time": "20:00",
           "dur": 60,
-          "type": "Sparren Training Badr",
+          "type": "boksen en spar Training Mustafa",
           "level": ""
         },
         {
